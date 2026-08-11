@@ -93,7 +93,7 @@ export default function CarList({
                       src={car.image}
                       alt={car.name}
                       className={`w-full h-full object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-500 ${
-                        isElfGiga ? 'scale-105 sm:scale-110' : ''
+                        isElfGiga || isAlphard ? 'scale-105 sm:scale-110' : ''
                       }`}
                     />
                     <div className="absolute top-2.5 left-2.5 bg-amber-500 text-white font-display font-extrabold text-[10px] uppercase px-2.5 py-0.5 rounded-full shadow-sm">

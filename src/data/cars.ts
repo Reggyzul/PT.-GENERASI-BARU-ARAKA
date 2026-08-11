@@ -227,7 +227,7 @@ export const CARS: Car[] = [
     category: 'VIP Luxury Class',
     pricePerDay: 2400000,
     priceDisplay: 'Mulai Rp 2.400.000 / hari',
-    image: '/alphard_real_exterior.jpg',
+    image: '/alphard_studio.jpg',
     interiorImage: '/alphard_real_interior_seats.jpg',
     seats: 7,
     transmission: 'Automatic',
