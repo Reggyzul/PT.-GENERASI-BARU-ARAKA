@@ -120,7 +120,7 @@ export default function Header({ activeSection, onNavClick, lang, setLang, curre
                 className="bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-xs sm:text-sm py-2.5 px-5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer flex items-center gap-2 whitespace-nowrap active:scale-95"
               >
                 <MessageCircle className="w-4 h-4 fill-current shrink-0" />
-                <span>Pesan WA (0812-8874-8745)</span>
+                <span>Booking</span>
               </button>
             </div>
 
@@ -167,7 +167,7 @@ export default function Header({ activeSection, onNavClick, lang, setLang, curre
                   className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 text-white font-sans font-bold text-sm py-3.5 rounded-xl shadow-md flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
                 >
                   <MessageCircle className="w-5 h-5 fill-current shrink-0" />
-                  <span>Pesan via WhatsApp (0812-8874-8745)</span>
+                  <span>Booking</span>
                 </button>
               </div>
             </div>
