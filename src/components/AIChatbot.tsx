@@ -27,10 +27,7 @@ const RELEVANT_KEYWORDS = [
   'driver', 'bbm', 'tol', 'parkir', 'overtime', 'syarat', 'ketentuan', 'fasilitas',
   'wisata', 'rute', 'lokasi', 'alamat', 'wa', 'whatsapp', 'araka', 'unit', 'kapasitas',
   'kursi', 'captain', 'luxury', 'premio', 'commuter', 'promo', 'dinas', 'keluarga',
-  'halo', 'hai', 'pagi', 'siang', 'sore', 'malam', 'permisi', 'tanya', 'admin', 'bisa'
-];
-
-export default function AIChatbot() {
+  'halo', 'hai', 'pagi', 'siang', 'sore', 'malam', 'permisi', 'tanya', 'admin', 'export default function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -38,7 +35,7 @@ export default function AIChatbot() {
     {
       id: 'welcome-1',
       sender: 'bot',
-      text: 'Halo! Saya Siti, Asisten AI resmi PT. Generasi Baru Araka. Ada yang bisa saya bantu terkait sewa Hiace, Elf, Bus Medium, atau Alphard hari ini?',
+      text: 'Halo! Saya Rian, Asisten AI resmi PT. Generasi Baru Araka. Ada yang bisa saya bantu terkait sewa Hiace, Elf, Bus Medium, atau Alphard hari ini?',
       timestamp: getFormattedTime()
     }
   ]);
@@ -131,7 +128,7 @@ export default function AIChatbot() {
           messages: [
             {
               role: 'system',
-              content: `Anda adalah Siti, AI Customer Support dari PT. Generasi Baru Araka (Araka Trans Travel).
+              content: `Anda adalah Rian, AI Customer Support Specialist dari PT. Generasi Baru Araka (Araka Trans Travel).
 Tugas Anda: Menjawab pertanyaan seputar sewa mobil (Hiace, Elf, Bus, Alphard) secara ramah, profesional, dan ringkas.
 
 DATA RESMI ARAKA TRANS:
@@ -195,27 +192,27 @@ ATURAN STRICT:
 
   const handleOpenWhatsAppDirect = () => {
     const waNumber = '6281288748745';
-    const text = encodeURIComponent('Halo Siti / Admin Araka Trans Travel, saya mau konsultasi pemesanan armada rental mobil.');
+    const text = encodeURIComponent('Halo Rian / Admin Araka Trans Travel, saya mau konsultasi pemesanan armada rental mobil.');
     window.open(`https://wa.me/${waNumber}?text=${text}`, '_blank', 'noreferrer');
   };
 
   return (
     <>
-      {/* FLOATING TRIGGER BUTTON (Positioned directly above WhatsApp button) */}
-      <div className="fixed bottom-24 right-6 z-40">
+      {/* FLOATING TRIGGER BUTTON (Positioned precisely directly above WhatsApp button) */}
+      <div className="fixed bottom-[92px] right-6 z-40">
         <motion.button
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           onClick={() => setIsOpen(!isOpen)}
           className="relative w-14 h-14 bg-[#0c2340] hover:bg-[#123157] text-white rounded-full shadow-2xl flex items-center justify-center cursor-pointer hover:scale-110 transition-all border-2 border-amber-400 group"
-          title="Tanya Siti - AI Customer Support Araka Trans"
+          title="Tanya Rian - AI Customer Support Araka Trans"
           id="floater-ai-chat"
         >
-          {/* Professional Female Avatar Image inside Button */}
+          {/* Professional Male Avatar Image inside Button */}
           <div className="w-11 h-11 rounded-full overflow-hidden border border-amber-300 relative">
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80"
-              alt="Siti AI Support"
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80"
+              alt="Rian AI Support"
               className="w-full h-full object-cover"
             />
           </div>
@@ -238,7 +235,7 @@ ATURAN STRICT:
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.25 }}
-            className="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[380px] h-[520px] max-h-[80vh] bg-white rounded-3xl shadow-2xl border border-blue-900/30 flex flex-col overflow-hidden text-left font-sans"
+            className="fixed bottom-[92px] right-4 sm:right-6 z-50 w-[calc(100vw-2rem)] sm:w-[380px] h-[520px] max-h-[80vh] bg-white rounded-3xl shadow-2xl border border-blue-900/30 flex flex-col overflow-hidden text-left font-sans"
             id="ai-chatbot-window"
           >
             {/* TOP HEADER */}
@@ -246,15 +243,15 @@ ATURAN STRICT:
               <div className="flex items-center gap-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-amber-400 shrink-0">
                   <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80"
-                    alt="Siti AI"
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80"
+                    alt="Rian AI Support"
                     className="w-full h-full object-cover"
                   />
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-[#0c2340]" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <h4 className="font-display font-black text-sm text-white uppercase tracking-tight">Siti</h4>
+                    <h4 className="font-display font-black text-sm text-white uppercase tracking-tight">Rian</h4>
                     <span className="bg-amber-500 text-[#0c2340] text-[9px] font-extrabold px-1.5 py-0.2 rounded uppercase">AI CS</span>
                   </div>
                   <p className="text-[10px] text-amber-300 font-semibold leading-none mt-0.5">
@@ -269,7 +266,7 @@ ATURAN STRICT:
               >
                 <X className="w-4 h-4" />
               </button>
-            </div>
+            </div>      </div>
 
             {/* MESSAGES BODY */}
             <div className="flex-1 p-3 sm:p-4 overflow-y-auto overscroll-contain space-y-3 bg-slate-50/60">
@@ -307,7 +304,7 @@ ATURAN STRICT:
                 <div className="flex items-start gap-2">
                   <div className="bg-white border border-slate-200/90 p-3 rounded-2xl rounded-bl-none shadow-sm flex items-center gap-1.5 text-xs text-slate-500 font-medium">
                     <RefreshCw className="w-3.5 h-3.5 animate-spin text-amber-500" />
-                    <span>Siti sedang mengetik...</span>
+                    <span>Rian sedang mengetik...</span>
                   </div>
                 </div>
               )}
