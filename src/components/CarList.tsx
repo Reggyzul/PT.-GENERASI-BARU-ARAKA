@@ -46,8 +46,8 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
           </p>
         </div>
 
-        {/* GRID LAYOUT: 5 KARTU ARMADA */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* GRID LAYOUT: 4 KARTU ARMADA */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {CARS.map((car, index) => {
             const isHiace = car.id === 'hiace-series';
             const isElfGiga = car.id === 'elf-giga';

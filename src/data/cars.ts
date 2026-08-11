@@ -247,34 +247,6 @@ export const CARS: Car[] = [
       { label: 'Kategori Layanan', value: 'VIP Transfer, Tamu Negara & Wedding' },
       { label: 'Kondisi Armada', value: 'Super Luxury & Pristine Condition' }
     ]
-  },
-  {
-    id: 'grand-tour',
-    name: 'Grand Tour',
-    nameAr: 'غراند تور',
-    category: 'Family & Group Travel',
-    pricePerDay: 750000,
-    priceDisplay: 'Mulai Rp 750.000 / hari',
-    image: '/avanza.avif',
-    seats: 7,
-    transmission: 'Manual/Matic',
-    fuel: 'Bensin (Efisien & Halus)',
-    includeList: [
-      'Full AC Double Blower',
-      'Reclining Seats',
-      'Hand Sanitizer & Tissue',
-      'Audio Bluetooth & USB Charger'
-    ],
-    terms: COMMON_HIACE_TERMS,
-    description: 'Pilihan transportasi untuk perjalanan bersama dengan mengutamakan kenyamanan dan kebutuhan rombongan.',
-    rating: 4.9,
-    reviewsCount: 130,
-    specifications: [
-      { label: 'Kapasitas Penumpang', value: '7 Kursi Penumpang' },
-      { label: 'Fasilitas Utama', value: 'AC Double Blower, Audio Bluetooth, USB Charger Port' },
-      { label: 'Kategori Layanan', value: 'Perjalanan Keluarga & Harian' },
-      { label: 'Kondisi Armada', value: 'Unit Bersih, Steril & Rutin Servis' }
-    ]
   }
 ];
 
