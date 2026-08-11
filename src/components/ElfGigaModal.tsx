@@ -11,7 +11,7 @@ interface ElfGigaModalProps {
 }
 
 export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGigaModalProps) {
-  const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior'>('exterior');
+  const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior_front' | 'interior_rear'>('exterior');
 
   if (!isOpen) return null;
 
@@ -30,6 +30,22 @@ export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGig
     'Tissue',
     'Alat Kebersihan Disinfektan'
   ];
+
+  const getDisplayedImage = () => {
+    if (activePhotoTab === 'interior_rear') {
+      return '/elf_giga_real_interior_rear.jpg';
+    }
+    if (activePhotoTab === 'interior_front') {
+      return '/elf_giga_real_interior_front.jpg';
+    }
+    return '/elf_giga_real_exterior.jpg';
+  };
+
+  const getDisplayedBadgeText = () => {
+    if (activePhotoTab === 'interior_rear') return 'Kabin Belakang 19 Kursi Leather';
+    if (activePhotoTab === 'interior_front') return 'Kabin Depan Leather Seats & TV';
+    return 'Unit Pariwisata B 7502 WAA';
+  };
 
   return (
     <AnimatePresence>
@@ -97,17 +113,17 @@ export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGig
               </div>
             </div>
 
-            {/* Photo Showcase with Simple Switcher Buttons */}
+            {/* Photo Showcase with 3 Photo Switcher Buttons (NO EMOJIS) */}
             <div className="space-y-2">
               <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center border border-slate-200">
                 <img
-                  src={activePhotoTab === 'interior' ? '/elf_long.avif' : '/elf_giga_studio.png'}
+                  src={getDisplayedImage()}
                   alt="Isuzu Elf Giga"
                   className="w-full h-full object-cover sm:object-contain drop-shadow-md transition-all duration-300"
                 />
                 
-                <div className="absolute top-2.5 left-2.5 bg-slate-900/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-slate-700">
-                  {activePhotoTab === 'interior' ? 'Kabin Penumpang Rombongan' : 'Eksterior Studio Isuzu Elf Giga'}
+                <div className="absolute top-2.5 left-2.5 bg-slate-900/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-slate-700 max-w-[75%] truncate">
+                  {getDisplayedBadgeText()}
                 </div>
 
                 {/* Photo Selector Pills overlay (NO EMOJIS) */}
@@ -124,14 +140,25 @@ export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGig
                   </button>
 
                   <button
-                    onClick={() => setActivePhotoTab('interior')}
+                    onClick={() => setActivePhotoTab('interior_front')}
                     className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
-                      activePhotoTab === 'interior'
+                      activePhotoTab === 'interior_front'
                         ? 'bg-amber-500 text-white'
                         : 'text-slate-300 hover:text-white'
                     }`}
                   >
-                    Interior Kabin
+                    Interior Depan
+                  </button>
+
+                  <button
+                    onClick={() => setActivePhotoTab('interior_rear')}
+                    className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
+                      activePhotoTab === 'interior_rear'
+                        ? 'bg-amber-500 text-white'
+                        : 'text-slate-300 hover:text-white'
+                    }`}
+                  >
+                    Interior Belakang
                   </button>
                 </div>
               </div>
@@ -139,7 +166,7 @@ export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGig
 
             {/* Description */}
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
-              Solusi transportasi tangguh untuk perjalanan rombongan dengan kapasitas 19 penumpang yang tetap nyaman, lega, dan terjaga kebersihannya.
+              Solusi transportasi tangguh untuk perjalanan rombongan dengan kapasitas 19 kursi penumpang leather orange-brown, AC louver merata, serta fasilitas kebersihan lengkap.
             </p>
 
             {/* Fasilitas Chips */}
