@@ -47,7 +47,7 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
   };
 
   return (
-    <section id="home" className="pt-32 sm:pt-36 pb-12 bg-white text-slate-900 overflow-hidden">
+    <section id="home" className="pt-24 sm:pt-28 pb-12 bg-white text-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Hero Card Container */}
