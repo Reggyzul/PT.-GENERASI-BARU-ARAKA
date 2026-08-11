@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  
+  --color-navy-dark: #0f172a;
+  --color-navy-main: #1e293b;
+  --color-navy-card: #ffffff;
+  
+  --color-orange-accent: #f97316;
+  --color-orange-hover: #ea580c;
+  --color-orange-light: #fff7ed;
+  
+  --color-luxury-gold: #f97316;
+  --color-luxury-gold-dark: #ea580c;
+  --color-luxury-charcoal: #0f172a;
+  --color-luxury-black: #0f172a;
+  --color-luxury-card: #ffffff;
+}
+
+/* Custom transitions and scroll behaviors */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
