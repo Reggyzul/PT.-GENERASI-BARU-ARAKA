@@ -47,16 +47,12 @@ export default function Footer({ onNavClick, lang }: FooterProps) {
           {/* Column 1: Brand & Office Address */}
           <div className="md:col-span-5 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-teal-600 flex items-center justify-center text-white shadow-md">
-                <Car className="w-7 h-7" />
-              </div>
-              <div className="text-left">
-                <span className="font-display font-black text-2xl text-white tracking-tight block leading-tight">
-                  ARAKA <span className="text-amber-400">TRANS</span>
-                </span>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block -mt-0.5">
-                  PT. GENERASI BARU ARAKA
-                </span>
+              <div className="bg-white p-3 rounded-2xl shadow-lg border border-white/20 inline-block group hover:scale-105 transition-transform duration-300">
+                <img 
+                  src="/logo-araka.png" 
+                  alt="ARAKA TRANS CLASSY TOUR LOGO" 
+                  className="h-12 sm:h-14 w-auto object-contain"
+                />
               </div>
             </div>
 
