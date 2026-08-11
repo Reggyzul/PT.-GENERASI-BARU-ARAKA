@@ -225,27 +225,29 @@ export const CARS: Car[] = [
     name: 'Toyota Alphard',
     nameAr: 'تويوتا ألفارد',
     category: 'VIP Luxury Class',
-    pricePerDay: 3200000,
-    priceDisplay: 'Mulai Rp 3.200.000 / hari',
-    image: '/innova3.avif',
+    pricePerDay: 2400000,
+    priceDisplay: 'Mulai Rp 2.400.000 / hari',
+    image: '/alphard_real_exterior.jpg',
+    interiorImage: '/alphard_real_interior_seats.jpg',
     seats: 7,
     transmission: 'Automatic',
     fuel: 'Bensin Halus & Senyap',
     includeList: [
-      'First Class Executive Captain Seats',
-      'Sunroof & Dual Climate Control AC',
-      'Hand Sanitizer & Tissue',
-      'Pelayanan Driver VIP'
+      'Full AC',
+      'Reclining Seats',
+      'Hand Sanitizer',
+      'Tissue',
+      'Alat Kebersihan Disinfektan'
     ],
     terms: COMMON_HIACE_TERMS,
-    description: 'Pilihan kendaraan premium bagi Anda yang membutuhkan kenyamanan dan eksklusivitas untuk perjalanan VIP, bisnis, maupun acara khusus.',
+    description: 'Pilihan kendaraan premium VIP dengan First-Class Executive Captain Seats, kabin senyap, dan pelayanan supir profesional.',
     rating: 5.0,
     reviewsCount: 74,
     specifications: [
+      { label: 'Tarif Sewa', value: 'Mulai Rp 2.400.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '7 Kursi Penumpang VIP' },
-      { label: 'Fasilitas Utama', value: 'Executive Leather Seats, Sunroof, JBL Sound System' },
-      { label: 'Kategori Layanan', value: 'VIP Transfer, Tamu Negara & Wedding' },
-      { label: 'Kondisi Armada', value: 'Super Luxury & Pristine Condition' }
+      { label: 'Fasilitas Utama', value: 'Full AC, Reclining Seats, Sanitizer, Disinfektan' },
+      { label: 'Kondisi Armada', value: 'Unit Black Metallic VIP Class B 09-23' }
     ]
   }
 ];

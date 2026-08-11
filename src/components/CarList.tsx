@@ -10,10 +10,18 @@ interface CarListProps {
   onOpenHiaceModal: () => void;
   onOpenElfGigaModal: () => void;
   onOpenBusMediumModal: () => void;
+  onOpenAlphardModal: () => void;
   lang: 'ID' | 'EN';
 }
 
-export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaModal, onOpenBusMediumModal, lang }: CarListProps) {
+export default function CarList({
+  onSelectCar,
+  onOpenHiaceModal,
+  onOpenElfGigaModal,
+  onOpenBusMediumModal,
+  onOpenAlphardModal,
+  lang
+}: CarListProps) {
   const t = TRANSLATIONS[lang];
 
   const handleWhatsAppBooking = (carName: string) => {
@@ -52,6 +60,7 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
             const isHiace = car.id === 'hiace-series';
             const isElfGiga = car.id === 'elf-giga';
             const isBusMedium = car.id === 'bus-medium';
+            const isAlphard = car.id === 'toyota-alphard';
 
             const handleCardClick = () => {
               if (isHiace) {
@@ -60,6 +69,8 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
                 onOpenElfGigaModal();
               } else if (isBusMedium) {
                 onOpenBusMediumModal();
+              } else if (isAlphard) {
+                onOpenAlphardModal();
               }
             };
 
@@ -71,11 +82,7 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 key={car.id}
                 onClick={handleCardClick}
-                className={`bg-white border rounded-3xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group overflow-hidden ${
-                  isHiace || isElfGiga || isBusMedium
-                    ? 'border-amber-400/80 ring-2 ring-amber-500/20 cursor-pointer bg-gradient-to-b from-amber-50/30 via-white to-white'
-                    : 'border-slate-200/90 hover:border-amber-400'
-                }`}
+                className="bg-white border border-amber-400/80 ring-2 ring-amber-500/20 cursor-pointer bg-gradient-to-b from-amber-50/30 via-white to-white rounded-3xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group overflow-hidden"
                 id={`car-card-${car.id}`}
               >
                 <div className="space-y-4 text-left">
@@ -117,6 +124,11 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
                       {isBusMedium && (
                         <span className="text-[10px] font-extrabold bg-amber-600 text-white px-2.5 py-1 rounded-full uppercase tracking-wider">
                           Jetbus 3
+                        </span>
+                      )}
+                      {isAlphard && (
+                        <span className="text-[10px] font-extrabold bg-slate-900 text-amber-400 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                          VIP Class
                         </span>
                       )}
                     </div>
@@ -179,29 +191,16 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
                       <span>Detail Informasi Bus Medium</span>
                     </button>
                   ) : (
-                    <>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleWhatsAppBooking(car.name);
-                        }}
-                        className="flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-xs uppercase py-3.5 px-3 rounded-xl shadow-md shadow-amber-500/20 transition-all flex items-center justify-center gap-1 cursor-pointer"
-                      >
-                        <MessageCircle className="w-4 h-4 fill-current shrink-0" />
-                        <span>Pesan WA</span>
-                      </button>
-
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onSelectCar(car);
-                        }}
-                        className="bg-slate-100 hover:bg-slate-200 text-[#0f172a] border border-slate-200 font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl transition-all cursor-pointer"
-                        title="Form Reservasi Lengkap"
-                      >
-                        Reservasi
-                      </button>
-                    </>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenAlphardModal();
+                      }}
+                      className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md shadow-amber-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                    >
+                      <Layers className="w-4 h-4 shrink-0" />
+                      <span>Detail Informasi Toyota Alphard</span>
+                    </button>
                   )}
                 </div>
 
