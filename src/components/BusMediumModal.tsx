@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Car } from '../types';
 import { CARS } from '../data/cars';
 import { motion, AnimatePresence } from 'motion/react';
@@ -12,6 +12,15 @@ interface BusMediumModalProps {
 
 export default function BusMediumModal({ isOpen, onClose, onSelectToBook }: BusMediumModalProps) {
   const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior_seats' | 'interior_led'>('exterior');
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -49,7 +58,7 @@ export default function BusMediumModal({ isOpen, onClose, onSelectToBook }: BusM
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 overflow-y-auto overscroll-contain">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -69,20 +78,10 @@ export default function BusMediumModal({ isOpen, onClose, onSelectToBook }: BusM
           id="bus-modal-panel"
         >
           {/* Top Header Bar */}
-          <div className="bg-[#0c2340] text-white p-3.5 sm:p-4 flex items-center justify-between border-b border-blue-900 shrink-0">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-amber-500 flex items-center justify-center text-[#0c2340] font-black text-xs shrink-0">
-                BM
-              </div>
-              <div className="text-left">
-                <h3 className="font-display font-black text-sm sm:text-base text-white uppercase tracking-tight leading-tight">
-                  INFORMASI DETAIL BUS MEDIUM
-                </h3>
-                <p className="font-sans text-[10px] sm:text-[11px] text-amber-300 font-semibold">
-                  PT. Generasi Baru Araka (Araka Trans Travel)
-                </p>
-              </div>
-            </div>
+          <div className="bg-[#0c2340] text-white px-5 py-4 flex items-center justify-between border-b border-blue-900 shrink-0">
+            <h3 className="font-display font-black text-sm sm:text-base text-white uppercase tracking-tight leading-tight">
+              INFORMASI DETAIL BUS MEDIUM
+            </h3>
 
             <button
               onClick={onClose}
@@ -94,7 +93,7 @@ export default function BusMediumModal({ isOpen, onClose, onSelectToBook }: BusM
           </div>
 
           {/* MAIN SCROLLABLE CONTENT BODY */}
-          <div className="p-4 sm:p-5 overflow-y-auto space-y-4 text-left">
+          <div className="p-4 sm:p-5 overflow-y-auto overscroll-contain space-y-4 text-left">
             
             {/* Title & Price Box */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">

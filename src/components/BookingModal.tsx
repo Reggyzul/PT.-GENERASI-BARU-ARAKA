@@ -28,10 +28,11 @@ export default function BookingModal({ car, onClose, lang, onCarChange }: Bookin
   const t = TRANSLATIONS[lang];
 
   useEffect(() => {
-    if (car) {
-      setSelectedCarId(car.id);
-    }
-  }, [car]);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   if (!car) return null;
 
@@ -79,7 +80,7 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto overscroll-contain">
         {/* Backdrop overlay */}
         <motion.div
           initial={{ opacity: 0 }}
