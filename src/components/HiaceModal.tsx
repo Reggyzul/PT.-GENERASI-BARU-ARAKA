@@ -11,8 +11,8 @@ interface HiaceModalProps {
 }
 
 export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: HiaceModalProps) {
-  const [selectedVariant, setSelectedVariant] = useState<Car>(HIACE_VARIANTS[0]);
-  const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior'>('exterior');
+  const [selectedVariant, setSelectedVariant] = useState<Car>(HIACE_VARIANTS[1]); // Default Premio or Commuter
+  const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior' | 'luxury_tv'>('exterior');
 
   if (!isOpen) return null;
 
@@ -29,6 +29,25 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
     'Tissue',
     'Alat Kebersihan Disinfektan'
   ];
+
+  // Image resolver
+  const getDisplayedImage = () => {
+    if (activePhotoTab === 'luxury_tv') {
+      return '/hiace_premio_luxury_interior.jpg';
+    }
+    if (activePhotoTab === 'interior') {
+      return selectedVariant.interiorImage || '/hiace_commuter_interior.jpg';
+    }
+    return selectedVariant.image;
+  };
+
+  const getDisplayedBadgeText = () => {
+    if (activePhotoTab === 'luxury_tv') return 'TV Monitor, Wooden Console & Ambient Lighting';
+    if (activePhotoTab === 'interior') return 'Kabin Interior Soft Leather Clean & Steril';
+    return selectedVariant.fuel;
+  };
+
+  const isPremioOrLuxury = selectedVariant.id === 'hiace-premio' || selectedVariant.id === 'hiace-premio-luxury';
 
   return (
     <AnimatePresence>
@@ -151,16 +170,16 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                 </div>
               </div>
 
-              {/* PHOTO SHOWCASE WITH TAB TOGGLE (EXTERIOR & INTERIOR) */}
+              {/* PHOTO SHOWCASE WITH MULTI-TAB TOGGLE (EXTERIOR, KABIN, TV CONSOLE) */}
               <div className="space-y-2">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <span className="text-xs font-extrabold uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
                     <ImageIcon className="w-4 h-4 text-amber-600" />
-                    <span>Galeri Foto Armada:</span>
+                    <span>Galeri Foto {selectedVariant.name}:</span>
                   </span>
 
                   {/* Photo Switcher Buttons */}
-                  <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
+                  <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 flex-wrap">
                     <button
                       onClick={() => setActivePhotoTab('exterior')}
                       className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
@@ -171,6 +190,7 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                     >
                       Eksterior
                     </button>
+
                     <button
                       onClick={() => setActivePhotoTab('interior')}
                       className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
@@ -179,24 +199,37 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                           : 'text-slate-600 hover:text-slate-900'
                       }`}
                     >
-                      Interior Kabin 🛋️
+                      Kabin Kursi 🛋️
                     </button>
+
+                    {isPremioOrLuxury && (
+                      <button
+                        onClick={() => setActivePhotoTab('luxury_tv')}
+                        className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          activePhotoTab === 'luxury_tv'
+                            ? 'bg-amber-500 text-white shadow-sm'
+                            : 'text-slate-600 hover:text-slate-900'
+                        }`}
+                      >
+                        TV & Console 📺
+                      </button>
+                    )}
                   </div>
                 </div>
 
                 {/* Displayed Image Container */}
                 <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 aspect-[16/10] sm:aspect-[16/9] p-2 flex items-center justify-center group">
                   <img
-                    src={activePhotoTab === 'interior' ? (selectedVariant.interiorImage || '/hiace_commuter_interior.jpg') : selectedVariant.image}
+                    src={getDisplayedImage()}
                     alt={`${selectedVariant.name} ${activePhotoTab}`}
                     className="w-full h-full object-cover sm:object-contain rounded-xl drop-shadow-md transition-all duration-300"
                   />
-                  <div className="absolute top-3 left-3 bg-slate-900/90 text-white font-sans text-[10px] font-bold px-3 py-1 rounded-full border border-slate-700">
-                    {activePhotoTab === 'interior' ? 'Kabin Interior Soft Leather' : selectedVariant.fuel}
+                  <div className="absolute top-3 left-3 bg-slate-900/90 text-white font-sans text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full border border-slate-700 max-w-[85%] truncate">
+                    {getDisplayedBadgeText()}
                   </div>
                   <div className="absolute bottom-3 right-3 bg-white/95 text-slate-800 font-sans text-xs font-extrabold px-3 py-1 rounded-full border border-slate-200 shadow-sm flex items-center gap-1">
                     <Users className="w-3.5 h-3.5 text-amber-600" />
-                    <span>{selectedVariant.seats} Kursi Penumpang</span>
+                    <span>{selectedVariant.seats} Kursi</span>
                   </div>
                 </div>
               </div>

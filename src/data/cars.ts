@@ -8,6 +8,11 @@ export const COMMON_HIACE_TERMS = [
   'Untuk informasi lebih lanjut maupun pemesanan silahkan hubungi kami'
 ];
 
+export interface HiaceGalleryItem {
+  label: string;
+  url: string;
+}
+
 export const HIACE_VARIANTS: Car[] = [
   {
     id: 'hiace-commuter',
@@ -46,8 +51,8 @@ export const HIACE_VARIANTS: Car[] = [
     category: 'Executive & Business',
     pricePerDay: 1200000,
     priceDisplay: 'Mulai Rp 1.200.000 / hari',
-    image: '/hiace_premio.avif',
-    interiorImage: '/hiace_commuter_interior.jpg',
+    image: '/hiace_premio_exterior.jpg',
+    interiorImage: '/hiace_premio_interior.jpg',
     seats: 12,
     transmission: 'Manual/Matic',
     fuel: 'Diesel Euro 4',
@@ -59,14 +64,14 @@ export const HIACE_VARIANTS: Car[] = [
       'Alat Kebersihan Disinfektan'
     ],
     terms: COMMON_HIACE_TERMS,
-    description: 'Menghadirkan kenyamanan dan ruang yang lebih premium untuk perjalanan bisnis, wisata, maupun perjalanan keluarga.',
+    description: 'Menghadirkan kenyamanan dan ruang yang lebih premium dengan kabin senyap, kursi kulit berkualitas, serta fasilitas kebersihan lengkap.',
     rating: 4.9,
     reviewsCount: 142,
     specifications: [
       { label: 'Tarif Sewa', value: 'Mulai Rp 1.200.000 / hari' },
-      { label: 'Kapasitas Penumpang', value: '12 Kursi Penumpang' },
-      { label: 'Fasilitas Utama', value: 'Kabin Senyap, Captain Seats, Charger Port' },
-      { label: 'Kondisi Armada', value: 'Bersih, Steril & Mewah' }
+      { label: 'Kapasitas Penumpang', value: '12 Kursi Penumpang Executive' },
+      { label: 'Fasilitas Utama', value: 'Full AC, Reclining Seats, Sanitizer, Disinfektan' },
+      { label: 'Kondisi Kabin', value: 'Kabin Senyap & Kursi Kulit Premium' }
     ]
   },
   {
@@ -106,8 +111,8 @@ export const HIACE_VARIANTS: Car[] = [
     category: 'Luxury & VIP Class',
     pricePerDay: 2000000,
     priceDisplay: 'Mulai Rp 2.000.000 / hari',
-    image: '/hiace_premio.avif',
-    interiorImage: '/hiace_commuter_interior.jpg',
+    image: '/hiace_premio_exterior.jpg',
+    interiorImage: '/hiace_premio_luxury_interior.jpg',
     seats: 9,
     transmission: 'Automatic/Manual',
     fuel: 'Diesel Euro 4',
@@ -119,14 +124,14 @@ export const HIACE_VARIANTS: Car[] = [
       'Alat Kebersihan Disinfektan'
     ],
     terms: COMMON_HIACE_TERMS,
-    description: 'Kombinasi antara kapasitas, kenyamanan, dan nuansa premium. Cocok untuk perjalanan VIP, perusahaan, maupun rombongan khusus.',
+    description: 'Kombinasi antara kapasitas, kenyamanan, dan nuansa VIP premium dengan TV Monitor, Wooden Console, dan Ambient Lighting.',
     rating: 5.0,
     reviewsCount: 110,
     specifications: [
       { label: 'Tarif Sewa', value: 'Mulai Rp 2.000.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '8-9 Kursi Luxury VIP' },
-      { label: 'Fasilitas Utama', value: 'Luxury Captain Seat, Smart TV, Wi-Fi ready' },
-      { label: 'Kondisi Armada', value: 'Interior Mewah & Steril' }
+      { label: 'Fasilitas Utama', value: 'Luxury Captain Seat, Smart TV, Wooden Console' },
+      { label: 'Kondisi Armada', value: 'Interior Ultra Executive & Steril' }
     ]
   }
 ];
@@ -138,8 +143,8 @@ export const CARS: Car[] = [
     category: 'Hiace Series (4 Varian)',
     pricePerDay: 1000000,
     priceDisplay: 'Mulai Rp 1.000.000 / hari (4 Varian Available)',
-    image: '/hiace_premio.avif',
-    interiorImage: '/hiace_commuter_interior.jpg',
+    image: '/hiace_premio_exterior.jpg',
+    interiorImage: '/hiace_premio_interior.jpg',
     seats: 14,
     transmission: 'Manual/Matic',
     fuel: 'Diesel Euro 4',
