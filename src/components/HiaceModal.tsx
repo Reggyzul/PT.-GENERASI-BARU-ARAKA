@@ -30,17 +30,38 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
     'Alat Kebersihan Disinfektan'
   ];
 
+  // Map image based on variant and active tab
   const getDisplayedImage = () => {
-    if (activePhotoTab === 'luxury_tv') {
-      return '/hiace_premio_luxury_interior.jpg';
+    if (selectedVariant.id === 'hiace-commuter-luxury') {
+      if (activePhotoTab === 'luxury_tv') return '/hiace_luxury_tv_interior.jpg';
+      if (activePhotoTab === 'interior') return '/hiace_commuter_luxury_interior.jpg';
+      return selectedVariant.image;
     }
-    if (activePhotoTab === 'interior') {
-      return selectedVariant.interiorImage || '/hiace_commuter_interior.jpg';
+    if (selectedVariant.id === 'hiace-premio-luxury') {
+      if (activePhotoTab === 'luxury_tv') return '/hiace_luxury_tv_interior.jpg';
+      if (activePhotoTab === 'interior') return '/hiace_premio_luxury_seats.jpg';
+      return '/hiace_premio_luxury_exterior.jpg';
     }
+    if (selectedVariant.id === 'hiace-premio') {
+      if (activePhotoTab === 'luxury_tv') return '/hiace_premio_luxury_interior.jpg';
+      if (activePhotoTab === 'interior') return '/hiace_premio_interior.jpg';
+      return '/hiace_premio_exterior.jpg';
+    }
+    // Default Commuter
+    if (activePhotoTab === 'interior') return '/hiace_commuter_interior.jpg';
     return selectedVariant.image;
   };
 
-  const isPremioOrLuxury = selectedVariant.id === 'hiace-premio' || selectedVariant.id === 'hiace-premio-luxury';
+  const getDisplayedBadgeText = () => {
+    if (activePhotoTab === 'luxury_tv') return 'TV Monitor, Ceiling LED Lighting & Console';
+    if (activePhotoTab === 'interior') {
+      if (selectedVariant.id.includes('luxury')) return 'Pilot Captain Seats Cream Soft Leather';
+      return 'Kabin Executive Black Leather';
+    }
+    return selectedVariant.fuel;
+  };
+
+  const hasTvConsolePhoto = selectedVariant.id !== 'hiace-commuter';
 
   return (
     <AnimatePresence>
@@ -157,11 +178,11 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                   className="w-full h-full object-cover sm:object-contain drop-shadow-md transition-all duration-300"
                 />
                 
-                <div className="absolute top-2.5 left-2.5 bg-slate-900/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-slate-700">
-                  {activePhotoTab === 'luxury_tv' ? 'TV & Console' : activePhotoTab === 'interior' ? 'Kabin Interior' : 'Eksterior'}
+                <div className="absolute top-2.5 left-2.5 bg-slate-900/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-slate-700 max-w-[70%] truncate">
+                  {getDisplayedBadgeText()}
                 </div>
 
-                {/* Photo Selector Pills overlay (NO EMOJIS) */}
+                {/* Photo Selector Pills overlay */}
                 <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-slate-900/85 backdrop-blur-md p-1 rounded-full border border-slate-700/80 flex items-center gap-1">
                   <button
                     onClick={() => setActivePhotoTab('exterior')}
@@ -185,7 +206,7 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                     Interior Kabin
                   </button>
 
-                  {isPremioOrLuxury && (
+                  {hasTvConsolePhoto && (
                     <button
                       onClick={() => setActivePhotoTab('luxury_tv')}
                       className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
