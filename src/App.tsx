@@ -119,13 +119,13 @@ export default function App() {
         {currentPage === 'home' ? (
           <>
             {/* 1. Hero Banner */}
-            <Hero onRentClick={() => handleNavClick('cars')} onVisiMisiClick={() => handleNavClick('about')} lang={lang} />
+            <Hero onRentClick={() => handleNavClick('cars')} onVisiMisiClick={() => handleNavClick('cars')} lang={lang} />
 
-            {/* 2. Layanan Rental Mobil */}
-            <Services lang={lang} />
-
-            {/* 3. Pilihan Armada */}
+            {/* 2. Pilihan Armada Mobil (Persis Di Bawah Hero) */}
             <CarList onSelectCar={handleSelectCar} lang={lang} />
+
+            {/* 3. Layanan Rental Mobil */}
+            <Services lang={lang} />
 
             {/* 4. Keunggulan (Why Choose Us) */}
             <Advantages onBookClick={() => handleNavClick('cars')} lang={lang} />

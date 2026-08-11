@@ -231,18 +231,18 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
 
         </div>
 
-        {/* FLOATING DOWN ARROW BUTTON: Profil Selengkapnya */}
+        {/* FLOATING DOWN ARROW BUTTON: Lihat Armada Mobil */}
         <div className="pt-8 flex justify-center">
           <motion.button
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            onClick={onVisiMisiClick}
+            onClick={handleScrollToFleet}
             className="group flex flex-col items-center gap-1.5 cursor-pointer focus:outline-none"
-            id="hero-floating-profil-btn"
+            id="hero-floating-fleet-btn"
           >
             <span className="font-sans font-bold text-xs sm:text-sm text-slate-700 group-hover:text-amber-600 transition-colors bg-white/95 px-5 py-1.5 rounded-full border border-slate-200 shadow-sm group-hover:shadow-md group-hover:border-amber-200">
-              Profil PT. Generasi Baru Araka
+              Lihat Armada Mobil
             </span>
             <div className="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center shadow-md group-hover:bg-amber-600 group-hover:scale-110 transition-all animate-bounce">
               <ChevronDown className="w-5 h-5" />
