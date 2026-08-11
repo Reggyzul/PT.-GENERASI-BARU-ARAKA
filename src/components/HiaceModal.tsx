@@ -12,11 +12,31 @@ interface HiaceModalProps {
 
 export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: HiaceModalProps) {
   const [selectedVariantId, setSelectedVariantId] = useState<string>('hiace-commuter');
-  const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior'>('exterior');
+  const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior' | 'interior_secondary'>('exterior');
 
   if (!isOpen) return null;
 
   const currentVariant = HIACE_VARIANTS.find(v => v.id === selectedVariantId) || HIACE_VARIANTS[0];
+
+  const getDisplayedImage = () => {
+    if (activePhotoTab === 'interior_secondary' && currentVariant.interiorSecondaryImage) {
+      return currentVariant.interiorSecondaryImage;
+    }
+    if (activePhotoTab === 'interior' && currentVariant.interiorImage) {
+      return currentVariant.interiorImage;
+    }
+    return currentVariant.image;
+  };
+
+  const getDisplayedBadgeText = () => {
+    if (activePhotoTab === 'exterior') {
+      return `Eksterior ${currentVariant.name}`;
+    }
+    if (activePhotoTab === 'interior') {
+      return currentVariant.id === 'hiace-commuter' ? `Interior & Bagasi ${currentVariant.name}` : `Interior Kabin ${currentVariant.name}`;
+    }
+    return `Kabin Penumpang ${currentVariant.name}`;
+  };
 
   const handleWhatsAppVariantBooking = () => {
     const waNumber = '6281288748745';
@@ -123,20 +143,20 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
             <div className="space-y-2">
               <div className="relative rounded-2xl overflow-hidden bg-[#071527] aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center border border-blue-900/60">
                 <img
-                  src={activePhotoTab === 'interior' ? currentVariant.interiorImage : currentVariant.image}
+                  src={getDisplayedImage()}
                   alt={currentVariant.name}
                   className="w-full h-full object-cover sm:object-contain drop-shadow-md transition-all duration-300"
                 />
                 
-                <div className="absolute top-2.5 left-2.5 bg-[#0c2340]/90 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-full border border-blue-800">
-                  {activePhotoTab === 'interior' ? `Kabin Interior ${currentVariant.name}` : `Eksterior ${currentVariant.name}`}
+                <div className="absolute top-2.5 left-2.5 bg-[#0c2340]/90 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-full border border-blue-800 max-w-[75%] truncate">
+                  {getDisplayedBadgeText()}
                 </div>
 
                 {/* Photo Selector Pills overlay */}
-                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-[#071527]/90 backdrop-blur-md p-1 rounded-full border border-blue-800 flex items-center gap-1">
+                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-[#071527]/90 backdrop-blur-md p-1 rounded-full border border-blue-800 flex items-center gap-1 max-w-[95%] overflow-x-auto">
                   <button
                     onClick={() => setActivePhotoTab('exterior')}
-                    className={`px-3.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
+                    className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer whitespace-nowrap ${
                       activePhotoTab === 'exterior'
                         ? 'bg-amber-500 text-[#0c2340]'
                         : 'text-slate-300 hover:text-white'
@@ -147,14 +167,27 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
 
                   <button
                     onClick={() => setActivePhotoTab('interior')}
-                    className={`px-3.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
+                    className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer whitespace-nowrap ${
                       activePhotoTab === 'interior'
                         ? 'bg-amber-500 text-[#0c2340]'
                         : 'text-slate-300 hover:text-white'
                     }`}
                   >
-                    Interior Kabin
+                    {currentVariant.id === 'hiace-commuter' ? 'Interior & Bagasi' : 'Interior Kabin'}
                   </button>
+
+                  {currentVariant.interiorSecondaryImage && (
+                    <button
+                      onClick={() => setActivePhotoTab('interior_secondary')}
+                      className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer whitespace-nowrap ${
+                        activePhotoTab === 'interior_secondary'
+                          ? 'bg-amber-500 text-[#0c2340]'
+                          : 'text-slate-300 hover:text-white'
+                      }`}
+                    >
+                      Kabin Penumpang
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

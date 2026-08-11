@@ -23,6 +23,7 @@ export interface Car {
     valueAr?: string;
   }[];
   interiorImage?: string;
+  interiorSecondaryImage?: string;
   terms?: string[];
 }
 
