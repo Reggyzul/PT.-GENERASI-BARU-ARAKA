@@ -67,11 +67,11 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, lang }: CarList
                 <div className="space-y-4 text-left">
                   
                   {/* Image Showcase */}
-                  <div className="relative rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/80 aspect-[16/10] flex items-center justify-center p-3">
+                  <div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-slate-100/80 to-slate-50 border border-slate-200/80 aspect-[16/10] flex items-center justify-center p-2 group-hover:bg-amber-50/40 transition-colors">
                     <img
                       src={car.image}
                       alt={car.name}
-                      className="w-full h-auto object-contain max-h-[160px] drop-shadow-md group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-contain max-h-[170px] drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-2.5 left-2.5 bg-amber-500 text-white font-display font-extrabold text-[10px] uppercase px-2.5 py-0.5 rounded-full shadow-sm">
                       {car.category}

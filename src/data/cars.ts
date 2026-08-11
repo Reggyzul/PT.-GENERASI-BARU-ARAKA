@@ -138,7 +138,7 @@ export const CARS: Car[] = [
     category: 'Hiace Series (4 Varian)',
     pricePerDay: 1000000,
     priceDisplay: 'Mulai Rp 1.000.000 / hari (4 Varian Available)',
-    image: '/hiace_premio_luxury_exterior.jpg',
+    image: '/hiace_premio_studio.png',
     interiorImage: '/hiace_premio_luxury_seats.jpg',
     seats: 14,
     transmission: 'Manual/Matic',
