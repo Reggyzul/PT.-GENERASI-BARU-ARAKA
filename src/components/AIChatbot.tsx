@@ -226,34 +226,32 @@ ATURAN FORMATTING & GAYA BAHASA:
 
   return (
     <>
-      {/* FLOATING TRIGGER BUTTON (Positioned precisely directly above WhatsApp button) */}
-      <div className="fixed bottom-[92px] right-6 z-40">
-        <motion.button
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          onClick={() => setIsOpen(!isOpen)}
-          className="relative w-14 h-14 bg-[#0c2340] hover:bg-[#123157] text-white rounded-full shadow-2xl flex items-center justify-center cursor-pointer hover:scale-110 transition-all border-2 border-amber-400 group"
-          title="Tanya Rian - Senior AI CS Specialist Araka Trans"
-          id="floater-ai-chat"
-        >
-          {/* Professional Male Avatar Image inside Button */}
-          <div className="w-11 h-11 rounded-full overflow-hidden border border-amber-300 relative">
-            <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80"
-              alt="Rian AI Support"
-              className="w-full h-full object-cover"
-            />
-          </div>
+      {/* FLOATING TRIGGER BUTTON (Flows cleanly inside unified flex stack) */}
+      <motion.button
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        onClick={() => setIsOpen(!isOpen)}
+        className="relative w-14 h-14 bg-[#0c2340] hover:bg-[#123157] text-white rounded-full shadow-2xl flex items-center justify-center cursor-pointer hover:scale-110 transition-all border-2 border-amber-400 group shrink-0"
+        title="Tanya Rian - Senior AI CS Specialist Araka Trans"
+        id="floater-ai-chat"
+      >
+        {/* Professional Male Avatar Image inside Button */}
+        <div className="w-11 h-11 rounded-full overflow-hidden border border-amber-300 relative">
+          <img
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&q=80"
+            alt="Rian AI Support"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-          {/* Active Status Badge */}
-          <span className="absolute top-0 right-0 w-4 h-4 bg-emerald-500 rounded-full border-2 border-[#0c2340] animate-pulse" />
+        {/* Active Status Badge */}
+        <span className="absolute top-0 right-0 w-4 h-4 bg-emerald-500 rounded-full border-2 border-[#0c2340] animate-pulse" />
 
-          {/* Sparkles Icon Overlay */}
-          <div className="absolute -bottom-1 -left-1 bg-amber-500 text-[#0c2340] p-1 rounded-full border border-white shadow-sm">
-            <Sparkles className="w-3 h-3 fill-current" />
-          </div>
-        </motion.button>
-      </div>
+        {/* Sparkles Icon Overlay */}
+        <div className="absolute -bottom-1 -left-1 bg-amber-500 text-[#0c2340] p-1 rounded-full border border-white shadow-sm">
+          <Sparkles className="w-3 h-3 fill-current" />
+        </div>
+      </motion.button>
 
       {/* CHAT WINDOW POPUP */}
       <AnimatePresence>
