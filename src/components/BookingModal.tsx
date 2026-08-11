@@ -28,11 +28,15 @@ export default function BookingModal({ car, onClose, lang, onCarChange }: Bookin
   const t = TRANSLATIONS[lang];
 
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
+    if (car) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
     return () => {
       document.body.style.overflow = '';
     };
-  }, []);
+  }, [car]);
 
   if (!car) return null;
 

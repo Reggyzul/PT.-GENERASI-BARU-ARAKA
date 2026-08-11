@@ -16,6 +16,8 @@ export default function BusMediumModal({ isOpen, onClose, onSelectToBook }: BusM
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
     return () => {
       document.body.style.overflow = '';
