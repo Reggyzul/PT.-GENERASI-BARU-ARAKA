@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Car } from '../types';
 import { HIACE_VARIANTS } from '../data/cars';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, CheckCircle2, MessageCircle, Sparkles, Users, ShieldCheck, Tag, Info, AlertCircle, Clock, Check, FileText, Image as ImageIcon, ChevronRight } from 'lucide-react';
+import { X, CheckCircle2, MessageCircle, Sparkles, Users, ShieldCheck, Tag, Info, AlertCircle, Clock, Check, FileText, Image as ImageIcon } from 'lucide-react';
 
 interface HiaceModalProps {
   isOpen: boolean;
@@ -60,20 +60,20 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
           initial={{ opacity: 0, scale: 0.95, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 15 }}
-          className="bg-white rounded-3xl w-full max-w-3xl shadow-2xl relative overflow-hidden flex flex-col z-10 my-auto border border-slate-200 max-h-[92vh]"
+          className="bg-white rounded-3xl w-full max-w-3xl shadow-2xl relative overflow-hidden flex flex-col z-10 my-auto border border-slate-200 max-h-[94vh]"
           id="hiace-modal-panel"
         >
           {/* Top Header Bar */}
-          <div className="bg-[#0b192c] text-white p-4 sm:p-5 flex items-center justify-between border-b border-slate-800 shrink-0">
+          <div className="bg-[#0b192c] text-white p-3.5 sm:p-4 flex items-center justify-between border-b border-slate-800 shrink-0">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-amber-500 flex items-center justify-center text-white font-bold text-xs">
+              <div className="w-7 h-7 rounded-lg bg-amber-500 flex items-center justify-center text-white font-bold text-xs shrink-0">
                 HT
               </div>
-              <div>
-                <h3 className="font-display font-black text-base sm:text-lg text-white uppercase tracking-tight leading-tight">
+              <div className="text-left">
+                <h3 className="font-display font-black text-sm sm:text-base text-white uppercase tracking-tight leading-tight">
                   PILIH VARIAN TOYOTA HIACE
                 </h3>
-                <p className="font-sans text-[11px] text-amber-300 font-medium">
+                <p className="font-sans text-[10px] sm:text-[11px] text-amber-300 font-semibold">
                   PT. Generasi Baru Araka (Araka Trans Travel)
                 </p>
               </div>
@@ -81,48 +81,60 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
 
             <button
               onClick={onClose}
-              className="p-2 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer"
+              className="p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer"
               id="close-hiace-modal"
             >
               <X className="w-5 h-5" />
             </button>
           </div>
 
-          {/* HORIZONTAL PILL TABS FOR QUICK VARIANT SELECTION */}
-          <div className="bg-slate-100 p-2 border-b border-slate-200 overflow-x-auto scrollbar-none flex items-center gap-2 shrink-0">
-            {HIACE_VARIANTS.map((variant) => {
-              const isSelected = selectedVariant.id === variant.id;
-              return (
-                <button
-                  key={variant.id}
-                  onClick={() => {
-                    setSelectedVariant(variant);
-                    setActivePhotoTab('exterior');
-                  }}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 border shrink-0 ${
-                    isSelected
-                      ? 'bg-amber-500 text-white border-amber-600 shadow-md scale-105'
-                      : 'bg-white text-slate-700 hover:bg-slate-50 border-slate-200'
-                  }`}
-                >
-                  <span>{variant.name}</span>
-                  <span className={`text-[10px] px-1.5 py-0.5 rounded-md ${
-                    isSelected ? 'bg-slate-900/30 text-amber-100' : 'bg-slate-100 text-amber-600'
-                  }`}>
-                    {variant.seats} Seats
-                  </span>
-                </button>
-              );
-            })}
+          {/* SOLID 2x2 GRID FOR VARIANT SELECTION (NO HORIZONTAL SCROLL) */}
+          <div className="bg-slate-100 p-2 border-b border-slate-200 shrink-0">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
+              {HIACE_VARIANTS.map((variant) => {
+                const isSelected = selectedVariant.id === variant.id;
+                return (
+                  <button
+                    key={variant.id}
+                    onClick={() => {
+                      setSelectedVariant(variant);
+                      setActivePhotoTab('exterior');
+                    }}
+                    className={`p-2 rounded-xl text-left transition-all cursor-pointer flex flex-col justify-between border ${
+                      isSelected
+                        ? 'bg-amber-500 text-white border-amber-600 shadow-md ring-2 ring-amber-400/50'
+                        : 'bg-white text-slate-800 hover:bg-slate-50 border-slate-200'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-1">
+                      <span className="font-display font-black text-[11px] sm:text-xs uppercase tracking-tight line-clamp-1">
+                        {variant.name}
+                      </span>
+                      <span className={`text-[8px] sm:text-[9px] font-extrabold px-1 py-0.2 rounded ${
+                        isSelected ? 'bg-slate-900/30 text-amber-100' : 'bg-slate-100 text-amber-600'
+                      }`}>
+                        {variant.seats}S
+                      </span>
+                    </div>
+
+                    <span className={`text-[10px] font-bold mt-0.5 ${
+                      isSelected ? 'text-amber-100' : 'text-slate-500'
+                    }`}>
+                      {variant.priceDisplay ? variant.priceDisplay.replace(' / hari', '') : ''}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* MAIN SCROLLABLE CONTENT BODY */}
-          <div className="p-4 sm:p-6 overflow-y-auto space-y-5 text-left">
+          <div className="p-4 sm:p-5 overflow-y-auto space-y-4 text-left">
             
             {/* Title & Price Box */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
               <div>
-                <h4 className="font-display font-black text-2xl text-slate-900 uppercase tracking-tight">
+                <h4 className="font-display font-black text-xl sm:text-2xl text-slate-900 uppercase tracking-tight">
                   {selectedVariant.name}
                 </h4>
                 <p className="text-xs font-bold text-slate-500 mt-0.5">
@@ -130,13 +142,13 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                 </p>
               </div>
 
-              <div className="bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold text-sm px-4 py-2 rounded-xl shadow-sm w-fit shrink-0 flex items-center gap-1.5">
+              <div className="bg-amber-500 text-white font-sans font-extrabold text-xs sm:text-sm px-3.5 py-1.5 rounded-xl shadow-sm w-fit shrink-0 flex items-center gap-1.5">
                 <Tag className="w-4 h-4" />
                 <span>{selectedVariant.priceDisplay}</span>
               </div>
             </div>
 
-            {/* Photo Showcase with Simple Switcher */}
+            {/* Photo Showcase with Simple Switcher Buttons */}
             <div className="space-y-2">
               <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center border border-slate-200">
                 <img
@@ -145,15 +157,15 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                   className="w-full h-full object-cover sm:object-contain drop-shadow-md transition-all duration-300"
                 />
                 
-                <div className="absolute top-3 left-3 bg-slate-900/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-slate-700">
+                <div className="absolute top-2.5 left-2.5 bg-slate-900/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-slate-700">
                   {activePhotoTab === 'luxury_tv' ? 'TV & Console' : activePhotoTab === 'interior' ? 'Kabin Interior' : 'Eksterior'}
                 </div>
 
-                {/* Photo Selector Pills overlay */}
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-slate-900/80 backdrop-blur-md p-1 rounded-full border border-slate-700/80 flex items-center gap-1">
+                {/* Photo Selector Pills overlay (NO EMOJIS) */}
+                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-slate-900/85 backdrop-blur-md p-1 rounded-full border border-slate-700/80 flex items-center gap-1">
                   <button
                     onClick={() => setActivePhotoTab('exterior')}
-                    className={`px-3 py-1 rounded-full text-[11px] font-bold transition-all cursor-pointer ${
+                    className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
                       activePhotoTab === 'exterior'
                         ? 'bg-amber-500 text-white'
                         : 'text-slate-300 hover:text-white'
@@ -164,25 +176,25 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
 
                   <button
                     onClick={() => setActivePhotoTab('interior')}
-                    className={`px-3 py-1 rounded-full text-[11px] font-bold transition-all cursor-pointer ${
+                    className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
                       activePhotoTab === 'interior'
                         ? 'bg-amber-500 text-white'
                         : 'text-slate-300 hover:text-white'
                     }`}
                   >
-                    Interior Kabin 🛋️
+                    Interior Kabin
                   </button>
 
                   {isPremioOrLuxury && (
                     <button
                       onClick={() => setActivePhotoTab('luxury_tv')}
-                      className={`px-3 py-1 rounded-full text-[11px] font-bold transition-all cursor-pointer ${
+                      className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
                         activePhotoTab === 'luxury_tv'
                           ? 'bg-amber-500 text-white'
                           : 'text-slate-300 hover:text-white'
                       }`}
                     >
-                      TV Console 📺
+                      TV Console
                     </button>
                   )}
                 </div>
@@ -199,7 +211,7 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
               <span className="text-xs font-extrabold uppercase tracking-wider text-slate-900 block">
                 Fasilitas Utama:
               </span>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {facilitiesList.map((item, idx) => (
                   <div key={idx} className="flex items-center gap-1.5 text-xs font-semibold text-slate-800 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
@@ -241,12 +253,12 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
           </div>
 
           {/* Sticky Bottom Actions */}
-          <div className="p-4 bg-slate-50 border-t border-slate-200 shrink-0 flex flex-col sm:flex-row items-center gap-2.5">
+          <div className="p-3.5 bg-slate-50 border-t border-slate-200 shrink-0 flex flex-col sm:flex-row items-center gap-2">
             <button
               onClick={() => handleWhatsAppBooking(selectedVariant.name, selectedVariant.priceDisplay)}
-              className="w-full sm:flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-bold text-xs sm:text-sm py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-95"
+              className="w-full sm:flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-95"
             >
-              <MessageCircle className="w-4.5 h-4.5 fill-current shrink-0" />
+              <MessageCircle className="w-4 h-4 fill-current shrink-0" />
               <span>Pesan {selectedVariant.name} via WA</span>
             </button>
 
@@ -255,7 +267,7 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                 onClose();
                 onSelectVariantToBook(selectedVariant);
               }}
-              className="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs sm:text-sm py-3.5 px-5 rounded-xl border border-slate-200 transition-all cursor-pointer whitespace-nowrap"
+              className="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs sm:text-sm py-3 px-5 rounded-xl border border-slate-200 transition-all cursor-pointer whitespace-nowrap"
             >
               Form Reservasi
             </button>
