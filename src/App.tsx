@@ -9,8 +9,9 @@ import BookingSteps from './components/BookingSteps';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
+import HiaceModal from './components/HiaceModal';
 import { Car } from './types';
-import { CARS } from './data/cars';
+import { CARS, HIACE_VARIANTS } from './data/cars';
 import { ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { TRANSLATIONS } from './utils/translations';
@@ -19,6 +20,7 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'about' | 'tours' | 'rentals'>('home');
   const [activeSection, setActiveSection] = useState('home');
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
+  const [isHiaceModalOpen, setIsHiaceModalOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [lang, setLang] = useState<'ID' | 'EN'>('ID');
   
@@ -110,7 +112,7 @@ export default function App() {
         setLang={setLang} 
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        onBookingClick={() => setSelectedCar(CARS[0])}
+        onBookingClick={() => setIsHiaceModalOpen(true)}
       />
 
       {/* Main Page Layout Flow */}
@@ -122,7 +124,7 @@ export default function App() {
             <Hero onRentClick={() => handleNavClick('cars')} onVisiMisiClick={() => handleNavClick('cars')} lang={lang} />
 
             {/* 2. Pilihan Armada Mobil (Persis Di Bawah Hero) */}
-            <CarList onSelectCar={handleSelectCar} lang={lang} />
+            <CarList onSelectCar={handleSelectCar} onOpenHiaceModal={() => setIsHiaceModalOpen(true)} lang={lang} />
 
             {/* 3. Layanan Rental Mobil */}
             <Services lang={lang} />
@@ -150,6 +152,16 @@ export default function App() {
 
       {/* Footer Contact Column */}
       <Footer onNavClick={handleNavClick} lang={lang} />
+
+      {/* Hiace Variants Modal Popup */}
+      <HiaceModal 
+        isOpen={isHiaceModalOpen} 
+        onClose={() => setIsHiaceModalOpen(false)} 
+        onSelectVariantToBook={(variant) => {
+          setIsHiaceModalOpen(false);
+          setSelectedCar(variant);
+        }}
+      />
 
       {/* Interactive Booking Popup */}
       <BookingModal car={selectedCar} onClose={() => setSelectedCar(null)} lang={lang} onCarChange={setSelectedCar} />
