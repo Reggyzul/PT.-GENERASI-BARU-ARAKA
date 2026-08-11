@@ -95,30 +95,6 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                 <strong>Araka Trans</strong> hadir sebagai penyedia layanan rental mobil dan transportasi yang siap menemani perjalanan pribadi, keluarga, perusahaan, maupun rombongan. Dengan pilihan armada yang beragam dan pelayanan profesional, kami berkomitmen memberikan pengalaman perjalanan yang nyaman dan berkesan.
               </motion.p>
 
-              {/* Two CTA Buttons */}
-              <motion.div 
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="flex flex-wrap items-center gap-3 pt-2"
-              >
-                <button
-                  onClick={handleWhatsAppPesanBtn}
-                  className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 hover:from-amber-600 hover:to-yellow-600 text-[#071527] font-sans font-black text-sm px-7 py-3.5 rounded-full shadow-xl shadow-amber-500/20 transition-all duration-200 cursor-pointer flex items-center gap-2.5 active:scale-95 border border-amber-300"
-                >
-                  <MessageCircle className="w-4.5 h-4.5 fill-current shrink-0" />
-                  <span>Pesan via WhatsApp (0812-8874-8745)</span>
-                </button>
-
-                <button
-                  onClick={handleScrollToFleet}
-                  className="bg-[#0c2340] hover:bg-[#123157] text-white font-sans font-bold text-sm px-7 py-3.5 rounded-full transition-all duration-200 cursor-pointer shadow-sm hover:shadow active:scale-95 border border-amber-400/40 flex items-center gap-2"
-                >
-                  <Car className="w-4 h-4 text-amber-400" />
-                  <span>Pilihan Armada</span>
-                </button>
-              </motion.div>
-
             </div>
 
             {/* RIGHT COLUMN: FLOATING WHITE BOOKING CARD */}
