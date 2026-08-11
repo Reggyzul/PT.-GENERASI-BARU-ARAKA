@@ -47,19 +47,19 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
   };
 
   return (
-    <section id="home" className="pt-24 sm:pt-28 pb-12 bg-white text-slate-900 overflow-hidden">
+    <section id="home" className="pt-24 sm:pt-28 pb-12 bg-slate-50 text-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Hero Card Container */}
-        <div className="relative rounded-[32px] overflow-hidden bg-slate-950 shadow-2xl p-6 sm:p-10 lg:p-12 border border-slate-800 text-white">
+        {/* Main Hero Card Container in Deep Royal Navy */}
+        <div className="relative rounded-[32px] overflow-hidden bg-[#071527] shadow-2xl p-6 sm:p-10 lg:p-12 border border-blue-900/60 text-white">
           
           {/* Background Fleet Showcase Image Overlay */}
           <div 
-            className="absolute inset-0 bg-cover bg-center opacity-30 scale-105 pointer-events-none transition-transform duration-700"
+            className="absolute inset-0 bg-cover bg-center opacity-25 scale-105 pointer-events-none transition-transform duration-700"
             style={{ backgroundImage: `url('/team_red.avif')` }}
           />
           {/* Dark Overlay Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/85 to-slate-950/60 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071527]/95 via-[#0c2340]/90 to-[#071527]/70 pointer-events-none" />
 
           {/* Core Content Grid */}
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -67,7 +67,7 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
             {/* LEFT COLUMN: HEADLINE & SUBTITLE */}
             <div className="lg:col-span-7 space-y-6 text-left" id="hero-text-container">
               
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-xs font-extrabold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0c2340] border border-amber-400/50 text-amber-300 text-xs font-extrabold uppercase tracking-wider shadow-sm">
                 <ShieldCheck className="w-4 h-4 text-amber-400" />
                 <span>PT. GENERASI BARU ARAKA</span>
               </div>
@@ -80,7 +80,7 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight uppercase"
               >
                 Solusi Transportasi <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-teal-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">
                   Nyaman, Aman & Terpercaya
                 </span>
               </motion.h1>
@@ -90,7 +90,7 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="font-sans text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl font-normal opacity-90"
+                className="font-sans text-blue-100/90 text-sm sm:text-base leading-relaxed max-w-xl font-medium"
               >
                 <strong>Araka Trans</strong> hadir sebagai penyedia layanan rental mobil dan transportasi yang siap menemani perjalanan pribadi, keluarga, perusahaan, maupun rombongan. Dengan pilihan armada yang beragam dan pelayanan profesional, kami berkomitmen memberikan pengalaman perjalanan yang nyaman dan berkesan.
               </motion.p>
@@ -104,7 +104,7 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
               >
                 <button
                   onClick={handleWhatsAppPesanBtn}
-                  className="bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-amber-500/20 transition-all duration-200 cursor-pointer flex items-center gap-2.5 active:scale-95"
+                  className="bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 hover:from-amber-600 hover:to-yellow-600 text-[#071527] font-sans font-black text-sm px-7 py-3.5 rounded-full shadow-xl shadow-amber-500/20 transition-all duration-200 cursor-pointer flex items-center gap-2.5 active:scale-95 border border-amber-300"
                 >
                   <MessageCircle className="w-4.5 h-4.5 fill-current shrink-0" />
                   <span>Pesan via WhatsApp (0812-8874-8745)</span>
@@ -112,9 +112,9 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
 
                 <button
                   onClick={handleScrollToFleet}
-                  className="bg-slate-100 hover:bg-white text-slate-800 font-sans font-bold text-sm px-7 py-3.5 rounded-full transition-all duration-200 cursor-pointer shadow-sm hover:shadow active:scale-95 border border-slate-200 flex items-center gap-2"
+                  className="bg-[#0c2340] hover:bg-[#123157] text-white font-sans font-bold text-sm px-7 py-3.5 rounded-full transition-all duration-200 cursor-pointer shadow-sm hover:shadow active:scale-95 border border-amber-400/40 flex items-center gap-2"
                 >
-                  <Car className="w-4 h-4 text-amber-600" />
+                  <Car className="w-4 h-4 text-amber-400" />
                   <span>Pilihan Armada</span>
                 </button>
               </motion.div>
@@ -127,17 +127,17 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-white text-slate-900 rounded-[24px] p-6 sm:p-7 shadow-2xl border border-slate-100 text-left relative overflow-hidden"
+                className="bg-white text-slate-900 rounded-[24px] p-6 sm:p-7 shadow-2xl border-2 border-amber-400/40 text-left relative overflow-hidden"
               >
                 {/* Card Title Bar */}
                 <div className="flex items-center justify-between pb-4 mb-5 border-b border-slate-100">
                   <div className="flex items-center gap-2.5">
                     <Ticket className="w-5 h-5 text-amber-600 shrink-0" />
-                    <h3 className="font-display font-bold text-base text-slate-800 tracking-tight">
+                    <h3 className="font-display font-bold text-base text-[#0c2340] tracking-tight">
                       Konsultasi & Reservasi Fast Response
                     </h3>
                   </div>
-                  <span className="text-[10px] font-extrabold bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full uppercase">
+                  <span className="text-[10px] font-extrabold bg-blue-900 text-amber-400 px-2.5 py-1 rounded-full uppercase tracking-wider">
                     24 Jam
                   </span>
                 </div>
@@ -147,7 +147,7 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                   
                   {/* Nama Anda Input */}
                   <div className="space-y-1.5">
-                    <label className="block font-semibold text-slate-600 text-xs">
+                    <label className="block font-semibold text-slate-700 text-xs">
                       Nama Pemesan
                     </label>
                     <input
@@ -155,19 +155,19 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                       placeholder="Masukkan nama anda"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:bg-white focus:outline-none text-slate-800 font-medium transition-all text-xs"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-medium transition-all text-xs"
                     />
                   </div>
 
                   {/* Pilihan Armada Select */}
                   <div className="space-y-1.5">
-                    <label className="block font-semibold text-slate-600 text-xs">
+                    <label className="block font-semibold text-slate-700 text-xs">
                       Pilihan Armada Kendaraan
                     </label>
                     <select
                       value={selectedFleet}
                       onChange={(e) => setSelectedFleet(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
                     >
                       {CARS.map((c) => (
                         <option key={c.id} value={c.name}>
@@ -179,13 +179,13 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
 
                   {/* Kategori Perjalanan */}
                   <div className="space-y-1.5">
-                    <label className="block font-semibold text-slate-600 text-xs">
+                    <label className="block font-semibold text-slate-700 text-xs">
                       Kategori Kebutuhan
                     </label>
                     <select
                       value={tripType}
                       onChange={(e) => setTripType(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
                     >
                       <option value="Rental Mobil untuk Wisata">Rental Mobil untuk Wisata</option>
                       <option value="Transportasi Rombongan">Transportasi Rombongan</option>
@@ -197,15 +197,14 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
 
                   {/* Estimasi Jumlah Penumpang */}
                   <div className="space-y-1.5">
-                    <label className="block font-semibold text-slate-600 text-xs">
+                    <label className="block font-semibold text-slate-700 text-xs">
                       Estimasi Peserta / Penumpang
                     </label>
                     <select
                       value={passengers}
                       onChange={(e) => setPassengers(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
                     >
-                      <option value="1-6 Orang (MPV / Grand Tour)">1-6 Orang (MPV / Grand Tour)</option>
                       <option value="7-12 Orang (Hiace Premio/Commuter)">7-12 Orang (Hiace Premio/Commuter)</option>
                       <option value="13-19 Orang (Elf Giga / Hiace)">13-19 Orang (Elf Giga / Hiace)</option>
                       <option value="20-35 Orang (Bus Medium)">20-35 Orang (Bus Medium)</option>
@@ -217,7 +216,7 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-sm py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-98"
+                      className="w-full bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-sm py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-98"
                     >
                       Cek Ketersediaan via WhatsApp
                     </button>
@@ -241,11 +240,11 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
             className="group flex flex-col items-center gap-1.5 cursor-pointer focus:outline-none"
             id="hero-floating-fleet-btn"
           >
-            <span className="font-sans font-bold text-xs sm:text-sm text-slate-700 group-hover:text-amber-600 transition-colors bg-white/95 px-5 py-1.5 rounded-full border border-slate-200 shadow-sm group-hover:shadow-md group-hover:border-amber-200">
+            <span className="font-sans font-bold text-xs sm:text-sm text-[#0c2340] group-hover:text-amber-600 transition-colors bg-white/95 px-5 py-1.5 rounded-full border border-blue-900/20 shadow-sm group-hover:shadow-md group-hover:border-amber-300">
               Lihat Armada Mobil
             </span>
-            <div className="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center shadow-md group-hover:bg-amber-600 group-hover:scale-110 transition-all animate-bounce">
-              <ChevronDown className="w-5 h-5" />
+            <div className="w-8 h-8 rounded-full bg-amber-500 text-[#0c2340] flex items-center justify-center shadow-md group-hover:bg-amber-400 group-hover:scale-110 transition-all animate-bounce font-black">
+              <ChevronDown className="w-5 h-5 stroke-[2.5]" />
             </div>
           </motion.button>
         </div>

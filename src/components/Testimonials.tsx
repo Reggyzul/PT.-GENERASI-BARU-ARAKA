@@ -14,26 +14,26 @@ export default function Testimonials({ lang }: TestimonialsProps) {
   const t = TRANSLATIONS[lang];
 
   return (
-    <section id="testimonials" className="py-20 sm:py-24 bg-[#f8fafc] text-[#0f172a] overflow-hidden relative border-b border-slate-200">
+    <section id="testimonials" className="py-20 sm:py-24 bg-[#f8fafc] text-[#0c2340] overflow-hidden relative border-b border-slate-200">
       
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber-400/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-900/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3" id="testimonials-heading">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-display font-extrabold text-xs tracking-wider uppercase shadow-sm">
-            <MessageSquare className="w-4 h-4 text-amber-600" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/10 border border-blue-900/20 text-[#0c2340] font-display font-extrabold text-xs tracking-wider uppercase shadow-sm">
+            <MessageSquare className="w-4 h-4 text-amber-500" />
             <span>ULASAN & TESTIMONI PENUMPANG</span>
           </div>
 
-          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#0f172a] tracking-tight uppercase leading-tight">
-            Pengalaman <span className="text-amber-600">Pelanggan Araka Trans</span>
+          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#0c2340] tracking-tight uppercase leading-tight">
+            Pengalaman <span className="text-amber-500">Pelanggan Araka Trans</span>
           </h2>
 
           <p className="font-sans text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
-            Kepercayaan dan kepuasan Anda adalah kebanggaan utama kami dalam setiap rute perjalanan di Kalimantan Timur.
+            Kepercayaan dan kepuasan Anda adalah kebanggaan utama kami dalam setiap rute perjalanan.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               key={testi.id}
-              className="bg-white border border-slate-200/90 rounded-3xl p-7 shadow-lg hover:shadow-2xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
+              className="bg-white border border-blue-900/20 rounded-3xl p-7 shadow-lg hover:shadow-2xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
             >
               <Quote className="absolute top-6 right-6 w-12 h-12 text-slate-100 fill-current opacity-80 group-hover:text-amber-100 transition-colors pointer-events-none" />
 
@@ -59,8 +59,8 @@ export default function Testimonials({ lang }: TestimonialsProps) {
                     ))}
                   </div>
 
-                  <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200">
-                    <CheckCircle2 className="w-3 h-3 text-teal-600 shrink-0" />
+                  <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-[#0c2340] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
+                    <CheckCircle2 className="w-3 h-3 text-amber-500 shrink-0" />
                     <span>Verified</span>
                   </span>
                 </div>
@@ -81,7 +81,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
                   }}
                 />
                 <div>
-                  <h4 className="font-display font-bold text-sm text-[#0f172a] uppercase tracking-tight">
+                  <h4 className="font-display font-bold text-sm text-[#0c2340] uppercase tracking-tight">
                     {testi.name}
                   </h4>
                   <p className="font-sans text-[11px] text-slate-500 font-medium">
@@ -89,7 +89,7 @@ export default function Testimonials({ lang }: TestimonialsProps) {
                   </p>
                   
                   {testi.carModel && (
-                    <span className="inline-flex items-center gap-1 bg-amber-50 text-amber-800 text-[9px] font-bold px-2 py-0.5 rounded-full border border-amber-200 mt-1">
+                    <span className="inline-flex items-center gap-1 bg-amber-50 text-amber-900 text-[9px] font-bold px-2 py-0.5 rounded-full border border-amber-300 mt-1">
                       <Sparkles className="w-2.5 h-2.5 text-amber-600" />
                       <span>{testi.carModel}</span>
                     </span>

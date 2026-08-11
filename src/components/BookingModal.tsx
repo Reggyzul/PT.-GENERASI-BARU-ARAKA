@@ -86,7 +86,7 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm"
+          className="fixed inset-0 bg-[#071527]/85 backdrop-blur-sm"
           id="booking-backdrop"
         />
 
@@ -95,15 +95,15 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="bg-white rounded-3xl w-full max-w-4xl shadow-2xl relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 z-10 my-auto border border-slate-200"
+          className="bg-white rounded-3xl w-full max-w-4xl shadow-2xl relative overflow-hidden grid grid-cols-1 lg:grid-cols-12 z-10 my-auto border border-blue-900/30"
           id="booking-modal-panel"
         >
           
           {/* LEFT SIDEBAR */}
-          <div className="lg:col-span-4 bg-gradient-to-b from-[#0b192c] via-[#0f172a] to-slate-900 text-white p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden text-left">
+          <div className="lg:col-span-4 bg-gradient-to-b from-[#071527] via-[#0c2340] to-[#071527] text-white p-6 sm:p-7 flex flex-col justify-between relative overflow-hidden text-left border-r border-blue-900/60">
             <div className="space-y-5 relative z-10">
               
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-[10px] font-extrabold uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0c2340] border border-amber-400/40 text-amber-300 text-[10px] font-extrabold uppercase tracking-widest">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                 <span>FORM RESERVASI RESMI</span>
               </div>
@@ -118,7 +118,7 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
               </div>
 
               {/* Car Photo */}
-              <div className="rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/80 aspect-[16/10] p-2 flex items-center justify-center">
+              <div className="rounded-2xl overflow-hidden border border-blue-900/80 shadow-lg bg-[#0c2340] aspect-[16/10] p-2 flex items-center justify-center">
                 <img
                   src={currentSelectedCar.image}
                   alt={currentSelectedCar.name}
@@ -127,22 +127,22 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
               </div>
 
               {/* Specs List */}
-              <div className="space-y-2 text-xs text-slate-300 border-t border-white/10 pt-4 font-medium">
-                <div className="flex justify-between py-1 border-b border-white/5">
+              <div className="space-y-2 text-xs text-slate-300 border-t border-blue-900/60 pt-4 font-medium">
+                <div className="flex justify-between py-1 border-b border-blue-900/40">
                   <span className="text-slate-400">Kapasitas:</span>
                   <span className="font-semibold text-white">{currentSelectedCar.seats} Kursi</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-white/5">
+                <div className="flex justify-between py-1 border-b border-blue-900/40">
                   <span className="text-slate-400">Kategori:</span>
-                  <span className="font-semibold text-teal-400">{currentSelectedCar.category}</span>
+                  <span className="font-semibold text-amber-400">{currentSelectedCar.category}</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-white/5">
+                <div className="flex justify-between py-1 border-b border-blue-900/40">
                   <span className="text-slate-400">Layanan:</span>
                   <span className="font-semibold text-amber-400">Driver Profesional</span>
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-left space-y-1">
+              <div className="p-3.5 rounded-2xl bg-[#0c2340] border border-amber-400/30 text-left space-y-1">
                 <div className="flex items-center gap-1.5 text-amber-400 font-extrabold text-[11px] uppercase tracking-wide">
                   <ShieldCheck className="w-4 h-4 shrink-0 text-amber-400" />
                   <span>PT. Generasi Baru Araka</span>
@@ -154,8 +154,8 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
 
             </div>
 
-            <div className="pt-4 border-t border-white/10 mt-6 text-[10px] text-slate-400 font-medium flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
+            <div className="pt-4 border-t border-blue-900/60 mt-6 text-[10px] text-slate-300 font-medium flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
               <span>Respon Cepat via WhatsApp (0812-8874-8745)</span>
             </div>
           </div>
@@ -175,7 +175,7 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
               <form onSubmit={handleSubmit} className="space-y-6">
                 
                 <div>
-                  <h4 className="font-display font-black text-xl sm:text-2xl text-[#0f172a] uppercase tracking-tight">
+                  <h4 className="font-display font-black text-xl sm:text-2xl text-[#0c2340] uppercase tracking-tight">
                     Form Reservasi Araka Trans
                   </h4>
                   <p className="font-sans text-xs text-slate-500 leading-relaxed font-medium mt-1">
@@ -185,7 +185,7 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
 
                 {/* 1. SELEKSI KATEGORI & ARMADA */}
                 <div className="space-y-4 pt-2">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-amber-600 block">
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#0c2340] block">
                     1. PILIH KATEGORI & ARMADA KENDARAAN
                   </span>
 
@@ -196,7 +196,7 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
                     <select
                       value={tripCategory}
                       onChange={(e) => setTripCategory(e.target.value)}
-                      className="block w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-xs font-sans font-semibold text-slate-900 cursor-pointer bg-white"
+                      className="block w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] text-xs font-sans font-semibold text-slate-900 cursor-pointer bg-white"
                     >
                       <option value="wisata">Rental Mobil untuk Wisata</option>
                       <option value="rombongan">Transportasi Rombongan (Hiace / Elf / Bus)</option>
@@ -217,7 +217,7 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
                         const newCar = CARS.find(c => c.id === e.target.value);
                         if (newCar && onCarChange) onCarChange(newCar);
                       }}
-                      className="block w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-xs font-sans font-semibold text-slate-900 cursor-pointer bg-white"
+                      className="block w-full px-3.5 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] text-xs font-sans font-semibold text-slate-900 cursor-pointer bg-white"
                     >
                       {CARS.map(c => (
                         <option key={c.id} value={c.id}>
@@ -230,7 +230,7 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
 
                 {/* 2. DATA PENUMPANG */}
                 <div className="space-y-3 pt-2">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-amber-600 block">
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#0c2340] block">
                     2. DATA PENUMPANG & KONTAK
                   </span>
 
@@ -273,7 +273,7 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
 
                 {/* 3. JADWAL & ALAMAT */}
                 <div className="space-y-3 pt-2">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-amber-600 block">
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#0c2340] block">
                     3. JADWAL & ALAMAT PENJEMPUTAN
                   </span>
 
@@ -355,16 +355,16 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
                 {/* Submit Action Button */}
                 <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="text-left text-xs text-slate-500 font-medium">
-                    <span className="block font-bold text-slate-900">Kirim Reservasi Ke WA</span>
+                    <span className="block font-bold text-[#0c2340]">Kirim Reservasi Ke WA</span>
                     <span>Langsung terhubung dengan tim Araka Trans (0812-8874-8745)</span>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-display font-black text-sm px-8 py-3.5 rounded-full shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-2.5 cursor-pointer"
+                    className="w-full sm:w-auto bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-display font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer border border-amber-400/30"
                     id="submit-booking-to-whatsapp"
                   >
-                    <Send className="w-4 h-4" />
+                    <Send className="w-4 h-4 text-amber-300" />
                     <span>Kirim via WhatsApp (0812-8874-8745) ➔</span>
                   </button>
                 </div>
@@ -377,10 +377,10 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
                 className="flex flex-col items-center justify-center text-center py-12 space-y-4"
                 id="booking-success-message"
               >
-                <div className="w-16 h-16 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mb-2 shadow-sm">
+                <div className="w-16 h-16 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-amber-500 mb-2 shadow-sm">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h4 className="font-display font-black text-2xl text-slate-900 uppercase">
+                <h4 className="font-display font-black text-2xl text-[#0c2340] uppercase">
                   Draf Reservasi Dikirim!
                 </h4>
                 <p className="font-sans text-slate-600 text-sm max-w-md leading-relaxed font-medium">
@@ -388,7 +388,7 @@ Mohon konfirmasi ketersediaan armada, jadwal, dan rincian tarif. Terima kasih!`;
                 </p>
                 <button
                   onClick={onClose}
-                  className="bg-amber-600 hover:bg-amber-700 text-white font-display font-bold text-sm px-7 py-3 rounded-full shadow-md transition-colors cursor-pointer mt-2"
+                  className="bg-[#0c2340] hover:bg-[#071527] text-white font-display font-bold text-sm px-7 py-3 rounded-full shadow-md transition-colors cursor-pointer mt-2 border border-amber-400/40"
                 >
                   Tutup Form
                 </button>

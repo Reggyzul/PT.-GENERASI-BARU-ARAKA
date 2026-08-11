@@ -56,7 +56,7 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm"
+          className="fixed inset-0 bg-[#071527]/85 backdrop-blur-sm"
           id="alphard-modal-backdrop"
         />
 
@@ -65,13 +65,13 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
           initial={{ opacity: 0, scale: 0.95, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 15 }}
-          className="bg-white rounded-3xl w-full max-w-3xl shadow-2xl relative overflow-hidden flex flex-col z-10 my-auto border border-slate-200 max-h-[94vh]"
+          className="bg-white rounded-3xl w-full max-w-3xl shadow-2xl relative overflow-hidden flex flex-col z-10 my-auto border border-blue-900/30 max-h-[94vh]"
           id="alphard-modal-panel"
         >
           {/* Top Header Bar */}
-          <div className="bg-[#0b192c] text-white p-3.5 sm:p-4 flex items-center justify-between border-b border-slate-800 shrink-0">
+          <div className="bg-[#0c2340] text-white p-3.5 sm:p-4 flex items-center justify-between border-b border-blue-900 shrink-0">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-amber-500 flex items-center justify-center text-white font-bold text-xs shrink-0">
+              <div className="w-7 h-7 rounded-lg bg-amber-500 flex items-center justify-center text-[#0c2340] font-black text-xs shrink-0">
                 TA
               </div>
               <div className="text-left">
@@ -86,7 +86,7 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
 
             <button
               onClick={onClose}
-              className="p-1.5 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer"
+              className="p-1.5 rounded-full bg-blue-950 hover:bg-blue-900 text-slate-300 hover:text-white transition-colors cursor-pointer border border-blue-800"
               id="close-alphard-modal"
             >
               <X className="w-5 h-5" />
@@ -99,7 +99,7 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
             {/* Title & Price Box */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
               <div>
-                <h4 className="font-display font-black text-xl sm:text-2xl text-slate-900 uppercase tracking-tight">
+                <h4 className="font-display font-black text-xl sm:text-2xl text-[#0c2340] uppercase tracking-tight">
                   Toyota Alphard
                 </h4>
                 <p className="text-xs font-bold text-slate-500 mt-0.5">
@@ -107,32 +107,32 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
                 </p>
               </div>
 
-              <div className="bg-amber-500 text-white font-sans font-extrabold text-xs sm:text-sm px-3.5 py-1.5 rounded-xl shadow-sm w-fit shrink-0 flex items-center gap-1.5">
+              <div className="bg-amber-500 text-[#0c2340] font-sans font-black text-xs sm:text-sm px-3.5 py-1.5 rounded-xl shadow-sm w-fit shrink-0 flex items-center gap-1.5">
                 <Tag className="w-4 h-4" />
                 <span>Mulai Dari Rp 2.400.000 / hari</span>
               </div>
             </div>
 
-            {/* Photo Showcase with 3 Photo Switcher Buttons (NO EMOJIS) */}
+            {/* Photo Showcase with 3 Photo Switcher Buttons */}
             <div className="space-y-2">
-              <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center border border-slate-200">
+              <div className="relative rounded-2xl overflow-hidden bg-[#071527] aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center border border-blue-900/60">
                 <img
                   src={getDisplayedImage()}
                   alt="Toyota Alphard VIP Class"
                   className="w-full h-full object-cover sm:object-contain drop-shadow-md transition-all duration-300"
                 />
                 
-                <div className="absolute top-2.5 left-2.5 bg-slate-900/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full border border-slate-700 max-w-[75%] truncate">
+                <div className="absolute top-2.5 left-2.5 bg-[#0c2340]/90 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-full border border-blue-800 max-w-[75%] truncate">
                   {getDisplayedBadgeText()}
                 </div>
 
-                {/* Photo Selector Pills overlay (NO EMOJIS) */}
-                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-slate-900/85 backdrop-blur-md p-1 rounded-full border border-slate-700/80 flex items-center gap-1">
+                {/* Photo Selector Pills overlay */}
+                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-[#071527]/90 backdrop-blur-md p-1 rounded-full border border-blue-800 flex items-center gap-1">
                   <button
                     onClick={() => setActivePhotoTab('exterior')}
                     className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
                       activePhotoTab === 'exterior'
-                        ? 'bg-amber-500 text-white'
+                        ? 'bg-amber-500 text-[#0c2340]'
                         : 'text-slate-300 hover:text-white'
                     }`}
                   >
@@ -143,7 +143,7 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
                     onClick={() => setActivePhotoTab('interior_seats')}
                     className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
                       activePhotoTab === 'interior_seats'
-                        ? 'bg-amber-500 text-white'
+                        ? 'bg-amber-500 text-[#0c2340]'
                         : 'text-slate-300 hover:text-white'
                     }`}
                   >
@@ -154,7 +154,7 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
                     onClick={() => setActivePhotoTab('interior_front')}
                     className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer ${
                       activePhotoTab === 'interior_front'
-                        ? 'bg-amber-500 text-white'
+                        ? 'bg-amber-500 text-[#0c2340]'
                         : 'text-slate-300 hover:text-white'
                     }`}
                   >
@@ -171,13 +171,13 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
 
             {/* Fasilitas Chips */}
             <div className="space-y-2 pt-2 border-t border-slate-100">
-              <span className="text-xs font-extrabold uppercase tracking-wider text-slate-900 block">
+              <span className="text-xs font-extrabold uppercase tracking-wider text-[#0c2340] block">
                 Fasilitas Utama:
               </span>
               <div className="flex flex-wrap gap-1.5">
                 {facilitiesList.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-1.5 text-xs font-semibold text-slate-800 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <div key={idx} className="flex items-center gap-1.5 text-xs font-semibold text-[#0c2340] bg-blue-50 px-3 py-1.5 rounded-lg border border-blue-200">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -186,11 +186,11 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
 
             {/* Simple Ketentuan Sewa */}
             <div className="space-y-2 pt-2 border-t border-slate-100">
-              <span className="text-xs font-extrabold uppercase tracking-wider text-slate-900 block">
+              <span className="text-xs font-extrabold uppercase tracking-wider text-[#0c2340] block">
                 Ketentuan Sewa:
               </span>
-              <div className="bg-amber-50 border border-amber-200/90 rounded-xl p-3.5 space-y-1.5 text-xs text-slate-800 font-medium">
-                <div className="flex items-start gap-2 text-emerald-800 font-semibold">
+              <div className="bg-amber-50/90 border border-amber-300/80 rounded-xl p-3.5 space-y-1.5 text-xs text-slate-800 font-medium">
+                <div className="flex items-start gap-2 text-blue-950 font-semibold">
                   <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span><strong>1. Termasuk:</strong> Mobil, Supir, dan BBM.</span>
                 </div>
@@ -206,7 +206,7 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
                   <Info className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                   <span><strong>4. Overtime:</strong> Penjemputan &lt; 05:00 / finish &gt; 23:00 (+Rp 150.000/jam).</span>
                 </div>
-                <div className="flex items-start gap-2 pt-1 border-t border-amber-200/60">
+                <div className="flex items-start gap-2 pt-1 border-t border-amber-200">
                   <Sparkles className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                   <span><strong>5. Informasi & Pemesanan:</strong> Hubungi WhatsApp resmi PT. Generasi Baru Araka.</span>
                 </div>
@@ -219,9 +219,9 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
           <div className="p-3.5 bg-slate-50 border-t border-slate-200 shrink-0 flex flex-col sm:flex-row items-center gap-2">
             <button
               onClick={handleWhatsAppBooking}
-              className="w-full sm:flex-1 bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-95"
+              className="w-full sm:flex-1 bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 active:scale-95 border border-amber-400/30"
             >
-              <MessageCircle className="w-4 h-4 fill-current shrink-0" />
+              <MessageCircle className="w-4 h-4 fill-current shrink-0 text-amber-300" />
               <span>Pesan Toyota Alphard via WA</span>
             </button>
 
@@ -230,7 +230,7 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
                 onClose();
                 onSelectToBook(alphardCar);
               }}
-              className="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs sm:text-sm py-3 px-5 rounded-xl border border-slate-200 transition-all cursor-pointer whitespace-nowrap"
+              className="w-full sm:w-auto bg-white hover:bg-slate-100 text-[#0c2340] font-bold text-xs sm:text-sm py-3 px-5 rounded-xl border border-slate-300 transition-all cursor-pointer whitespace-nowrap"
             >
               Form Reservasi
             </button>

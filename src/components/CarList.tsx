@@ -31,22 +31,22 @@ export default function CarList({
   };
 
   return (
-    <section id="cars" className="py-20 bg-slate-50 text-[#0f172a] overflow-hidden relative border-b border-slate-200">
+    <section id="cars" className="py-20 bg-slate-50 text-[#0c2340] overflow-hidden relative border-b border-slate-200">
       
       {/* Background Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-amber-400/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-900/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3" id="cars-heading">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-display font-extrabold text-xs tracking-wider uppercase shadow-sm">
-            <Sparkles className="w-4 h-4 text-amber-600" />
+          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-blue-900/10 border border-blue-900/20 text-[#0c2340] font-display font-extrabold text-xs tracking-wider uppercase shadow-sm">
+            <Sparkles className="w-4 h-4 text-amber-500" />
             <span>PILIHAN ARMADA KAMI</span>
           </div>
 
-          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#0f172a] tracking-tight uppercase leading-tight">
-            Armada Mobil <span className="text-amber-600">Araka Trans</span>
+          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#0c2340] tracking-tight uppercase leading-tight">
+            Armada Mobil <span className="text-amber-500">Araka Trans</span>
           </h2>
 
           <p className="font-sans text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
@@ -82,13 +82,13 @@ export default function CarList({
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 key={car.id}
                 onClick={handleCardClick}
-                className="bg-white border border-amber-400/80 ring-2 ring-amber-500/20 cursor-pointer bg-gradient-to-b from-amber-50/30 via-white to-white rounded-3xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group overflow-hidden"
+                className="bg-white border border-blue-900/30 ring-2 ring-amber-500/20 cursor-pointer bg-gradient-to-b from-blue-50/20 via-white to-white rounded-3xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group overflow-hidden"
                 id={`car-card-${car.id}`}
               >
                 <div className="space-y-4 text-left">
                   
                   {/* Image Showcase */}
-                  <div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-slate-100/80 to-slate-50 border border-slate-200/80 aspect-[16/10] flex items-center justify-center p-2 group-hover:bg-amber-50/40 transition-colors">
+                  <div className="relative rounded-2xl overflow-hidden bg-gradient-to-b from-slate-100/90 to-slate-50 border border-slate-200/80 aspect-[16/10] flex items-center justify-center p-2 group-hover:bg-amber-50/40 transition-colors">
                     <img
                       src={car.image}
                       alt={car.name}
@@ -96,11 +96,11 @@ export default function CarList({
                         isElfGiga || isAlphard ? 'scale-105 sm:scale-110' : ''
                       }`}
                     />
-                    <div className="absolute top-2.5 left-2.5 bg-amber-500 text-white font-display font-extrabold text-[10px] uppercase px-2.5 py-0.5 rounded-full shadow-sm">
+                    <div className="absolute top-2.5 left-2.5 bg-[#0c2340] text-amber-400 font-display font-extrabold text-[10px] uppercase px-2.5 py-0.5 rounded-full shadow-sm border border-amber-400/30">
                       {car.category}
                     </div>
                     <div className="absolute bottom-2.5 right-2.5 bg-white/95 text-slate-700 font-sans text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-slate-200 flex items-center gap-1 shadow-sm">
-                      <Users className="w-3 h-3 text-amber-600" />
+                      <Users className="w-3 h-3 text-[#0c2340]" />
                       <span>{isHiace ? '9 - 14 Kursi' : isBusMedium ? '33 - 35 Kursi' : `${car.seats} Kursi`}</span>
                     </div>
                   </div>
@@ -108,26 +108,26 @@ export default function CarList({
                   {/* Car Name & Description */}
                   <div>
                     <div className="flex items-center justify-between">
-                      <h3 className="font-display font-black text-2xl text-[#0f172a] group-hover:text-amber-600 transition-colors uppercase tracking-tight">
+                      <h3 className="font-display font-black text-2xl text-[#0c2340] group-hover:text-amber-500 transition-colors uppercase tracking-tight">
                         {car.name}
                       </h3>
                       {isHiace && (
-                        <span className="text-[10px] font-extrabold bg-amber-500 text-white px-2.5 py-1 rounded-full uppercase tracking-wider animate-pulse">
+                        <span className="text-[10px] font-extrabold bg-amber-500 text-[#0c2340] px-2.5 py-1 rounded-full uppercase tracking-wider animate-pulse">
                           4 Varian
                         </span>
                       )}
                       {isElfGiga && (
-                        <span className="text-[10px] font-extrabold bg-teal-600 text-white px-2.5 py-1 rounded-full uppercase tracking-wider">
+                        <span className="text-[10px] font-extrabold bg-[#0c2340] text-amber-400 px-2.5 py-1 rounded-full uppercase tracking-wider">
                           19 Kursi
                         </span>
                       )}
                       {isBusMedium && (
-                        <span className="text-[10px] font-extrabold bg-amber-600 text-white px-2.5 py-1 rounded-full uppercase tracking-wider">
+                        <span className="text-[10px] font-extrabold bg-amber-500 text-[#0c2340] px-2.5 py-1 rounded-full uppercase tracking-wider">
                           Jetbus 3
                         </span>
                       )}
                       {isAlphard && (
-                        <span className="text-[10px] font-extrabold bg-slate-900 text-amber-400 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                        <span className="text-[10px] font-extrabold bg-[#071527] text-amber-400 px-2.5 py-1 rounded-full uppercase tracking-wider">
                           VIP Class
                         </span>
                       )}
@@ -140,13 +140,13 @@ export default function CarList({
 
                   {/* FACILITIES CHECKLIST */}
                   <div className="space-y-1.5 pt-3 border-t border-slate-100">
-                    <span className="text-[10px] font-extrabold tracking-wider uppercase text-amber-600 block">
+                    <span className="text-[10px] font-extrabold tracking-wider uppercase text-blue-900 block">
                       {isHiace ? 'Varian Hiace Yang Tersedia:' : 'Fitur Utama:'}
                     </span>
                     <div className="space-y-1">
                       {car.includeList.slice(0, 4).map((facility, idx) => (
                         <div key={idx} className="flex items-center gap-1.5 text-xs font-semibold text-slate-700">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0" />
                           <span className="line-clamp-1">{facility}</span>
                         </div>
                       ))}
@@ -163,9 +163,9 @@ export default function CarList({
                         e.stopPropagation();
                         onOpenHiaceModal();
                       }}
-                      className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md shadow-amber-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                      className="w-full bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
                     >
-                      <Layers className="w-4 h-4 shrink-0" />
+                      <Layers className="w-4 h-4 shrink-0 text-amber-300" />
                       <span>Pilih Varian Hiace (4 Varian)</span>
                     </button>
                   ) : isElfGiga ? (
@@ -174,9 +174,9 @@ export default function CarList({
                         e.stopPropagation();
                         onOpenElfGigaModal();
                       }}
-                      className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md shadow-amber-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                      className="w-full bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
                     >
-                      <Layers className="w-4 h-4 shrink-0" />
+                      <Layers className="w-4 h-4 shrink-0 text-amber-300" />
                       <span>Detail Informasi Elf Giga</span>
                     </button>
                   ) : isBusMedium ? (
@@ -185,9 +185,9 @@ export default function CarList({
                         e.stopPropagation();
                         onOpenBusMediumModal();
                       }}
-                      className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md shadow-amber-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                      className="w-full bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
                     >
-                      <Layers className="w-4 h-4 shrink-0" />
+                      <Layers className="w-4 h-4 shrink-0 text-amber-300" />
                       <span>Detail Informasi Bus Medium</span>
                     </button>
                   ) : (
@@ -196,9 +196,9 @@ export default function CarList({
                         e.stopPropagation();
                         onOpenAlphardModal();
                       }}
-                      className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md shadow-amber-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                      className="w-full bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
                     >
-                      <Layers className="w-4 h-4 shrink-0" />
+                      <Layers className="w-4 h-4 shrink-0 text-amber-300" />
                       <span>Detail Informasi Toyota Alphard</span>
                     </button>
                   )}

@@ -19,7 +19,7 @@ export default function Services({ lang }: ServicesProps) {
   const servicesList = [
     {
       id: 'rental-wisata',
-      icon: <Compass className="w-6 h-6 text-amber-600" />,
+      icon: <Compass className="w-6 h-6 text-amber-500" />,
       badge: 'WISATA & LIBURAN',
       title: 'Rental Mobil untuk Wisata',
       subtitle: 'Wisata Keluarga & Rombongan',
@@ -28,7 +28,7 @@ export default function Services({ lang }: ServicesProps) {
     },
     {
       id: 'transportasi-rombongan',
-      icon: <Users2 className="w-6 h-6 text-amber-600" />,
+      icon: <Users2 className="w-6 h-6 text-amber-500" />,
       badge: 'KAPASITAS BESAR',
       title: 'Transportasi Rombongan',
       subtitle: 'Hiace, Elf Giga & Bus Medium',
@@ -37,7 +37,7 @@ export default function Services({ lang }: ServicesProps) {
     },
     {
       id: 'rental-perusahaan',
-      icon: <Building2 className="w-6 h-6 text-amber-600" />,
+      icon: <Building2 className="w-6 h-6 text-amber-500" />,
       badge: 'DINAS & KORPORAT',
       title: 'Rental untuk Perusahaan',
       subtitle: 'Kunjungan Kerja & Meeting',
@@ -46,7 +46,7 @@ export default function Services({ lang }: ServicesProps) {
     },
     {
       id: 'perjalanan-vip',
-      icon: <Crown className="w-6 h-6 text-amber-600" />,
+      icon: <Crown className="w-6 h-6 text-amber-500" />,
       badge: 'EKSKLUSIF & LUXURY',
       title: 'Perjalanan VIP',
       subtitle: 'Toyota Alphard & Armada Luxury',
@@ -55,7 +55,7 @@ export default function Services({ lang }: ServicesProps) {
     },
     {
       id: 'event-gathering',
-      icon: <PartyPopper className="w-6 h-6 text-amber-600" />,
+      icon: <PartyPopper className="w-6 h-6 text-amber-500" />,
       badge: 'ACARA & GATHERING',
       title: 'Event & Gathering',
       subtitle: 'Acara Kelompok & Outbound',
@@ -88,16 +88,16 @@ export default function Services({ lang }: ServicesProps) {
   ];
 
   return (
-    <section id="services" className="py-20 bg-slate-50 text-slate-900 overflow-hidden relative border-b border-slate-200">
+    <section id="services" className="py-20 bg-slate-50 text-[#0c2340] overflow-hidden relative border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-2" id="services-heading">
-          <span className="font-display font-bold text-xs uppercase tracking-widest text-amber-600 block">
+          <span className="font-display font-bold text-xs uppercase tracking-widest text-amber-500 block">
             LAYANAN RENTAL MOBIL
           </span>
-          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-tight">
-            Layanan Transportasi <span className="text-amber-600">Araka Trans</span>
+          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#0c2340] tracking-tight leading-tight">
+            Layanan Transportasi <span className="text-amber-500">Araka Trans</span>
           </h2>
           <p className="font-sans text-slate-600 text-sm sm:text-base leading-relaxed font-medium">
             PT. Generasi Baru Araka menyediakan solusi transportasi profesional untuk berbagai skala dan jenis perjalanan Anda.
@@ -113,23 +113,23 @@ export default function Services({ lang }: ServicesProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               key={item.id}
-              className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between group text-left relative overflow-hidden"
+              className="bg-white rounded-3xl p-6 sm:p-7 border border-blue-900/20 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between group text-left relative overflow-hidden"
             >
               <div className="space-y-4">
                 
                 {/* Header Icon + Badge Row */}
                 <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-100 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-[#0c2340] border border-blue-900 flex items-center justify-center shrink-0">
                     {item.icon}
                   </div>
-                  <span className="text-[10px] font-extrabold text-amber-700 bg-amber-50 px-3 py-1 rounded-full uppercase tracking-wider border border-amber-200/60">
+                  <span className="text-[10px] font-extrabold text-[#0c2340] bg-blue-50 px-3 py-1 rounded-full uppercase tracking-wider border border-blue-200/80">
                     {item.badge}
                   </span>
                 </div>
 
                 {/* Title & Subtitle */}
                 <div>
-                  <h3 className="font-display font-bold text-lg text-slate-900 group-hover:text-amber-600 transition-colors leading-snug">
+                  <h3 className="font-display font-bold text-lg text-[#0c2340] group-hover:text-amber-500 transition-colors leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-xs text-amber-600 font-bold mt-1">
@@ -146,14 +146,14 @@ export default function Services({ lang }: ServicesProps) {
 
               {/* Card Footer */}
               <div className="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
-                <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-600">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0c2340]">
+                  <CheckCircle2 className="w-4 h-4 text-amber-500 shrink-0" />
                   <span>{item.tag}</span>
                 </div>
 
                 <button
                   onClick={() => handleWhatsAppBooking(item.title)}
-                  className="bg-gradient-to-r from-amber-500 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-xs py-2 px-4 rounded-full shadow-md transition-all duration-200 cursor-pointer active:scale-95 border border-amber-400/20"
+                  className="bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-xs py-2 px-4 rounded-full shadow-md transition-all duration-200 cursor-pointer active:scale-95 border border-amber-400/30"
                 >
                   Pesan Layanan
                 </button>
@@ -166,8 +166,8 @@ export default function Services({ lang }: ServicesProps) {
         {/* SEGMENTATION SECTION: ARMADA UNTUK SETIAP PERJALANAN */}
         <div className="mt-16 pt-12 border-t border-slate-200 space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-900 uppercase">
-              Armada untuk <span className="text-amber-600">Setiap Perjalanan</span>
+            <h3 className="font-display font-black text-2xl sm:text-3xl text-[#0c2340] uppercase">
+              Armada untuk <span className="text-amber-500">Setiap Perjalanan</span>
             </h3>
             <p className="font-sans text-xs sm:text-sm text-slate-600 font-medium">
               Sesuaikan tipe kendaraan dengan kebutuhan perjalanan Anda bersama Araka Trans
@@ -176,11 +176,11 @@ export default function Services({ lang }: ServicesProps) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
             {segmentations.map((seg, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all space-y-3 relative">
-                <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 uppercase">
+              <div key={idx} className="bg-white p-6 rounded-3xl border border-blue-900/20 shadow-sm hover:shadow-md transition-all space-y-3 relative">
+                <span className="text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-blue-900 text-amber-400 uppercase">
                   {seg.badge}
                 </span>
-                <h4 className="font-display font-black text-base text-slate-900">
+                <h4 className="font-display font-black text-base text-[#0c2340]">
                   {seg.question}
                 </h4>
                 <p className="font-sans text-xs text-slate-600 leading-relaxed font-medium">
