@@ -1,5 +1,13 @@
 import { Car, Testimonial } from '../types';
 
+export const COMMON_HIACE_TERMS = [
+  'Seluruh Biaya Sewa sudah termasuk mobil, supir, bbm',
+  'Biaya Sewa belum termasuk Tol, Parkir, Penyebrangan Ferry, Makan Driver, Penginapan Driver dan Tip Driver',
+  'Jangka Waktu Sewa dari Pukul 05:00 s/d 23:00',
+  'Untuk Penjemputan sebelum Pukul 05:00 dan finish diatas pukul 23:00 akan dikenakan overtime Rp 150.000/jam',
+  'Untuk informasi lebih lanjut maupun pemesanan silahkan hubungi kami'
+];
+
 export const HIACE_VARIANTS: Car[] = [
   {
     id: 'hiace-commuter',
@@ -9,24 +17,26 @@ export const HIACE_VARIANTS: Car[] = [
     pricePerDay: 1000000,
     priceDisplay: 'Mulai Rp 1.000.000 / hari',
     image: '/hiace.avif',
+    interiorImage: '/hiace_commuter_interior.jpg',
     seats: 14,
     transmission: 'Manual/Matic',
     fuel: 'Diesel (Bertenaga & Irit)',
     includeList: [
-      'Pilihan tepat untuk perjalanan keluarga & wisata',
-      'Kapasitas 14 penumpang yang luas & nyaman',
-      'AC Double Blower Dingin Merata',
-      'Audio & USB Charging Port',
-      'Pengemudi Ramah & Profesional'
+      'Full AC',
+      'Reclining Seats',
+      'Hand Sanitizer',
+      'Tissue',
+      'Alat Kebersihan Disinfektan'
     ],
-    description: 'Pilihan tepat untuk perjalanan keluarga, wisata, maupun perjalanan rombongan dengan kapasitas penumpang yang nyaman.',
+    terms: COMMON_HIACE_TERMS,
+    description: 'Pilihan tepat untuk perjalanan keluarga, wisata, maupun perjalanan rombongan dengan kapasitas penumpang yang nyaman dan steril.',
     rating: 5.0,
     reviewsCount: 156,
     specifications: [
       { label: 'Tarif Sewa', value: 'Mulai Rp 1.000.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '14 Kursi Penumpang' },
-      { label: 'Fasilitas Utama', value: 'Full AC Double Blower, Audio System, Reclining Seats' },
-      { label: 'Kondisi Armada', value: 'Unit Bersih, Steril & Terawat Prima' }
+      { label: 'Fasilitas Utama', value: 'Full AC, Reclining Seats, Sanitizer, Disinfektan' },
+      { label: 'Kondisi Kabin', value: 'Super Bersih, Steril & Terawat Prima' }
     ]
   },
   {
@@ -37,16 +47,18 @@ export const HIACE_VARIANTS: Car[] = [
     pricePerDay: 1200000,
     priceDisplay: 'Mulai Rp 1.200.000 / hari',
     image: '/hiace_premio.avif',
+    interiorImage: '/hiace_commuter_interior.jpg',
     seats: 12,
     transmission: 'Manual/Matic',
     fuel: 'Diesel Euro 4',
     includeList: [
-      'Kenyamanan dan ruang yang lebih premium',
-      'Cocok untuk perjalanan bisnis, wisata & keluarga',
-      'Kabin Senyap & Suspensi Empuk',
-      'Full AC Climate Control & Multimedia',
-      'Driver Pengalaman & Tepat Waktu'
+      'Full AC',
+      'Reclining Seats',
+      'Hand Sanitizer',
+      'Tissue',
+      'Alat Kebersihan Disinfektan'
     ],
+    terms: COMMON_HIACE_TERMS,
     description: 'Menghadirkan kenyamanan dan ruang yang lebih premium untuk perjalanan bisnis, wisata, maupun perjalanan keluarga.',
     rating: 4.9,
     reviewsCount: 142,
@@ -65,16 +77,18 @@ export const HIACE_VARIANTS: Car[] = [
     pricePerDay: 1800000,
     priceDisplay: 'Mulai Rp 1.800.000 / hari',
     image: '/hiace.avif',
+    interiorImage: '/hiace_commuter_interior.jpg',
     seats: 9,
     transmission: 'Manual/Matic',
     fuel: 'Diesel',
     includeList: [
-      'Konsep eksklusif untuk pengalaman perjalanan premium',
-      'Kursi Pilot / Captain Seat Mewah',
-      'Interior Design Custom Luxury',
-      'TV / Screen Audio & System Hiburan',
-      'Pelayanan VIP & Private Driver'
+      'Full AC',
+      'Reclining Pilot Seats',
+      'Hand Sanitizer',
+      'Tissue',
+      'Alat Kebersihan Disinfektan'
     ],
+    terms: COMMON_HIACE_TERMS,
     description: 'Pilihan kendaraan dengan konsep lebih eksklusif untuk Anda yang mengutamakan kenyamanan dan pengalaman perjalanan yang lebih premium.',
     rating: 5.0,
     reviewsCount: 98,
@@ -93,16 +107,18 @@ export const HIACE_VARIANTS: Car[] = [
     pricePerDay: 2000000,
     priceDisplay: 'Mulai Rp 2.000.000 / hari',
     image: '/hiace_premio.avif',
+    interiorImage: '/hiace_commuter_interior.jpg',
     seats: 9,
     transmission: 'Automatic/Manual',
     fuel: 'Diesel Euro 4',
     includeList: [
-      'Kombinasi kapasitas, kenyamanan & nuansa premium',
-      'Ideal untuk perjalanan VIP, perusahaan & rombongan khusus',
-      'Interior Ultra Executive & Reclining Massage Seat',
-      'Full Entertainment System & Connectivity',
-      'Driver Berpengalaman Layanan VIP'
+      'Full AC',
+      'Reclining Massage Seats',
+      'Hand Sanitizer',
+      'Tissue',
+      'Alat Kebersihan Disinfektan'
     ],
+    terms: COMMON_HIACE_TERMS,
     description: 'Kombinasi antara kapasitas, kenyamanan, dan nuansa premium. Cocok untuk perjalanan VIP, perusahaan, maupun rombongan khusus.',
     rating: 5.0,
     reviewsCount: 110,
@@ -123,23 +139,25 @@ export const CARS: Car[] = [
     pricePerDay: 1000000,
     priceDisplay: 'Mulai Rp 1.000.000 / hari (4 Varian Available)',
     image: '/hiace_premio.avif',
+    interiorImage: '/hiace_commuter_interior.jpg',
     seats: 14,
     transmission: 'Manual/Matic',
     fuel: 'Diesel Euro 4',
     includeList: [
-      'Hiace Commuter (Mulai Rp 1 Juta / hari)',
-      'Hiace Premio (Mulai Rp 1.2 Juta / hari)',
-      'Hiace Commuter Luxury (Mulai Rp 1.8 Juta / hari)',
-      'Hiace Premio Luxury (Mulai Rp 2 Juta / hari)'
+      'Full AC & Reclining Seats',
+      'Hand Sanitizer & Tissue',
+      'Alat Kebersihan Disinfektan',
+      'Include Mobil, Supir & BBM'
     ],
-    description: 'Armada Toyota Hiace lengkap: Commuter (Mulai Rp 1 Juta), Premio (Mulai Rp 1.2 Juta), Commuter Luxury (Mulai Rp 1.8 Juta), dan Premio Luxury (Mulai Rp 2 Juta). Klik untuk memilih varian.',
+    terms: COMMON_HIACE_TERMS,
+    description: 'Armada Toyota Hiace lengkap: Commuter (Mulai Rp 1 Juta), Premio (Mulai Rp 1.2 Juta), Commuter Luxury (Mulai Rp 1.8 Juta), dan Premio Luxury (Mulai Rp 2 Juta). Klik untuk memilih varian & lihat foto interior.',
     rating: 5.0,
     reviewsCount: 210,
     specifications: [
       { label: 'Tarif Mulai', value: 'Rp 1.000.000 / hari' },
       { label: 'Pilihan Varian', value: 'Commuter, Premio, Commuter Luxury, Premio Luxury' },
       { label: 'Kapasitas Penumpang', value: '9 s/d 14 Kursi Penumpang' },
-      { label: 'Fasilitas Utama', value: 'Full AC Digital, Reclining Seats, Audio & USB Port' }
+      { label: 'Fasilitas Utama', value: 'Full AC, Reclining Seats, Sanitizer, Disinfektan' }
     ]
   },
   {
@@ -154,12 +172,12 @@ export const CARS: Car[] = [
     transmission: 'Manual',
     fuel: 'Diesel High Power',
     includeList: [
-      'Solusi transportasi untuk rombongan kapasitas besar',
-      'Kenyamanan kabin tetap terjaga di perjalanan jauh',
-      'AC Ducting Merata hingga baris belakang',
-      'Bagasi Luas untuk barang rombongan',
-      'Pengemudi Pengalaman Rute Antar Kota'
+      'Full AC Ducting',
+      'Reclining Seats',
+      'Hand Sanitizer & Tissue',
+      'Bagasi Luas Rombongan'
     ],
+    terms: COMMON_HIACE_TERMS,
     description: 'Solusi transportasi untuk perjalanan rombongan dengan kapasitas besar dan kenyamanan yang tetap terjaga.',
     rating: 4.9,
     reviewsCount: 125,
@@ -182,12 +200,12 @@ export const CARS: Car[] = [
     transmission: 'Manual',
     fuel: 'Diesel Turbo Heavy Duty',
     includeList: [
-      'Pilihan ideal untuk peserta jumlah lebih banyak',
-      'Cocok untuk wisata, gathering, study tour & acara kantor',
-      'Fasilitas Karaoke, TV, Multimedia & Full AC',
-      'Bagasi Samping & Belakang Ekstra Luas',
-      'Driver & Co-Driver Profesional'
+      'Full AC & Audio Karaoke',
+      'TV Monitor & Reclining Seats',
+      'Hand Sanitizer & Tissue',
+      'Bagasi Samping & Belakang Ekstra Luas'
     ],
+    terms: COMMON_HIACE_TERMS,
     description: 'Pilihan ideal untuk kebutuhan perjalanan dengan jumlah peserta yang lebih banyak, seperti wisata, gathering, study tour, dan acara perusahaan.',
     rating: 5.0,
     reviewsCount: 88,
@@ -210,12 +228,12 @@ export const CARS: Car[] = [
     transmission: 'Automatic',
     fuel: 'Bensin Halus & Senyap',
     includeList: [
-      'Pilihan kendaraan premium untuk kenyamanan eksklusif',
-      'Cocok untuk perjalanan VIP, bisnis, maupun acara khusus',
       'First Class Executive Captain Seats',
-      'Sunroof & Dual Climate Control',
-      'Pelayanan Driver Profesional Berpakaian Rapi'
+      'Sunroof & Dual Climate Control AC',
+      'Hand Sanitizer & Tissue',
+      'Pelayanan Driver VIP'
     ],
+    terms: COMMON_HIACE_TERMS,
     description: 'Pilihan kendaraan premium bagi Anda yang membutuhkan kenyamanan dan eksklusivitas untuk perjalanan VIP, bisnis, maupun acara khusus.',
     rating: 5.0,
     reviewsCount: 74,
@@ -238,12 +256,12 @@ export const CARS: Car[] = [
     transmission: 'Manual/Matic',
     fuel: 'Bensin (Efisien & Halus)',
     includeList: [
-      'Pilihan transportasi untuk perjalanan bersama',
-      'Mengutamakan kenyamanan dan kebutuhan rombongan',
-      'AC Digital Double Blower Sejuk',
-      'Kabin Bersih & Harum Terawat',
-      'Pengemudi Pengalaman & Tepat Waktu'
+      'Full AC Double Blower',
+      'Reclining Seats',
+      'Hand Sanitizer & Tissue',
+      'Audio Bluetooth & USB Charger'
     ],
+    terms: COMMON_HIACE_TERMS,
     description: 'Pilihan transportasi untuk perjalanan bersama dengan mengutamakan kenyamanan dan kebutuhan rombongan.',
     rating: 4.9,
     reviewsCount: 130,
