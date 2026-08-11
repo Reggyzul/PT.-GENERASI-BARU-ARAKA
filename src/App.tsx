@@ -13,6 +13,7 @@ import HiaceModal from './components/HiaceModal';
 import ElfGigaModal from './components/ElfGigaModal';
 import BusMediumModal from './components/BusMediumModal';
 import AlphardModal from './components/AlphardModal';
+import AIChatbot from './components/AIChatbot';
 import { Car } from './types';
 import { CARS, HIACE_VARIANTS } from './data/cars';
 import { ChevronUp } from 'lucide-react';
@@ -208,6 +209,9 @@ export default function App() {
 
       {/* Interactive Booking Popup */}
       <BookingModal car={selectedCar} onClose={() => setSelectedCar(null)} lang={lang} onCarChange={setSelectedCar} />
+
+      {/* AI Chatbot Widget (Siti - Customer Support) */}
+      <AIChatbot />
 
       {/* Floating WhatsApp Action Button */}
       <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
