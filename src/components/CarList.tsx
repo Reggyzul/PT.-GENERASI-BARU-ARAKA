@@ -9,10 +9,11 @@ interface CarListProps {
   onSelectCar: (car: Car) => void;
   onOpenHiaceModal: () => void;
   onOpenElfGigaModal: () => void;
+  onOpenBusMediumModal: () => void;
   lang: 'ID' | 'EN';
 }
 
-export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaModal, lang }: CarListProps) {
+export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaModal, onOpenBusMediumModal, lang }: CarListProps) {
   const t = TRANSLATIONS[lang];
 
   const handleWhatsAppBooking = (carName: string) => {
@@ -50,12 +51,15 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
           {CARS.map((car, index) => {
             const isHiace = car.id === 'hiace-series';
             const isElfGiga = car.id === 'elf-giga';
+            const isBusMedium = car.id === 'bus-medium';
 
             const handleCardClick = () => {
               if (isHiace) {
                 onOpenHiaceModal();
               } else if (isElfGiga) {
                 onOpenElfGigaModal();
+              } else if (isBusMedium) {
+                onOpenBusMediumModal();
               }
             };
 
@@ -68,7 +72,7 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
                 key={car.id}
                 onClick={handleCardClick}
                 className={`bg-white border rounded-3xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group overflow-hidden ${
-                  isHiace || isElfGiga
+                  isHiace || isElfGiga || isBusMedium
                     ? 'border-amber-400/80 ring-2 ring-amber-500/20 cursor-pointer bg-gradient-to-b from-amber-50/30 via-white to-white'
                     : 'border-slate-200/90 hover:border-amber-400'
                 }`}
@@ -88,7 +92,7 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
                     </div>
                     <div className="absolute bottom-2.5 right-2.5 bg-white/95 text-slate-700 font-sans text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-slate-200 flex items-center gap-1 shadow-sm">
                       <Users className="w-3 h-3 text-amber-600" />
-                      <span>{isHiace ? '9 - 14 Kursi' : `${car.seats} Kursi`}</span>
+                      <span>{isHiace ? '9 - 14 Kursi' : isBusMedium ? '33 - 35 Kursi' : `${car.seats} Kursi`}</span>
                     </div>
                   </div>
 
@@ -106,6 +110,11 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
                       {isElfGiga && (
                         <span className="text-[10px] font-extrabold bg-teal-600 text-white px-2.5 py-1 rounded-full uppercase tracking-wider">
                           19 Kursi
+                        </span>
+                      )}
+                      {isBusMedium && (
+                        <span className="text-[10px] font-extrabold bg-amber-600 text-white px-2.5 py-1 rounded-full uppercase tracking-wider">
+                          Jetbus 3
                         </span>
                       )}
                     </div>
@@ -155,6 +164,17 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaMo
                     >
                       <Layers className="w-4 h-4 shrink-0" />
                       <span>Detail Informasi Elf Giga</span>
+                    </button>
+                  ) : isBusMedium ? (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenBusMediumModal();
+                      }}
+                      className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md shadow-amber-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                    >
+                      <Layers className="w-4 h-4 shrink-0" />
+                      <span>Detail Informasi Bus Medium</span>
                     </button>
                   ) : (
                     <>

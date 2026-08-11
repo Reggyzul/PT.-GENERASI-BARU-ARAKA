@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import HiaceModal from './components/HiaceModal';
 import ElfGigaModal from './components/ElfGigaModal';
+import BusMediumModal from './components/BusMediumModal';
 import { Car } from './types';
 import { CARS, HIACE_VARIANTS } from './data/cars';
 import { ChevronUp } from 'lucide-react';
@@ -23,6 +24,7 @@ export default function App() {
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
   const [isHiaceModalOpen, setIsHiaceModalOpen] = useState(false);
   const [isElfGigaModalOpen, setIsElfGigaModalOpen] = useState(false);
+  const [isBusMediumModalOpen, setIsBusMediumModalOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [lang, setLang] = useState<'ID' | 'EN'>('ID');
   
@@ -130,6 +132,7 @@ export default function App() {
               onSelectCar={handleSelectCar} 
               onOpenHiaceModal={() => setIsHiaceModalOpen(true)} 
               onOpenElfGigaModal={() => setIsElfGigaModalOpen(true)}
+              onOpenBusMediumModal={() => setIsBusMediumModalOpen(true)}
               lang={lang} 
             />
 
@@ -176,6 +179,16 @@ export default function App() {
         onClose={() => setIsElfGigaModalOpen(false)}
         onSelectToBook={(car) => {
           setIsElfGigaModalOpen(false);
+          setSelectedCar(car);
+        }}
+      />
+
+      {/* Bus Medium Modal Popup */}
+      <BusMediumModal
+        isOpen={isBusMediumModalOpen}
+        onClose={() => setIsBusMediumModalOpen(false)}
+        onSelectToBook={(car) => {
+          setIsBusMediumModalOpen(false);
           setSelectedCar(car);
         }}
       />

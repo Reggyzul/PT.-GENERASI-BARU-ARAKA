@@ -168,7 +168,7 @@ export const CARS: Car[] = [
     pricePerDay: 1200000,
     priceDisplay: 'Mulai Rp 1.200.000 / hari',
     image: '/elf_giga_studio.png',
-    interiorImage: '/elf_long.avif',
+    interiorImage: '/elf_giga_real_interior_front.jpg',
     seats: 19,
     transmission: 'Manual',
     fuel: 'Diesel High Power',
@@ -195,27 +195,29 @@ export const CARS: Car[] = [
     name: 'Bus Medium',
     nameAr: 'حافلة متوسطة',
     category: 'Bus Pariwisata & Event',
-    pricePerDay: 2500000,
-    priceDisplay: 'Mulai Rp 2.500.000 / hari',
-    image: '/medium_bus.avif',
+    pricePerDay: 2000000,
+    priceDisplay: 'Mulai Rp 2.000.000 / hari',
+    image: '/bus_medium_real_exterior.jpg',
+    interiorImage: '/bus_medium_real_interior_seats.jpg',
     seats: 33,
     transmission: 'Manual',
     fuel: 'Diesel Turbo Heavy Duty',
     includeList: [
-      'Full AC & Audio Karaoke',
-      'TV Monitor & Reclining Seats',
-      'Hand Sanitizer & Tissue',
-      'Bagasi Samping & Belakang Ekstra Luas'
+      'Full AC',
+      'Reclining Seats',
+      'Hand Sanitizer',
+      'Tissue',
+      'Alat Kebersihan Disinfektan'
     ],
     terms: COMMON_HIACE_TERMS,
-    description: 'Pilihan ideal untuk kebutuhan perjalanan dengan jumlah peserta yang lebih banyak, seperti wisata, gathering, study tour, dan acara perusahaan.',
+    description: 'Pilihan ideal untuk rombongan wisata, gathering, study tour & event kantor dengan armada Jetbus 3 Araka Trans 33 kursi reclining seats.',
     rating: 5.0,
     reviewsCount: 88,
     specifications: [
-      { label: 'Kapasitas Penumpang', value: '30-35 Kursi Penumpang' },
-      { label: 'Fasilitas Utama', value: 'Audio Karaoke, TV Monitor, Reclining Seats, Full AC' },
-      { label: 'Kategori Layanan', value: 'Study Tour, Event & Outbound Perusahaan' },
-      { label: 'Kondisi Armada', value: 'Prima, Bersih & Siap Jalan' }
+      { label: 'Tarif Sewa', value: 'Mulai Rp 2.000.000 / hari' },
+      { label: 'Kapasitas Penumpang', value: '33 Kursi Penumpang Reclining' },
+      { label: 'Fasilitas Utama', value: 'Full AC, Reclining Seats, Sanitizer, Disinfektan' },
+      { label: 'Kondisi Armada', value: 'Unit Jetbus 3 Pariwisata B 7143 WGA' }
     ]
   },
   {
