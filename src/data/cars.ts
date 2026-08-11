@@ -165,27 +165,29 @@ export const CARS: Car[] = [
     name: 'Elf Giga',
     nameAr: 'إيسوزو إلف جيجا',
     category: 'Transpor Rombongan Besar',
-    pricePerDay: 1600000,
-    priceDisplay: 'Mulai Rp 1.600.000 / hari',
-    image: '/elf_long.avif',
+    pricePerDay: 1200000,
+    priceDisplay: 'Mulai Rp 1.200.000 / hari',
+    image: '/elf_giga_studio.png',
+    interiorImage: '/elf_long.avif',
     seats: 19,
     transmission: 'Manual',
     fuel: 'Diesel High Power',
     includeList: [
-      'Full AC Ducting',
+      'Full AC',
       'Reclining Seats',
-      'Hand Sanitizer & Tissue',
-      'Bagasi Luas Rombongan'
+      'Hand Sanitizer',
+      'Tissue',
+      'Alat Kebersihan Disinfektan'
     ],
     terms: COMMON_HIACE_TERMS,
-    description: 'Solusi transportasi untuk perjalanan rombongan dengan kapasitas besar dan kenyamanan yang tetap terjaga.',
+    description: 'Solusi transportasi untuk perjalanan rombongan dengan kapasitas 19 penumpang yang nyaman, lega, dan steril.',
     rating: 4.9,
     reviewsCount: 125,
     specifications: [
+      { label: 'Tarif Sewa', value: 'Mulai Rp 1.200.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '16-19 Kursi Penumpang' },
-      { label: 'Fasilitas Utama', value: 'AC Louver per baris, Audio System, Bagasi Luas' },
-      { label: 'Kategori Layanan', value: 'Gathering, Ziarah, Wisata Rombongan' },
-      { label: 'Kondisi Armada', value: 'Tangguh & Terawat Berkala' }
+      { label: 'Fasilitas Utama', value: 'Full AC, Reclining Seats, Sanitizer, Disinfektan' },
+      { label: 'Kondisi Armada', value: 'Tangguh, Bersih & Terawat Berkala' }
     ]
   },
   {

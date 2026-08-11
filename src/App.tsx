@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import BookingModal from './components/BookingModal';
 import HiaceModal from './components/HiaceModal';
+import ElfGigaModal from './components/ElfGigaModal';
 import { Car } from './types';
 import { CARS, HIACE_VARIANTS } from './data/cars';
 import { ChevronUp } from 'lucide-react';
@@ -21,6 +22,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [selectedCar, setSelectedCar] = useState<Car | null>(null);
   const [isHiaceModalOpen, setIsHiaceModalOpen] = useState(false);
+  const [isElfGigaModalOpen, setIsElfGigaModalOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [lang, setLang] = useState<'ID' | 'EN'>('ID');
   
@@ -124,7 +126,12 @@ export default function App() {
             <Hero onRentClick={() => handleNavClick('cars')} onVisiMisiClick={() => handleNavClick('cars')} lang={lang} />
 
             {/* 2. Pilihan Armada Mobil (Persis Di Bawah Hero) */}
-            <CarList onSelectCar={handleSelectCar} onOpenHiaceModal={() => setIsHiaceModalOpen(true)} lang={lang} />
+            <CarList 
+              onSelectCar={handleSelectCar} 
+              onOpenHiaceModal={() => setIsHiaceModalOpen(true)} 
+              onOpenElfGigaModal={() => setIsElfGigaModalOpen(true)}
+              lang={lang} 
+            />
 
             {/* 3. Layanan Rental Mobil */}
             <Services lang={lang} />
@@ -160,6 +167,16 @@ export default function App() {
         onSelectVariantToBook={(variant) => {
           setIsHiaceModalOpen(false);
           setSelectedCar(variant);
+        }}
+      />
+
+      {/* Elf Giga Modal Popup */}
+      <ElfGigaModal
+        isOpen={isElfGigaModalOpen}
+        onClose={() => setIsElfGigaModalOpen(false)}
+        onSelectToBook={(car) => {
+          setIsElfGigaModalOpen(false);
+          setSelectedCar(car);
         }}
       />
 

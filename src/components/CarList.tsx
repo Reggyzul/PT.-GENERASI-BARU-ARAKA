@@ -8,10 +8,11 @@ import { TRANSLATIONS } from '../utils/translations';
 interface CarListProps {
   onSelectCar: (car: Car) => void;
   onOpenHiaceModal: () => void;
+  onOpenElfGigaModal: () => void;
   lang: 'ID' | 'EN';
 }
 
-export default function CarList({ onSelectCar, onOpenHiaceModal, lang }: CarListProps) {
+export default function CarList({ onSelectCar, onOpenHiaceModal, onOpenElfGigaModal, lang }: CarListProps) {
   const t = TRANSLATIONS[lang];
 
   const handleWhatsAppBooking = (carName: string) => {
@@ -48,6 +49,15 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, lang }: CarList
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {CARS.map((car, index) => {
             const isHiace = car.id === 'hiace-series';
+            const isElfGiga = car.id === 'elf-giga';
+
+            const handleCardClick = () => {
+              if (isHiace) {
+                onOpenHiaceModal();
+              } else if (isElfGiga) {
+                onOpenElfGigaModal();
+              }
+            };
 
             return (
               <motion.div
@@ -56,9 +66,9 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, lang }: CarList
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 key={car.id}
-                onClick={isHiace ? onOpenHiaceModal : undefined}
+                onClick={handleCardClick}
                 className={`bg-white border rounded-3xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group overflow-hidden ${
-                  isHiace
+                  isHiace || isElfGiga
                     ? 'border-amber-400/80 ring-2 ring-amber-500/20 cursor-pointer bg-gradient-to-b from-amber-50/30 via-white to-white'
                     : 'border-slate-200/90 hover:border-amber-400'
                 }`}
@@ -91,6 +101,11 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, lang }: CarList
                       {isHiace && (
                         <span className="text-[10px] font-extrabold bg-amber-500 text-white px-2.5 py-1 rounded-full uppercase tracking-wider animate-pulse">
                           4 Varian
+                        </span>
+                      )}
+                      {isElfGiga && (
+                        <span className="text-[10px] font-extrabold bg-teal-600 text-white px-2.5 py-1 rounded-full uppercase tracking-wider">
+                          19 Kursi
                         </span>
                       )}
                     </div>
@@ -129,6 +144,17 @@ export default function CarList({ onSelectCar, onOpenHiaceModal, lang }: CarList
                     >
                       <Layers className="w-4 h-4 shrink-0" />
                       <span>Pilih Varian Hiace (4 Varian)</span>
+                    </button>
+                  ) : isElfGiga ? (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenElfGigaModal();
+                      }}
+                      className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-teal-600 hover:from-amber-600 hover:to-teal-700 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md shadow-amber-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                    >
+                      <Layers className="w-4 h-4 shrink-0" />
+                      <span>Detail Informasi Elf Giga</span>
                     </button>
                   ) : (
                     <>
