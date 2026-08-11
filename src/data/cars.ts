@@ -6,8 +6,8 @@ export const HIACE_VARIANTS: Car[] = [
     name: 'Hiace Commuter',
     nameAr: 'تويوتا هايس كوميوتر',
     category: 'Transpor Rombongan',
-    pricePerDay: 1200000,
-    priceDisplay: 'Solusi Nyaman Rombongan & Keluarga',
+    pricePerDay: 1000000,
+    priceDisplay: 'Mulai Rp 1.000.000 / hari',
     image: '/hiace.avif',
     seats: 14,
     transmission: 'Manual/Matic',
@@ -23,9 +23,9 @@ export const HIACE_VARIANTS: Car[] = [
     rating: 5.0,
     reviewsCount: 156,
     specifications: [
+      { label: 'Tarif Sewa', value: 'Mulai Rp 1.000.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '14 Kursi Penumpang' },
       { label: 'Fasilitas Utama', value: 'Full AC Double Blower, Audio System, Reclining Seats' },
-      { label: 'Kategori Layanan', value: 'Wisata, Perjalanan Keluarga & Gathering' },
       { label: 'Kondisi Armada', value: 'Unit Bersih, Steril & Terawat Prima' }
     ]
   },
@@ -34,8 +34,8 @@ export const HIACE_VARIANTS: Car[] = [
     name: 'Hiace Premio',
     nameAr: 'تويوتا هايس بريميو',
     category: 'Executive & Business',
-    pricePerDay: 1500000,
-    priceDisplay: 'Kenyamanan Premium & Ruang Luas',
+    pricePerDay: 1200000,
+    priceDisplay: 'Mulai Rp 1.200.000 / hari',
     image: '/hiace_premio.avif',
     seats: 12,
     transmission: 'Manual/Matic',
@@ -51,9 +51,9 @@ export const HIACE_VARIANTS: Car[] = [
     rating: 4.9,
     reviewsCount: 142,
     specifications: [
+      { label: 'Tarif Sewa', value: 'Mulai Rp 1.200.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '12 Kursi Penumpang' },
       { label: 'Fasilitas Utama', value: 'Kabin Senyap, Captain Seats, Charger Port' },
-      { label: 'Kategori Layanan', value: 'Bisnis, Dinas & Perusahaan' },
       { label: 'Kondisi Armada', value: 'Bersih, Steril & Mewah' }
     ]
   },
@@ -63,7 +63,7 @@ export const HIACE_VARIANTS: Car[] = [
     nameAr: 'هايس كوميوتر فاخرة',
     category: 'Luxury & VIP',
     pricePerDay: 1800000,
-    priceDisplay: 'Konsep Eksklusif & Premium Experience',
+    priceDisplay: 'Mulai Rp 1.800.000 / hari',
     image: '/hiace.avif',
     seats: 9,
     transmission: 'Manual/Matic',
@@ -79,9 +79,9 @@ export const HIACE_VARIANTS: Car[] = [
     rating: 5.0,
     reviewsCount: 98,
     specifications: [
+      { label: 'Tarif Sewa', value: 'Mulai Rp 1.800.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '8-9 Kursi Pilot Luxury' },
       { label: 'Fasilitas Utama', value: 'Captain Seats, Ambient Lighting, Entertainment' },
-      { label: 'Kategori Layanan', value: 'Perjalanan VIP & Tamu Khusus' },
       { label: 'Kondisi Armada', value: 'Kondisi Super Premium' }
     ]
   },
@@ -90,8 +90,8 @@ export const HIACE_VARIANTS: Car[] = [
     name: 'Hiace Premio Luxury',
     nameAr: 'هايس بريميو فاخرة',
     category: 'Luxury & VIP Class',
-    pricePerDay: 2200000,
-    priceDisplay: 'Kombinasi Kapasitas, Kenyamanan & Nuansa Premium',
+    pricePerDay: 2000000,
+    priceDisplay: 'Mulai Rp 2.000.000 / hari',
     image: '/hiace_premio.avif',
     seats: 9,
     transmission: 'Automatic/Manual',
@@ -107,9 +107,9 @@ export const HIACE_VARIANTS: Car[] = [
     rating: 5.0,
     reviewsCount: 110,
     specifications: [
+      { label: 'Tarif Sewa', value: 'Mulai Rp 2.000.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '8-9 Kursi Luxury VIP' },
       { label: 'Fasilitas Utama', value: 'Luxury Captain Seat, Smart TV, Wi-Fi ready' },
-      { label: 'Kategori Layanan', value: 'Kunjungan Kerja VIP & Event Perusahaan' },
       { label: 'Kondisi Armada', value: 'Interior Mewah & Steril' }
     ]
   }
@@ -120,26 +120,26 @@ export const CARS: Car[] = [
     id: 'hiace-series',
     name: 'Toyota Hiace Series',
     category: 'Hiace Series (4 Varian)',
-    pricePerDay: 1200000,
-    priceDisplay: 'Tersedia 4 Varian: Commuter, Premio & Luxury',
+    pricePerDay: 1000000,
+    priceDisplay: 'Mulai Rp 1.000.000 / hari (4 Varian Available)',
     image: '/hiace_premio.avif',
     seats: 14,
     transmission: 'Manual/Matic',
     fuel: 'Diesel Euro 4',
     includeList: [
-      'Hiace Commuter (14 Kursi Penumpang)',
-      'Hiace Premio (12 Kursi Executive)',
-      'Hiace Commuter Luxury (9 Kursi Pilot)',
-      'Hiace Premio Luxury (9 Kursi VIP)'
+      'Hiace Commuter (Mulai Rp 1 Juta / hari)',
+      'Hiace Premio (Mulai Rp 1.2 Juta / hari)',
+      'Hiace Commuter Luxury (Mulai Rp 1.8 Juta / hari)',
+      'Hiace Premio Luxury (Mulai Rp 2 Juta / hari)'
     ],
-    description: 'Armada Toyota Hiace lengkap untuk berbagai kelas perjalanan: Hiace Commuter, Hiace Premio, Hiace Commuter Luxury, dan Hiace Premio Luxury. Klik untuk memilih varian.',
+    description: 'Armada Toyota Hiace lengkap: Commuter (Mulai Rp 1 Juta), Premio (Mulai Rp 1.2 Juta), Commuter Luxury (Mulai Rp 1.8 Juta), dan Premio Luxury (Mulai Rp 2 Juta). Klik untuk memilih varian.',
     rating: 5.0,
     reviewsCount: 210,
     specifications: [
+      { label: 'Tarif Mulai', value: 'Rp 1.000.000 / hari' },
       { label: 'Pilihan Varian', value: 'Commuter, Premio, Commuter Luxury, Premio Luxury' },
       { label: 'Kapasitas Penumpang', value: '9 s/d 14 Kursi Penumpang' },
-      { label: 'Fasilitas Utama', value: 'Full AC Digital, Reclining Seats, Audio & USB Port' },
-      { label: 'Kondisi Armada', value: 'Bersih, Steril & Terawat Prima' }
+      { label: 'Fasilitas Utama', value: 'Full AC Digital, Reclining Seats, Audio & USB Port' }
     ]
   },
   {
@@ -148,7 +148,7 @@ export const CARS: Car[] = [
     nameAr: 'إيسوزو إلف جيجا',
     category: 'Transpor Rombongan Besar',
     pricePerDay: 1600000,
-    priceDisplay: 'Solusi Kapasitas Besar & Tetap Nyaman',
+    priceDisplay: 'Mulai Rp 1.600.000 / hari',
     image: '/elf_long.avif',
     seats: 19,
     transmission: 'Manual',
@@ -176,7 +176,7 @@ export const CARS: Car[] = [
     nameAr: 'حافلة متوسطة',
     category: 'Bus Pariwisata & Event',
     pricePerDay: 2500000,
-    priceDisplay: 'Ideal untuk Gathering & Tour Peserta Banyak',
+    priceDisplay: 'Mulai Rp 2.500.000 / hari',
     image: '/medium_bus.avif',
     seats: 33,
     transmission: 'Manual',
@@ -204,7 +204,7 @@ export const CARS: Car[] = [
     nameAr: 'تويوتا ألفارد',
     category: 'VIP Luxury Class',
     pricePerDay: 3200000,
-    priceDisplay: 'Kemewahan & Eksklusivitas Perjalanan VIP',
+    priceDisplay: 'Mulai Rp 3.200.000 / hari',
     image: '/innova3.avif',
     seats: 7,
     transmission: 'Automatic',
@@ -232,7 +232,7 @@ export const CARS: Car[] = [
     nameAr: 'غراند تور',
     category: 'Family & Group Travel',
     pricePerDay: 750000,
-    priceDisplay: 'Praktis & Nyaman Bersama Keluarga',
+    priceDisplay: 'Mulai Rp 750.000 / hari',
     image: '/avanza.avif',
     seats: 7,
     transmission: 'Manual/Matic',
