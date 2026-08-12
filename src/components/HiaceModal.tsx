@@ -164,40 +164,40 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                 />
               </div>
 
-              {/* Photo Selector Pills BELOW Image */}
-              <div className="flex items-center justify-center gap-2 p-1 bg-slate-100 rounded-xl border border-slate-200 overflow-x-auto">
+              {/* Photo Selector Grid Buttons */}
+              <div className={`grid gap-2 ${currentVariant.interiorSecondaryImage ? 'grid-cols-3' : 'grid-cols-2'}`}>
                 <button
                   onClick={() => setActivePhotoTab('exterior')}
-                  className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                  className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
                     activePhotoTab === 'exterior'
-                      ? 'bg-[#0c2340] text-amber-400 shadow-sm'
-                      : 'text-slate-600 hover:bg-slate-200'
+                      ? 'bg-[#0c2340] text-amber-400 border border-amber-400/50 shadow-sm'
+                      : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                   }`}
                 >
-                  Eksterior Utama
+                  <span>Tampilan Eksterior</span>
                 </button>
 
                 <button
                   onClick={() => setActivePhotoTab('interior')}
-                  className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                  className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
                     activePhotoTab === 'interior'
-                      ? 'bg-[#0c2340] text-amber-400 shadow-sm'
-                      : 'text-slate-600 hover:bg-slate-200'
+                      ? 'bg-[#0c2340] text-amber-400 border border-amber-400/50 shadow-sm'
+                      : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                   }`}
                 >
-                  {currentVariant.id === 'hiace-commuter' ? 'Interior & Bagasi' : 'Interior Kabin'}
+                  <span>{currentVariant.id === 'hiace-commuter' ? 'Interior & Bagasi' : 'Interior Kabin'}</span>
                 </button>
 
                 {currentVariant.interiorSecondaryImage && (
                   <button
                     onClick={() => setActivePhotoTab('interior_secondary')}
-                    className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                    className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
                       activePhotoTab === 'interior_secondary'
-                        ? 'bg-[#0c2340] text-amber-400 shadow-sm'
-                        : 'text-slate-600 hover:bg-slate-200'
+                        ? 'bg-[#0c2340] text-amber-400 border border-amber-400/50 shadow-sm'
+                        : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                     }`}
                   >
-                    Kabin Penumpang
+                    <span>Kabin Penumpang</span>
                   </button>
                 )}
               </div>

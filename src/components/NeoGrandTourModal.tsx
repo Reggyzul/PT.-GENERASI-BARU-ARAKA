@@ -138,30 +138,30 @@ export default function NeoGrandTourModal({ isOpen, onClose, onSelectToBook }: N
               <div className="grid grid-cols-3 gap-2">
                 <button
                   onClick={() => setActivePhotoTab('exterior')}
-                  className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                  className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
                     activePhotoTab === 'exterior'
                       ? 'bg-[#0c2340] text-amber-400 border border-amber-400/50 shadow-sm'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                      : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                   }`}
                 >
                   <span>Tampilan Eksterior</span>
                 </button>
                 <button
                   onClick={() => setActivePhotoTab('cabin')}
-                  className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                  className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
                     activePhotoTab === 'cabin'
                       ? 'bg-[#0c2340] text-amber-400 border border-amber-400/50 shadow-sm'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                      : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                   }`}
                 >
                   <span>Kabin Executive</span>
                 </button>
                 <button
                   onClick={() => setActivePhotoTab('seat')}
-                  className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                  className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
                     activePhotoTab === 'seat'
                       ? 'bg-[#0c2340] text-amber-400 border border-amber-400/50 shadow-sm'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                      : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                   }`}
                 >
                   <span>Kursi Legrest Luxury</span>
