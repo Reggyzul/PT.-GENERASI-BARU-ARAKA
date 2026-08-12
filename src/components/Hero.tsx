@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { MessageCircle, Ticket, ArrowRight, MapPin, Users, Calendar, Phone, ChevronDown, Car, ShieldCheck } from 'lucide-react';
+import { MessageCircle, Ticket, ArrowRight, MapPin, Users, Calendar, Phone, ChevronDown, Car, ShieldCheck, Sparkles } from 'lucide-react';
 import { TRANSLATIONS } from '../utils/translations';
 import { CARS } from '../data/cars';
 
