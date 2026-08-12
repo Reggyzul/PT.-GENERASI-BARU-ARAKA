@@ -11,6 +11,7 @@ interface CarListProps {
   onOpenElfGigaModal: () => void;
   onOpenBusMediumModal: () => void;
   onOpenAlphardModal: () => void;
+  onOpenInnovaModal: () => void;
   lang: 'ID' | 'EN';
 }
 
@@ -20,6 +21,7 @@ export default function CarList({
   onOpenElfGigaModal,
   onOpenBusMediumModal,
   onOpenAlphardModal,
+  onOpenInnovaModal,
   lang
 }: CarListProps) {
   const t = TRANSLATIONS[lang];
@@ -54,13 +56,14 @@ export default function CarList({
           </p>
         </div>
 
-        {/* GRID LAYOUT: 4 KARTU ARMADA */}
+        {/* GRID LAYOUT: KARTU ARMADA */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {CARS.map((car, index) => {
             const isHiace = car.id === 'hiace-series';
             const isElfGiga = car.id === 'elf-giga';
             const isBusMedium = car.id === 'bus-medium';
             const isAlphard = car.id === 'toyota-alphard';
+            const isInnova = car.id === 'innova-reborn';
 
             const handleCardClick = () => {
               if (isHiace) {
@@ -71,6 +74,10 @@ export default function CarList({
                 onOpenBusMediumModal();
               } else if (isAlphard) {
                 onOpenAlphardModal();
+              } else if (isInnova) {
+                onOpenInnovaModal();
+              } else {
+                onSelectCar(car);
               }
             };
 

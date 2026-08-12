@@ -12,6 +12,7 @@ import HiaceModal from './components/HiaceModal';
 import ElfGigaModal from './components/ElfGigaModal';
 import BusMediumModal from './components/BusMediumModal';
 import AlphardModal from './components/AlphardModal';
+import InnovaModal from './components/InnovaModal';
 import AIChatbot from './components/AIChatbot';
 import { Car } from './types';
 import { CARS, HIACE_VARIANTS } from './data/cars';
@@ -27,6 +28,7 @@ export default function App() {
   const [isElfGigaModalOpen, setIsElfGigaModalOpen] = useState(false);
   const [isBusMediumModalOpen, setIsBusMediumModalOpen] = useState(false);
   const [isAlphardModalOpen, setIsAlphardModalOpen] = useState(false);
+  const [isInnovaModalOpen, setIsInnovaModalOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [lang, setLang] = useState<'ID' | 'EN'>('ID');
   
@@ -136,6 +138,7 @@ export default function App() {
               onOpenElfGigaModal={() => setIsElfGigaModalOpen(true)}
               onOpenBusMediumModal={() => setIsBusMediumModalOpen(true)}
               onOpenAlphardModal={() => setIsAlphardModalOpen(true)}
+              onOpenInnovaModal={() => setIsInnovaModalOpen(true)}
               lang={lang} 
             />
 
@@ -199,6 +202,16 @@ export default function App() {
         onClose={() => setIsAlphardModalOpen(false)}
         onSelectToBook={(car) => {
           setIsAlphardModalOpen(false);
+          setSelectedCar(car);
+        }}
+      />
+
+      {/* Toyota Innova Reborn Modal Popup */}
+      <InnovaModal
+        isOpen={isInnovaModalOpen}
+        onClose={() => setIsInnovaModalOpen(false)}
+        onSelectToBook={(car) => {
+          setIsInnovaModalOpen(false);
           setSelectedCar(car);
         }}
       />
