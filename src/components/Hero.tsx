@@ -67,9 +67,14 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
             {/* LEFT COLUMN: HEADLINE & SUBTITLE */}
             <div className="lg:col-span-7 space-y-6 text-left" id="hero-text-container">
               
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0c2340] border border-amber-400/50 text-amber-300 text-xs font-extrabold uppercase tracking-wider shadow-sm">
-                <ShieldCheck className="w-4 h-4 text-amber-400" />
-                <span>PT. GENERASI BARU ARAKA</span>
+              <div className="space-y-1.5">
+                <span className="font-sans font-extrabold text-[11px] sm:text-xs uppercase tracking-widest text-amber-400 block">
+                  COMPANY PROFILE
+                </span>
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0c2340] border border-amber-400/50 text-amber-300 text-xs font-extrabold uppercase tracking-wider shadow-sm">
+                  <ShieldCheck className="w-4 h-4 text-amber-400" />
+                  <span>PT. GENERASI BARU ARAKA</span>
+                </div>
               </div>
 
               {/* Bold Large Headline */}
