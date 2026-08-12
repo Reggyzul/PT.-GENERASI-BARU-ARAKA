@@ -13,6 +13,7 @@ import ElfGigaModal from './components/ElfGigaModal';
 import BusMediumModal from './components/BusMediumModal';
 import AlphardModal from './components/AlphardModal';
 import InnovaModal from './components/InnovaModal';
+import AvanzaModal from './components/AvanzaModal';
 import AIChatbot from './components/AIChatbot';
 import { Car } from './types';
 import { CARS, HIACE_VARIANTS } from './data/cars';
@@ -29,6 +30,7 @@ export default function App() {
   const [isBusMediumModalOpen, setIsBusMediumModalOpen] = useState(false);
   const [isAlphardModalOpen, setIsAlphardModalOpen] = useState(false);
   const [isInnovaModalOpen, setIsInnovaModalOpen] = useState(false);
+  const [isAvanzaModalOpen, setIsAvanzaModalOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [lang, setLang] = useState<'ID' | 'EN'>('ID');
   
@@ -139,6 +141,7 @@ export default function App() {
               onOpenBusMediumModal={() => setIsBusMediumModalOpen(true)}
               onOpenAlphardModal={() => setIsAlphardModalOpen(true)}
               onOpenInnovaModal={() => setIsInnovaModalOpen(true)}
+              onOpenAvanzaModal={() => setIsAvanzaModalOpen(true)}
               lang={lang} 
             />
 
@@ -212,6 +215,16 @@ export default function App() {
         onClose={() => setIsInnovaModalOpen(false)}
         onSelectToBook={(car) => {
           setIsInnovaModalOpen(false);
+          setSelectedCar(car);
+        }}
+      />
+
+      {/* Toyota Avanza Modal Popup */}
+      <AvanzaModal
+        isOpen={isAvanzaModalOpen}
+        onClose={() => setIsAvanzaModalOpen(false)}
+        onSelectToBook={(car) => {
+          setIsAvanzaModalOpen(false);
           setSelectedCar(car);
         }}
       />
