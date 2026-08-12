@@ -114,6 +114,8 @@ export default function CarList({
                           ? 'scale-[1.12] sm:scale-[1.18] origin-center group-hover:scale-[1.22]' 
                           : isAlphard 
                           ? 'scale-105 sm:scale-110 group-hover:scale-110' 
+                          : isInnova || isNeo
+                          ? 'scale-105 sm:scale-110 group-hover:scale-115 drop-shadow-2xl'
                           : 'group-hover:scale-105'
                       }`}
                     />

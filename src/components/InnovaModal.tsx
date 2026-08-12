@@ -49,7 +49,7 @@ export default function InnovaModal({ isOpen, onClose, onSelectToBook }: InnovaM
     if (activePhotoTab === 'interior_front') {
       return '/innova_reborn_real_interior_front.jpg';
     }
-    return '/innova_reborn_real_exterior.jpg';
+    return '/innova_cutout.png';
   };
 
   const getDisplayedBadgeText = () => {

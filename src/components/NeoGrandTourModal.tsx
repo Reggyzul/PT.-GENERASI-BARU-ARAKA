@@ -49,7 +49,7 @@ export default function NeoGrandTourModal({ isOpen, onClose, onSelectToBook }: N
     if (activePhotoTab === 'cabin') {
       return '/neo_grand_tour_real_interior_cabin.jpg';
     }
-    return '/neo_grand_tour_real_exterior.jpg';
+    return '/neo_grand_tour_cutout.png';
   };
 
   const getDisplayedBadgeText = () => {
