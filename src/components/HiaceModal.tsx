@@ -47,9 +47,9 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
       return `Eksterior ${currentVariant.name}`;
     }
     if (activePhotoTab === 'interior') {
-      return currentVariant.id === 'hiace-commuter' ? `Interior & Bagasi ${currentVariant.name}` : `Interior Kabin & Smart TV ${currentVariant.name}`;
+      return currentVariant.id === 'hiace-commuter' ? `Kabin Depan & TV Console ${currentVariant.name}` : `Interior Kabin & Smart TV ${currentVariant.name}`;
     }
-    return `Kabin Penumpang ${currentVariant.name}`;
+    return currentVariant.id === 'hiace-commuter' ? `Ruang Penumpang & Bagasi ${currentVariant.name}` : `Kabin Penumpang ${currentVariant.name}`;
   };
 
   const handleWhatsAppVariantBooking = () => {
@@ -202,7 +202,7 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                       : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                   }`}
                 >
-                  <span>{currentVariant.id === 'hiace-commuter' ? 'Interior & Bagasi' : 'Kabin Depan & TV'}</span>
+                  <span>{currentVariant.id === 'hiace-commuter' ? 'Kabin & TV Console' : 'Kabin Depan & TV'}</span>
                 </button>
 
                 {currentVariant.interiorSecondaryImage && (
@@ -214,7 +214,7 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                         : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                     }`}
                   >
-                    <span>Kabin Penumpang</span>
+                    <span>{currentVariant.id === 'hiace-commuter' ? 'Bagasi & Penumpang' : 'Kabin Penumpang'}</span>
                   </button>
                 )}
 
