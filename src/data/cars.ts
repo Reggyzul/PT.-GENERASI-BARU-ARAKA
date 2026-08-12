@@ -78,8 +78,8 @@ export const HIACE_VARIANTS: Car[] = [
     pricePerDay: 1800000,
     priceDisplay: 'Mulai Rp 1.800.000 / hari',
     image: '/hiace_commuter_real_exterior.jpg',
-    interiorImage: '/hiace_commuter_luxury_interior.jpg',
-    interiorSecondaryImage: '/hiace_luxury_tv_interior.jpg',
+    interiorImage: '/hiace_premio_luxury_tv.jpg',
+    interiorSecondaryImage: '/hiace_premio_luxury_cabin.jpg',
     seats: 9,
     transmission: 'Manual/Matic',
     fuel: 'Diesel',
@@ -91,14 +91,14 @@ export const HIACE_VARIANTS: Car[] = [
       'Alat Kebersihan Disinfektan'
     ],
     terms: COMMON_HIACE_TERMS,
-    description: 'Konsep eksklusif dengan Kursi Pilot Captain Seat mewah bermaterial soft cream leather, Smart TV, ceiling LED lighting, dan kebersihan terjamin.',
+    description: 'Konsep eksklusif dengan Kursi Pilot Captain Seat mewah bermaterial soft leather, Smart TV Karaoke, ceiling LED lighting, dan kebersihan terjamin.',
     rating: 5.0,
     reviewsCount: 98,
     specifications: [
       { label: 'Tarif Sewa', value: 'Mulai Rp 1.800.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '8-9 Kursi Pilot Luxury' },
-      { label: 'Fasilitas Utama', value: 'Full AC, Reclining Captain Seats, Sanitizer, Disinfektan' },
-      { label: 'Kondisi Armada', value: 'Interior Pilot Seat Cream Luxury' }
+      { label: 'Fasilitas Utama', value: 'Full AC, Reclining Captain Seats, Smart TV Karaoke' },
+      { label: 'Kondisi Armada', value: 'Interior Pilot Seat Black Leather Luxury' }
     ]
   },
   {
@@ -109,8 +109,8 @@ export const HIACE_VARIANTS: Car[] = [
     pricePerDay: 2000000,
     priceDisplay: 'Mulai Rp 2.000.000 / hari',
     image: '/hiace_premio_luxury_exterior.jpg',
-    interiorImage: '/hiace_premio_luxury_tv.jpg',
-    interiorSecondaryImage: '/hiace_premio_luxury_cabin.jpg',
+    interiorImage: '/hiace_premio_luxury_seats.jpg',
+    interiorSecondaryImage: '/hiace_premio_interior.jpg',
     videoUrl: '/WhatsApp Video 2026-08-12 at 13.45.17.mp4',
     seats: 9,
     transmission: 'Automatic/Manual',
@@ -123,13 +123,13 @@ export const HIACE_VARIANTS: Car[] = [
       'Alat Kebersihan Disinfektan'
     ],
     terms: COMMON_HIACE_TERMS,
-    description: 'Pilihan kasta tertinggi Hiace Premio dengan Electric Captain Massage Seats, Smart TV Karaoke, ambient ceiling lights, serta standar kebersihan & sterilitas VIP.',
+    description: 'Pilihan kasta tertinggi Hiace Premio dengan Electric Captain Massage Seats, Smart TV, ambient ceiling lights, serta standar kebersihan & sterilitas VIP.',
     rating: 5.0,
     reviewsCount: 110,
     specifications: [
       { label: 'Tarif Sewa', value: 'Mulai Rp 2.000.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '8-9 Kursi Luxury VIP' },
-      { label: 'Fasilitas Utama', value: 'Smart TV Karaoke, Reclining Leather Seats, Ceiling LED' },
+      { label: 'Fasilitas Utama', value: 'Electric Reclining Seats, Ambient Ceiling LED, Smart TV' },
       { label: 'Kondisi Armada', value: 'Ultra Executive VIP Class B 7801 KMS' }
     ]
   }
