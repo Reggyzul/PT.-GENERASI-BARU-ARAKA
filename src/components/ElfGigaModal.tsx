@@ -49,13 +49,13 @@ export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGig
     if (activePhotoTab === 'interior_front') {
       return '/elf_giga_real_interior_front.jpg';
     }
-    return '/elf_giga_front.png';
+    return '/elf_giga_side_raw.png';
   };
 
   const getDisplayedBadgeText = () => {
     if (activePhotoTab === 'interior_rear') return 'Kabin Belakang 19 Kursi Leather';
     if (activePhotoTab === 'interior_front') return 'Kabin Depan Leather Seats & TV';
-    return 'Unit Pariwisata B 7502 WAA';
+    return 'Unit Pariwisata AR 08 Araka Classy Tour';
   };
 
   return (

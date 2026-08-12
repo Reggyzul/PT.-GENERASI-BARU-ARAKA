@@ -169,7 +169,7 @@ export const CARS: Car[] = [
     category: 'Transpor Rombongan Besar',
     pricePerDay: 1200000,
     priceDisplay: 'Mulai Rp 1.200.000 / hari',
-    image: '/elf_giga_front.png',
+    image: '/elf_giga_side_raw.png',
     interiorImage: '/elf_giga_real_interior_front.jpg',
     seats: 19,
     transmission: 'Manual',
