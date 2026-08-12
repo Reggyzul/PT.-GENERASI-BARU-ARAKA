@@ -140,56 +140,66 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
               </div>
             </div>
 
-            {/* Photo Showcase with Switcher Tabs */}
-            <div className="space-y-2">
-              <div className="relative rounded-2xl overflow-hidden bg-[#071527] aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center border border-blue-900/60">
+            {/* Photo Showcase with Clean Header & Switcher Tabs Below */}
+            <div className="space-y-3">
+              {/* Photo Title & Badge Bar ABOVE Image */}
+              <div className="flex items-center justify-between gap-2 px-1">
+                <div className="flex items-center gap-1.5 text-[#0c2340]">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span className="font-bold text-xs sm:text-sm text-slate-800">
+                    {getDisplayedBadgeText()}
+                  </span>
+                </div>
+                <span className="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-700 border border-amber-400/30 uppercase tracking-wider shrink-0">
+                  {currentVariant.name}
+                </span>
+              </div>
+
+              {/* 100% UNCLUTTERED CLEAN PHOTO BOX */}
+              <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center border border-slate-200 shadow-md group">
                 <img
                   src={getDisplayedImage()}
                   alt={currentVariant.name}
-                  className="w-full h-full object-cover sm:object-contain drop-shadow-md transition-all duration-300"
+                  className="w-full h-full object-cover sm:object-contain drop-shadow-lg transition-transform duration-500 group-hover:scale-102"
                 />
-                
-                <div className="absolute top-2.5 left-2.5 bg-[#0c2340]/90 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-full border border-blue-800 max-w-[75%] truncate">
-                  {getDisplayedBadgeText()}
-                </div>
+              </div>
 
-                {/* Photo Selector Pills overlay */}
-                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-[#071527]/90 backdrop-blur-md p-1 rounded-full border border-blue-800 flex items-center gap-1 max-w-[95%] overflow-x-auto">
+              {/* Photo Selector Pills BELOW Image */}
+              <div className="flex items-center justify-center gap-2 p-1 bg-slate-100 rounded-xl border border-slate-200 overflow-x-auto">
+                <button
+                  onClick={() => setActivePhotoTab('exterior')}
+                  className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                    activePhotoTab === 'exterior'
+                      ? 'bg-[#0c2340] text-amber-400 shadow-sm'
+                      : 'text-slate-600 hover:bg-slate-200'
+                  }`}
+                >
+                  Eksterior Utama
+                </button>
+
+                <button
+                  onClick={() => setActivePhotoTab('interior')}
+                  className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                    activePhotoTab === 'interior'
+                      ? 'bg-[#0c2340] text-amber-400 shadow-sm'
+                      : 'text-slate-600 hover:bg-slate-200'
+                  }`}
+                >
+                  {currentVariant.id === 'hiace-commuter' ? 'Interior & Bagasi' : 'Interior Kabin'}
+                </button>
+
+                {currentVariant.interiorSecondaryImage && (
                   <button
-                    onClick={() => setActivePhotoTab('exterior')}
-                    className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer whitespace-nowrap ${
-                      activePhotoTab === 'exterior'
-                        ? 'bg-amber-500 text-[#0c2340]'
-                        : 'text-slate-300 hover:text-white'
+                    onClick={() => setActivePhotoTab('interior_secondary')}
+                    className={`px-3.5 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer whitespace-nowrap ${
+                      activePhotoTab === 'interior_secondary'
+                        ? 'bg-[#0c2340] text-amber-400 shadow-sm'
+                        : 'text-slate-600 hover:bg-slate-200'
                     }`}
                   >
-                    Eksterior
+                    Kabin Penumpang
                   </button>
-
-                  <button
-                    onClick={() => setActivePhotoTab('interior')}
-                    className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer whitespace-nowrap ${
-                      activePhotoTab === 'interior'
-                        ? 'bg-amber-500 text-[#0c2340]'
-                        : 'text-slate-300 hover:text-white'
-                    }`}
-                  >
-                    {currentVariant.id === 'hiace-commuter' ? 'Interior & Bagasi' : 'Interior Kabin'}
-                  </button>
-
-                  {currentVariant.interiorSecondaryImage && (
-                    <button
-                      onClick={() => setActivePhotoTab('interior_secondary')}
-                      className={`px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold transition-all cursor-pointer whitespace-nowrap ${
-                        activePhotoTab === 'interior_secondary'
-                          ? 'bg-amber-500 text-[#0c2340]'
-                          : 'text-slate-300 hover:text-white'
-                      }`}
-                    >
-                      Kabin Penumpang
-                    </button>
-                  )}
-                </div>
+                )}
               </div>
             </div>
 

@@ -112,24 +112,26 @@ export default function InnovaModal({ isOpen, onClose, onSelectToBook }: InnovaM
             
             {/* Top Showcase: Main Image + Selector Tabs */}
             <div className="space-y-3">
-              <div className="relative rounded-2xl overflow-hidden bg-slate-900 aspect-[16/9] sm:aspect-[16/8] border border-slate-200 shadow-md group">
+              {/* Photo Title & Badge Bar ABOVE Image */}
+              <div className="flex items-center justify-between gap-2 px-1">
+                <div className="flex items-center gap-1.5 text-[#0c2340]">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span className="font-bold text-xs sm:text-sm text-slate-800">
+                    {getDisplayedBadgeText()}
+                  </span>
+                </div>
+                <span className="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-700 border border-amber-400/30 uppercase tracking-wider shrink-0">
+                  ★ 5.0 • Executive Class
+                </span>
+              </div>
+
+              {/* 100% UNCLUTTERED CLEAN PHOTO BOX */}
+              <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center border border-slate-200 shadow-md group">
                 <img
                   src={getDisplayedImage()}
                   alt="Toyota Innova Reborn Real Photo"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
+                  className="w-full h-full object-cover sm:object-contain drop-shadow-lg transition-transform duration-500 group-hover:scale-102"
                 />
-                
-                {/* Active Photo Badge */}
-                <div className="absolute top-3 left-3 bg-[#0c2340]/90 backdrop-blur-md text-amber-300 text-xs font-bold px-3 py-1 rounded-full border border-amber-400/40 flex items-center gap-1.5 shadow-sm">
-                  <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-                  <span>{getDisplayedBadgeText()}</span>
-                </div>
-
-                {/* Rating Badge */}
-                <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-md text-[#0c2340] text-xs font-extrabold px-3 py-1 rounded-full border border-slate-200 flex items-center gap-1 shadow-sm">
-                  <span className="text-amber-500 font-bold">★ 5.0</span>
-                  <span className="text-slate-400">• Executive Class</span>
-                </div>
               </div>
 
               {/* Photo Showcase Selector Tabs */}
