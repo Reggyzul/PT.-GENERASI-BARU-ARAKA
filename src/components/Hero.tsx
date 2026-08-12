@@ -120,65 +120,8 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                 <strong>Araka Trans</strong> melayani sewa armada Toyota Hiace (Commuter, Premio, Luxury), Elf Giga, Bus Medium, hingga Alphard VIP area Jabodetabek & antar kota seluruh Indonesia dengan armada super bersih, supir profesional, dan tarif paling hemat terpercaya.
               </motion.p>
 
-              {/* Professional Minimalist & Elegant Legalitas & Informasi Pembayaran Block */}
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.16 }}
-                className="pt-1 max-w-xl text-left"
-              >
-                <div className="bg-[#0c2340]/80 backdrop-blur-md rounded-2xl p-4 border border-amber-400/30 text-left space-y-3 shadow-lg">
-                  {/* Header Row */}
-                  <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-blue-900/60 text-left">
-                    <div className="flex items-center gap-2 text-left">
-                      <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
-                      <span className="font-display font-bold text-xs uppercase tracking-wider text-amber-300">
-                        Legalitas & Rekening Resmi
-                      </span>
-                    </div>
-                    <span className="text-[9px] font-extrabold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 uppercase tracking-widest shrink-0">
-                      TERVERIFIKASI RESMI
-                    </span>
-                  </div>
-
-                  {/* Details List - Clean Left Aligned Layout */}
-                  <div className="space-y-2 text-xs text-left">
-                    {/* Line 1: NIB & NPWP */}
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-300 font-sans text-[11px] text-left">
-                      <div className="flex items-center gap-1.5 text-left">
-                        <span className="text-[10px] font-extrabold text-slate-400 uppercase">NIB:</span>
-                        <span className="font-mono font-bold text-white tracking-wide select-all">2306220075432</span>
-                      </div>
-                      <span className="text-slate-600 hidden sm:inline">•</span>
-                      <div className="flex items-center gap-1.5 text-left">
-                        <span className="text-[10px] font-extrabold text-slate-400 uppercase">NPWP:</span>
-                        <span className="font-mono font-bold text-white tracking-wide select-all">74.195.738.5-453.000</span>
-                      </div>
-                    </div>
-
-                    {/* Line 2: BCA Rekening Resmi */}
-                    <div className="pt-2 border-t border-blue-900/40 flex items-center justify-between gap-3 text-left">
-                      <div className="flex items-center gap-2 text-left">
-                        <div className="w-7 h-7 rounded-lg bg-amber-500/20 border border-amber-400/40 flex items-center justify-center shrink-0">
-                          <CreditCard className="w-4 h-4 text-amber-400" />
-                        </div>
-                        <div className="text-left">
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="text-[10px] font-extrabold text-amber-400 uppercase tracking-wider">REKENING RESMI:</span>
-                            <span className="font-sans font-black text-amber-300 text-xs sm:text-sm">BCA 6760280095</span>
-                          </div>
-                          <p className="text-[10px] text-slate-300 font-medium">a.n. PT Generasi Baru Araka</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-            </div>
-
-            {/* RIGHT COLUMN: FLOATING WHITE BOOKING CARD */}
-            <div className="lg:col-span-5">
+            {/* RIGHT COLUMN: FLOATING WHITE BOOKING CARD + LEGALITAS BLOCK BELOW */}
+            <div className="lg:col-span-5 space-y-4">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -280,6 +223,63 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
 
                 </form>
               </motion.div>
+
+              {/* Professional Minimalist & Elegant Legalitas & Informasi Pembayaran Block (Moved Below Form) */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.25 }}
+                className="w-full text-left"
+              >
+                <div className="bg-[#0c2340]/90 backdrop-blur-md rounded-2xl p-4 border border-amber-400/30 text-left space-y-3 shadow-xl">
+                  {/* Header Row */}
+                  <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-blue-900/60 text-left">
+                    <div className="flex items-center gap-2 text-left">
+                      <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
+                      <span className="font-display font-bold text-xs uppercase tracking-wider text-amber-300">
+                        Legalitas & Rekening Resmi
+                      </span>
+                    </div>
+                    <span className="text-[9px] font-extrabold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 uppercase tracking-widest shrink-0">
+                      TERVERIFIKASI RESMI
+                    </span>
+                  </div>
+
+                  {/* Details List - Clean Left Aligned Layout */}
+                  <div className="space-y-2 text-xs text-left">
+                    {/* Line 1: NIB & NPWP */}
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-300 font-sans text-[11px] text-left">
+                      <div className="flex items-center gap-1.5 text-left">
+                        <span className="text-[10px] font-extrabold text-slate-400 uppercase">NIB:</span>
+                        <span className="font-mono font-bold text-white tracking-wide select-all">2306220075432</span>
+                      </div>
+                      <span className="text-slate-600 hidden sm:inline">•</span>
+                      <div className="flex items-center gap-1.5 text-left">
+                        <span className="text-[10px] font-extrabold text-slate-400 uppercase">NPWP:</span>
+                        <span className="font-mono font-bold text-white tracking-wide select-all">74.195.738.5-453.000</span>
+                      </div>
+                    </div>
+
+                    {/* Line 2: BCA Rekening Resmi */}
+                    <div className="pt-2 border-t border-blue-900/40 flex items-center justify-between gap-3 text-left">
+                      <div className="flex items-center gap-2 text-left">
+                        <div className="w-7 h-7 rounded-lg bg-amber-500/20 border border-amber-400/40 flex items-center justify-center shrink-0">
+                          <CreditCard className="w-4 h-4 text-amber-400" />
+                        </div>
+                        <div className="text-left">
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <span className="text-[10px] font-extrabold text-amber-400 uppercase tracking-wider">REKENING RESMI:</span>
+                            <span className="font-sans font-black text-amber-300 text-xs sm:text-sm">BCA 6760280095</span>
+                          </div>
+                          <p className="text-[10px] text-slate-300 font-medium">a.n. PT Generasi Baru Araka</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+            </div>
             </div>
 
           </div>
