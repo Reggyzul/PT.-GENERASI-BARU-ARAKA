@@ -49,7 +49,7 @@ export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGig
     if (activePhotoTab === 'interior_front') {
       return '/elf_giga_real_interior_front.jpg';
     }
-    return '/elf_giga_real_exterior.jpg';
+    return '/elf_giga_front.png';
   };
 
   const getDisplayedBadgeText = () => {
