@@ -14,6 +14,7 @@ import BusMediumModal from './components/BusMediumModal';
 import AlphardModal from './components/AlphardModal';
 import InnovaModal from './components/InnovaModal';
 import AvanzaModal from './components/AvanzaModal';
+import NeoGrandTourModal from './components/NeoGrandTourModal';
 import AIChatbot from './components/AIChatbot';
 import { Car } from './types';
 import { CARS, HIACE_VARIANTS } from './data/cars';
@@ -31,6 +32,7 @@ export default function App() {
   const [isAlphardModalOpen, setIsAlphardModalOpen] = useState(false);
   const [isInnovaModalOpen, setIsInnovaModalOpen] = useState(false);
   const [isAvanzaModalOpen, setIsAvanzaModalOpen] = useState(false);
+  const [isNeoGrandTourModalOpen, setIsNeoGrandTourModalOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [lang, setLang] = useState<'ID' | 'EN'>('ID');
   
@@ -142,6 +144,7 @@ export default function App() {
               onOpenAlphardModal={() => setIsAlphardModalOpen(true)}
               onOpenInnovaModal={() => setIsInnovaModalOpen(true)}
               onOpenAvanzaModal={() => setIsAvanzaModalOpen(true)}
+              onOpenNeoGrandTourModal={() => setIsNeoGrandTourModalOpen(true)}
               lang={lang} 
             />
 
@@ -225,6 +228,16 @@ export default function App() {
         onClose={() => setIsAvanzaModalOpen(false)}
         onSelectToBook={(car) => {
           setIsAvanzaModalOpen(false);
+          setSelectedCar(car);
+        }}
+      />
+
+      {/* Neo Grand Tour Modal Popup */}
+      <NeoGrandTourModal
+        isOpen={isNeoGrandTourModalOpen}
+        onClose={() => setIsNeoGrandTourModalOpen(false)}
+        onSelectToBook={(car) => {
+          setIsNeoGrandTourModalOpen(false);
           setSelectedCar(car);
         }}
       />

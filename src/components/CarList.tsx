@@ -13,6 +13,7 @@ interface CarListProps {
   onOpenAlphardModal: () => void;
   onOpenInnovaModal: () => void;
   onOpenAvanzaModal: () => void;
+  onOpenNeoGrandTourModal: () => void;
   lang: 'ID' | 'EN';
 }
 
@@ -24,6 +25,7 @@ export default function CarList({
   onOpenAlphardModal,
   onOpenInnovaModal,
   onOpenAvanzaModal,
+  onOpenNeoGrandTourModal,
   lang
 }: CarListProps) {
   const t = TRANSLATIONS[lang];
@@ -67,6 +69,7 @@ export default function CarList({
             const isAlphard = car.id === 'toyota-alphard';
             const isInnova = car.id === 'innova-reborn';
             const isAvanza = car.id === 'toyota-avanza';
+            const isNeo = car.id === 'grand-tour';
 
             const handleCardClick = () => {
               if (isHiace) {
@@ -81,6 +84,8 @@ export default function CarList({
                 onOpenInnovaModal();
               } else if (isAvanza) {
                 onOpenAvanzaModal();
+              } else if (isNeo) {
+                onOpenNeoGrandTourModal();
               } else {
                 onSelectCar(car);
               }
@@ -238,6 +243,17 @@ export default function CarList({
                     >
                       <Layers className="w-4 h-4 shrink-0 text-amber-300" />
                       <span>Detail Informasi Toyota Avanza</span>
+                    </button>
+                  ) : isNeo ? (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenNeoGrandTourModal();
+                      }}
+                      className="w-full bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                    >
+                      <Layers className="w-4 h-4 shrink-0 text-amber-300" />
+                      <span>Detail Informasi Neo Grand Tour</span>
                     </button>
                   ) : (
                     <button
