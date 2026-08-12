@@ -152,25 +152,25 @@ export default function BusMediumModal({ isOpen, onClose, onSelectToBook }: BusM
                 </button>
 
                 <button
-                  onClick={() => setActivePhotoTab('interior_front')}
+                  onClick={() => setActivePhotoTab('interior_seats')}
                   className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
-                    activePhotoTab === 'interior_front'
+                    activePhotoTab === 'interior_seats'
                       ? 'bg-[#0c2340] text-amber-400 border border-amber-400/50 shadow-sm'
                       : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                   }`}
                 >
-                  <span>Kabin Depan & TV</span>
+                  <span>Kabin Reclining Seats</span>
                 </button>
 
                 <button
-                  onClick={() => setActivePhotoTab('interior_rear')}
+                  onClick={() => setActivePhotoTab('interior_led')}
                   className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
-                    activePhotoTab === 'interior_rear'
+                    activePhotoTab === 'interior_led'
                       ? 'bg-[#0c2340] text-amber-400 border border-amber-400/50 shadow-sm'
                       : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                   }`}
                 >
-                  <span>Kabin Belakang</span>
+                  <span>Ambient LED Light</span>
                 </button>
               </div>
             </div>
