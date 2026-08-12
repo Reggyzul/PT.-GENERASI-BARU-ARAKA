@@ -179,7 +179,9 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
 
               {/* Photo & Video Selector Grid Buttons */}
               <div className={`grid gap-2 ${
-                currentVariant.videoUrl ? 'grid-cols-2 sm:grid-cols-4' : (currentVariant.interiorSecondaryImage ? 'grid-cols-3' : 'grid-cols-2')
+                (currentVariant.videoUrl && currentVariant.interiorSecondaryImage) 
+                  ? 'grid-cols-2 sm:grid-cols-4' 
+                  : ((currentVariant.videoUrl || currentVariant.interiorSecondaryImage) ? 'grid-cols-3' : 'grid-cols-2')
               }`}>
                 <button
                   onClick={() => setActivePhotoTab('exterior')}

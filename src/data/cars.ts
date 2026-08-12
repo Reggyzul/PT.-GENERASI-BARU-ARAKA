@@ -18,7 +18,6 @@ export const HIACE_VARIANTS: Car[] = [
     priceDisplay: 'Mulai Rp 1.000.000 / hari',
     image: '/hiace_commuter_real_exterior.jpg',
     interiorImage: '/hiace_commuter_real_interior.jpg',
-    interiorSecondaryImage: '/hiace_commuter_interior.jpg',
     videoUrl: '/WhatsApp Video 2026-08-12 at 13.45.35.mp4',
     seats: 14,
     transmission: 'Manual/Matic',
