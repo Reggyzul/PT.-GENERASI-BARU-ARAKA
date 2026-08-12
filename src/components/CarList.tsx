@@ -201,7 +201,7 @@ export default function CarList({
                       <Layers className="w-4 h-4 shrink-0 text-amber-300" />
                       <span>Detail Informasi Bus Medium</span>
                     </button>
-                  ) : (
+                  ) : isAlphard ? (
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -211,6 +211,28 @@ export default function CarList({
                     >
                       <Layers className="w-4 h-4 shrink-0 text-amber-300" />
                       <span>Detail Informasi Toyota Alphard</span>
+                    </button>
+                  ) : isInnova ? (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenInnovaModal();
+                      }}
+                      className="w-full bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                    >
+                      <Layers className="w-4 h-4 shrink-0 text-amber-300" />
+                      <span>Detail Informasi Innova Reborn</span>
+                    </button>
+                  ) : (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onSelectCar(car);
+                      }}
+                      className="w-full bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-xs uppercase py-3.5 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                    >
+                      <Layers className="w-4 h-4 shrink-0 text-amber-300" />
+                      <span>Pesan Unit {car.name}</span>
                     </button>
                   )}
                 </div>
