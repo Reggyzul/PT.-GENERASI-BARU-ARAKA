@@ -77,7 +77,7 @@ export const HIACE_VARIANTS: Car[] = [
     category: 'Luxury & VIP',
     pricePerDay: 1800000,
     priceDisplay: 'Mulai Rp 1.800.000 / hari',
-    image: '/hiace_commuter_real_exterior.jpg',
+    image: '/hiace_commuter_luxury_exterior.jpg',
     interiorImage: '/hiace_commuter_luxury_tv.jpg',
     interiorSecondaryImage: '/hiace_commuter_luxury_interior.jpg',
     videoUrl: '/WhatsApp Video 2026-08-12 at 13.45.34.mp4',
