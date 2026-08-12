@@ -11,7 +11,7 @@ interface ElfGigaModalProps {
 }
 
 export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGigaModalProps) {
-  const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior_front' | 'interior_rear'>('exterior');
+  const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior_front' | 'interior_rear' | 'video'>('exterior');
 
   useEffect(() => {
     if (isOpen) {
@@ -53,6 +53,7 @@ export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGig
   };
 
   const getDisplayedBadgeText = () => {
+    if (activePhotoTab === 'video') return 'Video Walkthrough Tour Isuzu Elf Giga';
     if (activePhotoTab === 'interior_rear') return 'Kabin Belakang 19 Kursi Leather';
     if (activePhotoTab === 'interior_front') return 'Kabin Depan Leather Seats & TV';
     return 'Unit Pariwisata AR 08 Araka Classy Tour';
@@ -114,7 +115,7 @@ export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGig
               </div>
             </div>
 
-            {/* Photo Showcase with Clean Header & Switcher Tabs Below */}
+            {/* Photo & Video Showcase with Clean Header & Switcher Tabs Below */}
             <div className="space-y-3">
               {/* Photo Title & Badge Bar ABOVE Image */}
               <div className="flex items-center justify-between gap-2 px-1">
@@ -129,17 +130,27 @@ export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGig
                 </span>
               </div>
 
-              {/* 100% UNCLUTTERED CLEAN PHOTO BOX */}
+              {/* 100% UNCLUTTERED CLEAN MEDIA BOX (PHOTO OR VIDEO) */}
               <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center border border-slate-200 shadow-md group">
-                <img
-                  src={getDisplayedImage()}
-                  alt="Isuzu Elf Giga"
-                  className="w-full h-full object-cover sm:object-contain drop-shadow-lg transition-transform duration-500 group-hover:scale-102"
-                />
+                {activePhotoTab === 'video' && elfGigaCar.videoUrl ? (
+                  <video
+                    src={elfGigaCar.videoUrl}
+                    controls
+                    autoPlay
+                    playsInline
+                    className="w-full h-full object-contain bg-black"
+                  />
+                ) : (
+                  <img
+                    src={getDisplayedImage()}
+                    alt="Isuzu Elf Giga"
+                    className="w-full h-full object-cover sm:object-contain drop-shadow-lg transition-transform duration-500 group-hover:scale-102"
+                  />
+                )}
               </div>
 
               {/* Photo Selector Grid Buttons */}
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 <button
                   onClick={() => setActivePhotoTab('exterior')}
                   className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
@@ -171,6 +182,17 @@ export default function ElfGigaModal({ isOpen, onClose, onSelectToBook }: ElfGig
                   }`}
                 >
                   <span>Kabin Belakang</span>
+                </button>
+
+                <button
+                  onClick={() => setActivePhotoTab('video')}
+                  className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
+                    activePhotoTab === 'video'
+                      ? 'bg-[#0c2340] text-amber-400 border border-amber-400/50 shadow-sm'
+                      : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
+                  }`}
+                >
+                  <span>🎥 Vidio Tour Unit</span>
                 </button>
               </div>
             </div>

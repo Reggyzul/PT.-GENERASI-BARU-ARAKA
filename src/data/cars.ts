@@ -173,6 +173,7 @@ export const CARS: Car[] = [
     priceDisplay: 'Mulai Rp 1.200.000 / hari',
     image: '/elf_giga_side_raw.png',
     interiorImage: '/elf_giga_real_interior_front.jpg',
+    videoUrl: '/WhatsApp Video 2026-08-12 at 13.45.27.mp4',
     seats: 19,
     transmission: 'Manual',
     fuel: 'Diesel High Power',
