@@ -94,7 +94,7 @@ export default function CarList({
                       alt={car.name}
                       className={`w-full h-full object-contain drop-shadow-xl transition-transform duration-500 ${
                         isElfGiga 
-                          ? 'scale-[1.38] sm:scale-[1.48] translate-y-1 group-hover:scale-[1.48]' 
+                          ? 'scale-[1.2] sm:scale-[1.25] origin-center group-hover:scale-[1.28]' 
                           : isAlphard 
                           ? 'scale-105 sm:scale-110 group-hover:scale-110' 
                           : 'group-hover:scale-105'
