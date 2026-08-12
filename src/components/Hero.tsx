@@ -47,11 +47,11 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
   };
 
   return (
-    <section id="home" className="pt-24 sm:pt-28 pb-12 bg-slate-50 text-slate-900 overflow-hidden">
+    <section id="home" className="pt-20 sm:pt-24 pb-8 bg-slate-50 text-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Hero Card Container in Deep Royal Navy */}
-        <div className="relative rounded-[32px] overflow-hidden bg-[#071527] shadow-2xl p-6 sm:p-10 lg:p-12 border border-blue-900/60 text-white">
+        <div className="relative rounded-[28px] overflow-hidden bg-[#071527] shadow-2xl p-5 sm:p-8 lg:p-10 border border-blue-900/60 text-white">
           
           {/* Background Fleet Showcase Image Overlay */}
           <div 
@@ -62,13 +62,13 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
           <div className="absolute inset-0 bg-gradient-to-r from-[#071527]/95 via-[#0c2340]/90 to-[#071527]/70 pointer-events-none" />
 
           {/* Core Content Grid */}
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
             
             {/* LEFT COLUMN: HEADLINE & SUBTITLE */}
-            <div className="lg:col-span-7 space-y-6 text-left" id="hero-text-container">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left" id="hero-text-container">
               
               {/* Luxury Classy Badge */}
-              <div className="inline-flex flex-col items-start px-4.5 py-2.5 rounded-2xl bg-[#0c2340]/95 backdrop-blur-md border border-amber-400/50 shadow-xl text-left gap-1">
+              <div className="inline-flex flex-col items-start px-4 py-2 rounded-2xl bg-[#0c2340]/95 backdrop-blur-md border border-amber-400/50 shadow-xl text-left gap-0.5">
                 <div className="flex items-center gap-1.5 text-amber-400">
                   <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
                   <span className="font-sans font-black text-[10px] uppercase tracking-[0.25em] text-amber-400">
@@ -85,7 +85,7 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="font-display font-black text-3xl sm:text-5xl lg:text-[56px] text-white tracking-tight leading-[1.12] uppercase"
+                className="font-display font-black text-2xl sm:text-4xl lg:text-[48px] text-white tracking-tight leading-[1.12] uppercase"
               >
                 Sewa Hiace Jabodetabek <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 drop-shadow-md">
@@ -115,37 +115,38 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.12 }}
-                className="font-sans text-blue-100/90 text-sm sm:text-base leading-relaxed max-w-xl font-medium"
+                className="font-sans text-blue-100/90 text-xs sm:text-sm leading-relaxed max-w-xl font-medium"
               >
                 <strong>Araka Trans</strong> melayani sewa armada Toyota Hiace (Commuter, Premio, Luxury), Elf Giga, Bus Medium, hingga Alphard VIP area Jabodetabek & antar kota seluruh Indonesia dengan armada super bersih, supir profesional, dan tarif paling hemat terpercaya.
               </motion.p>
+            </div>
 
             {/* RIGHT COLUMN: FLOATING WHITE BOOKING CARD + LEGALITAS BLOCK BELOW */}
-            <div className="lg:col-span-5 space-y-4">
+            <div className="lg:col-span-5 space-y-3">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-white text-slate-900 rounded-[24px] p-6 sm:p-7 shadow-2xl border-2 border-amber-400/40 text-left relative overflow-hidden"
+                className="bg-white text-slate-900 rounded-[20px] p-5 sm:p-6 shadow-2xl border-2 border-amber-400/40 text-left relative overflow-hidden"
               >
                 {/* Card Title Bar */}
-                <div className="flex items-center justify-between pb-4 mb-5 border-b border-slate-100">
-                  <div className="flex items-center gap-2.5">
-                    <Ticket className="w-5 h-5 text-amber-600 shrink-0" />
-                    <h3 className="font-display font-bold text-base text-[#0c2340] tracking-tight">
+                <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-100">
+                  <div className="flex items-center gap-2">
+                    <Ticket className="w-4.5 h-4.5 text-amber-600 shrink-0" />
+                    <h3 className="font-display font-bold text-sm sm:text-base text-[#0c2340] tracking-tight">
                       Konsultasi & Reservasi Fast Response
                     </h3>
                   </div>
-                  <span className="text-[10px] font-extrabold bg-blue-900 text-amber-400 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                  <span className="text-[9px] font-extrabold bg-blue-900 text-amber-400 px-2 py-0.5 rounded-full uppercase tracking-wider">
                     24 Jam
                   </span>
                 </div>
 
                 {/* Interactive Booking Form */}
-                <form onSubmit={handleQuickSubmit} className="space-y-4 font-sans text-xs">
+                <form onSubmit={handleQuickSubmit} className="space-y-3 font-sans text-xs">
                   
                   {/* Nama Anda Input */}
-                  <div className="space-y-1.5">
+                  <div className="space-y-1">
                     <label className="block font-semibold text-slate-700 text-xs">
                       Nama Pemesan
                     </label>
@@ -154,19 +155,19 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                       placeholder="Masukkan nama anda"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-medium transition-all text-xs"
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-medium transition-all text-xs"
                     />
                   </div>
 
                   {/* Pilihan Armada Select */}
-                  <div className="space-y-1.5">
+                  <div className="space-y-1">
                     <label className="block font-semibold text-slate-700 text-xs">
                       Pilihan Armada Kendaraan
                     </label>
                     <select
                       value={selectedFleet}
                       onChange={(e) => setSelectedFleet(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
                     >
                       {CARS.map((c) => (
                         <option key={c.id} value={c.name}>
@@ -177,14 +178,14 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                   </div>
 
                   {/* Kategori Perjalanan */}
-                  <div className="space-y-1.5">
+                  <div className="space-y-1">
                     <label className="block font-semibold text-slate-700 text-xs">
                       Kategori Kebutuhan
                     </label>
                     <select
                       value={tripType}
                       onChange={(e) => setTripType(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
                     >
                       <option value="Rental Mobil untuk Wisata">Rental Mobil untuk Wisata</option>
                       <option value="Transportasi Rombongan">Transportasi Rombongan</option>
@@ -195,14 +196,14 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                   </div>
 
                   {/* Estimasi Jumlah Penumpang */}
-                  <div className="space-y-1.5">
+                  <div className="space-y-1">
                     <label className="block font-semibold text-slate-700 text-xs">
                       Estimasi Peserta / Penumpang
                     </label>
                     <select
                       value={passengers}
                       onChange={(e) => setPassengers(e.target.value)}
-                      className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-[#0c2340] focus:bg-white focus:outline-none text-slate-800 font-semibold cursor-pointer transition-all text-xs"
                     >
                       <option value="7-12 Orang (Hiace Premio/Commuter)">7-12 Orang (Hiace Premio/Commuter)</option>
                       <option value="13-19 Orang (Elf Giga / Hiace)">13-19 Orang (Elf Giga / Hiace)</option>
@@ -212,10 +213,10 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                   </div>
 
                   {/* Full-width Button */}
-                  <div className="pt-2">
+                  <div className="pt-1.5">
                     <button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-sm py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-98"
+                      className="w-full bg-gradient-to-r from-[#0c2340] via-[#1d4ed8] to-amber-500 hover:from-[#071527] hover:to-amber-600 text-white font-sans font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-98"
                     >
                       Cek Ketersediaan via WhatsApp
                     </button>
@@ -231,16 +232,16 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                 transition={{ duration: 0.5, delay: 0.25 }}
                 className="w-full text-left"
               >
-                <div className="bg-[#0c2340]/90 backdrop-blur-md rounded-2xl p-4 border border-amber-400/30 text-left space-y-3 shadow-xl">
+                <div className="bg-[#0c2340]/90 backdrop-blur-md rounded-2xl p-3.5 border border-amber-400/30 text-left space-y-2.5 shadow-xl">
                   {/* Header Row */}
-                  <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-blue-900/60 text-left">
+                  <div className="flex items-center justify-between gap-2 pb-2 border-b border-blue-900/60 text-left">
                     <div className="flex items-center gap-2 text-left">
                       <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
                       <span className="font-display font-bold text-xs uppercase tracking-wider text-amber-300">
                         Legalitas & Rekening Resmi
                       </span>
                     </div>
-                    <span className="text-[9px] font-extrabold px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 uppercase tracking-widest shrink-0">
+                    <span className="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 uppercase tracking-widest shrink-0">
                       TERVERIFIKASI RESMI
                     </span>
                   </div>
@@ -248,7 +249,7 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                   {/* Details List - Clean Left Aligned Layout */}
                   <div className="space-y-2 text-xs text-left">
                     {/* Line 1: NIB & NPWP */}
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-slate-300 font-sans text-[11px] text-left">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-slate-300 font-sans text-[11px] text-left">
                       <div className="flex items-center gap-1.5 text-left">
                         <span className="text-[10px] font-extrabold text-slate-400 uppercase">NIB:</span>
                         <span className="font-mono font-bold text-white tracking-wide select-all">2306220075432</span>
@@ -261,10 +262,10 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                     </div>
 
                     {/* Line 2: BCA Rekening Resmi */}
-                    <div className="pt-2 border-t border-blue-900/40 flex items-center justify-between gap-3 text-left">
+                    <div className="pt-1.5 border-t border-blue-900/40 flex items-center justify-between gap-3 text-left">
                       <div className="flex items-center gap-2 text-left">
-                        <div className="w-7 h-7 rounded-lg bg-amber-500/20 border border-amber-400/40 flex items-center justify-center shrink-0">
-                          <CreditCard className="w-4 h-4 text-amber-400" />
+                        <div className="w-6.5 h-6.5 rounded-lg bg-amber-500/20 border border-amber-400/40 flex items-center justify-center shrink-0">
+                          <CreditCard className="w-3.5 h-3.5 text-amber-400" />
                         </div>
                         <div className="text-left">
                           <div className="flex items-center gap-1.5 flex-wrap">
@@ -278,29 +279,25 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                   </div>
                 </div>
               </motion.div>
-
             </div>
-            </div>
-
           </div>
-
         </div>
 
         {/* FLOATING DOWN ARROW BUTTON: Lihat Armada Mobil */}
-        <div className="pt-8 flex justify-center">
+        <div className="pt-4 flex justify-center">
           <motion.button
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             onClick={handleScrollToFleet}
-            className="group flex flex-col items-center gap-1.5 cursor-pointer focus:outline-none"
+            className="group flex flex-col items-center gap-1 cursor-pointer focus:outline-none"
             id="hero-floating-fleet-btn"
           >
-            <span className="font-sans font-bold text-xs sm:text-sm text-[#0c2340] group-hover:text-amber-600 transition-colors bg-white/95 px-5 py-1.5 rounded-full border border-blue-900/20 shadow-sm group-hover:shadow-md group-hover:border-amber-300">
+            <span className="font-sans font-bold text-xs text-[#0c2340] group-hover:text-amber-600 transition-colors bg-white/95 px-4 py-1 rounded-full border border-blue-900/20 shadow-sm group-hover:shadow-md group-hover:border-amber-300">
               Lihat Armada Mobil
             </span>
-            <div className="w-8 h-8 rounded-full bg-amber-500 text-[#0c2340] flex items-center justify-center shadow-md group-hover:bg-amber-400 group-hover:scale-110 transition-all animate-bounce font-black">
-              <ChevronDown className="w-5 h-5 stroke-[2.5]" />
+            <div className="w-7 h-7 rounded-full bg-amber-500 text-[#0c2340] flex items-center justify-center shadow-md group-hover:bg-amber-400 group-hover:scale-110 transition-all animate-bounce font-black">
+              <ChevronDown className="w-4 h-4 stroke-[2.5]" />
             </div>
           </motion.button>
         </div>
