@@ -80,27 +80,44 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
                 </span>
               </div>
 
-              {/* Bold Large Headline */}
+              {/* Bold High-Converting Selling Headline */}
               <motion.h1 
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight uppercase"
+                className="font-display font-black text-3xl sm:text-5xl lg:text-[56px] text-white tracking-tight leading-[1.12] uppercase"
               >
-                Solusi Transportasi <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">
-                  Nyaman, Aman & Terpercaya
+                Sewa Hiace Jabodetabek <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 drop-shadow-md">
+                  Mulai 1 Jutaan / Hari
                 </span>
               </motion.h1>
+
+              {/* Highlight Selling Ribbons */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.08 }}
+                className="flex flex-wrap items-center gap-2"
+              >
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-extrabold shadow-sm">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span>Include Mobil + Supir + BBM</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#0c2340] border border-blue-800 text-slate-200 text-xs font-extrabold shadow-sm">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>Solusi Transportasi Nyaman & Terpercaya</span>
+                </div>
+              </motion.div>
 
               {/* Sub-headline Paragraph */}
               <motion.p
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                transition={{ duration: 0.5, delay: 0.12 }}
                 className="font-sans text-blue-100/90 text-sm sm:text-base leading-relaxed max-w-xl font-medium"
               >
-                <strong>Araka Trans</strong> hadir sebagai penyedia layanan rental mobil dan transportasi yang siap menemani perjalanan pribadi, keluarga, perusahaan, maupun rombongan. Dengan pilihan armada yang beragam dan pelayanan profesional, kami berkomitmen memberikan pengalaman perjalanan yang nyaman dan berkesan.
+                <strong>Araka Trans</strong> melayani sewa armada Toyota Hiace (Commuter, Premio, Luxury), Elf Giga, Bus Medium, hingga Alphard VIP area Jabodetabek & antar kota seluruh Indonesia dengan armada super bersih, supir profesional, dan tarif paling hemat terpercaya.
               </motion.p>
 
             </div>
