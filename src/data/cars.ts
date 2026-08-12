@@ -78,8 +78,9 @@ export const HIACE_VARIANTS: Car[] = [
     pricePerDay: 1800000,
     priceDisplay: 'Mulai Rp 1.800.000 / hari',
     image: '/hiace_commuter_real_exterior.jpg',
-    interiorImage: '/hiace_premio_luxury_tv.jpg',
-    interiorSecondaryImage: '/hiace_premio_luxury_cabin.jpg',
+    interiorImage: '/hiace_commuter_luxury_tv.jpg',
+    interiorSecondaryImage: '/hiace_commuter_luxury_interior.jpg',
+    videoUrl: '/WhatsApp Video 2026-08-12 at 13.45.34.mp4',
     seats: 9,
     transmission: 'Manual/Matic',
     fuel: 'Diesel',
@@ -91,14 +92,14 @@ export const HIACE_VARIANTS: Car[] = [
       'Alat Kebersihan Disinfektan'
     ],
     terms: COMMON_HIACE_TERMS,
-    description: 'Konsep eksklusif dengan Kursi Pilot Captain Seat mewah bermaterial soft leather, Smart TV Karaoke, ceiling LED lighting, dan kebersihan terjamin.',
+    description: 'Konsep eksklusif dengan Pilot Captain Seats mewah bermaterial Soft Grey Leather, Smart TV Karaoke, Meja Lipat Wood-Grain, ceiling LED lighting, dan kebersihan terjamin.',
     rating: 5.0,
     reviewsCount: 98,
     specifications: [
       { label: 'Tarif Sewa', value: 'Mulai Rp 1.800.000 / hari' },
       { label: 'Kapasitas Penumpang', value: '8-9 Kursi Pilot Luxury' },
-      { label: 'Fasilitas Utama', value: 'Full AC, Reclining Captain Seats, Smart TV Karaoke' },
-      { label: 'Kondisi Armada', value: 'Interior Pilot Seat Black Leather Luxury' }
+      { label: 'Fasilitas Utama', value: 'Full AC, Reclining Captain Seats, Smart TV Karaoke, Meja Lipat' },
+      { label: 'Kondisi Armada', value: 'Interior Pilot Seat Soft Grey Luxury Class' }
     ]
   },
   {
