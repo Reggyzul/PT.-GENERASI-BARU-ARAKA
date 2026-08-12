@@ -43,8 +43,8 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
   ];
 
   const getDisplayedImage = () => {
-    if (activePhotoTab === 'interior_front') {
-      return '/alphard_real_interior_front.jpg';
+    if (activePhotoTab === 'interior_led') {
+      return '/alphard_real_interior_led.jpg';
     }
     if (activePhotoTab === 'interior_seats') {
       return '/alphard_real_interior_seats.jpg';
@@ -53,7 +53,7 @@ export default function AlphardModal({ isOpen, onClose, onSelectToBook }: Alphar
   };
 
   const getDisplayedBadgeText = () => {
-    if (activePhotoTab === 'interior_front') return 'Kabin Depan & Dashboard Leather Beige';
+    if (activePhotoTab === 'interior_led') return 'Panoramic Sunroof & Ambient Roof LED Lighting';
     if (activePhotoTab === 'interior_seats') return 'First-Class Executive Captain Seats & Ottoman';
     return 'Unit Black Metallic B 09-23';
   };
