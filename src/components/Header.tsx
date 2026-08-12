@@ -36,7 +36,6 @@ export default function Header({
   const navItems = [
     { label: t.nav_home, id: 'home', type: 'page', pageId: 'home' as const },
     { label: 'Armada Mobil', id: 'cars', type: 'section', sectionId: 'cars' },
-    { label: 'Layanan', id: 'services', type: 'section', sectionId: 'services' },
     { label: 'Keunggulan', id: 'advantages', type: 'section', sectionId: 'advantages' },
     { label: 'Cara Pesan', id: 'steps', type: 'section', sectionId: 'steps' },
     { label: 'Profil & Visi Misi', id: 'about', type: 'page', pageId: 'about' as const },

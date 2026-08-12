@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Advantages from './components/Advantages';
 import About from './components/About';
 import CarList from './components/CarList';
-import Services from './components/Services';
 import BookingSteps from './components/BookingSteps';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
@@ -42,7 +41,7 @@ export default function App() {
       }
 
       if (currentPage === 'home') {
-        const sections = ['home', 'services', 'cars', 'advantages', 'steps', 'contact'];
+        const sections = ['home', 'cars', 'advantages', 'steps', 'contact'];
         const scrollPosition = window.scrollY + 250;
 
         for (const section of sections) {
@@ -140,10 +139,7 @@ export default function App() {
               lang={lang} 
             />
 
-            {/* 3. Layanan Rental Mobil */}
-            <Services lang={lang} />
-
-            {/* 4. Keunggulan (Why Choose Us) */}
+            {/* 3. Keunggulan (Why Choose Us) */}
             <Advantages onBookClick={() => handleNavClick('cars')} lang={lang} />
 
             {/* 5. Cara Pemesanan Mudah */}
