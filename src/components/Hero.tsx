@@ -67,14 +67,17 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
             {/* LEFT COLUMN: HEADLINE & SUBTITLE */}
             <div className="lg:col-span-7 space-y-6 text-left" id="hero-text-container">
               
-              <div className="space-y-1.5">
-                <span className="font-sans font-extrabold text-[11px] sm:text-xs uppercase tracking-widest text-amber-400 block">
-                  COMPANY PROFILE
-                </span>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0c2340] border border-amber-400/50 text-amber-300 text-xs font-extrabold uppercase tracking-wider shadow-sm">
-                  <ShieldCheck className="w-4 h-4 text-amber-400" />
-                  <span>PT. GENERASI BARU ARAKA</span>
+              {/* Luxury Classy Badge */}
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0c2340]/90 backdrop-blur-md border border-amber-400/50 shadow-lg text-left">
+                <div className="flex items-center gap-1.5 text-amber-400 pr-2.5 border-r border-amber-400/30 shrink-0">
+                  <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span className="font-sans font-black text-[10px] uppercase tracking-[0.25em] text-amber-400">
+                    COMPANY PROFILE
+                  </span>
                 </div>
+                <span className="font-sans font-extrabold text-xs text-white uppercase tracking-wider truncate">
+                  PT. GENERASI BARU ARAKA
+                </span>
               </div>
 
               {/* Bold Large Headline */}
