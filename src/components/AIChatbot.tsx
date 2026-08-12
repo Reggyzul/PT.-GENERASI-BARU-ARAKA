@@ -156,14 +156,15 @@ KNOWLEDGE BASE NATIONWIDE (RENTAL SELURUH INDONESIA & ARMADA):
    - Layanan: Rental Wisata Rombongan, Dinas Perusahaan/Instansi, Perjalanan VIP/Direksi, Drop Antar Kota, Wedding Car, Event Gathering.
 
 2. Armada Utama & Tarif Acuan:
+   - Toyota Avanza (7 Seats MPV): Mulai Rp 800.000 / hari
+   - Toyota Innova Reborn (7 Seats Executive MPV): Mulai Rp 1.000.000 / hari
    - Toyota Hiace Commuter (14 Seats): Mulai Rp 1.000.000 / hari
    - Toyota Hiace Premio (12 Seats Executive): Mulai Rp 1.200.000 / hari
    - Toyota Hiace Commuter Luxury (9 Captain Seats): Mulai Rp 1.800.000 / hari
-   - Toyota Hiace Premio Luxury (9 Electric Captain Seats): Mulai Rp 2.000.000 / hari
+   - Toyota Hiace Premio Luxury / Hiace Grand Tour (9-12 Seats Luxury): Mulai Rp 2.000.000 / hari
    - Isuzu Elf Giga (19 Seats): Mulai Rp 1.200.000 / hari
    - Bus Medium Jetbus 3 (33-35 Seats): Mulai Rp 2.000.000 / hari
    - Toyota Alphard VIP Class (Executive Captain Seats): Mulai Rp 2.400.000 / hari
-   - Armada MPV/City Car (Avanza, Innova Reborn, Zenix, Ertiga, Xpander): Tersedia untuk harian & dinas.
 
 3. Ketentuan & Fasilitas:
    - Sewa dengan Supir (All-In): Sudah termasuk Mobil, Supir Profesional & BBM.

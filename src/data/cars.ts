@@ -251,6 +251,93 @@ export const CARS: Car[] = [
       { label: 'Fasilitas Utama', value: 'Full AC, Reclining Seats, Sanitizer, Disinfektan' },
       { label: 'Kondisi Armada', value: 'Unit Black Metallic VIP Class B 09-23' }
     ]
+  },
+  {
+    id: 'toyota-avanza',
+    name: 'Toyota Avanza',
+    nameAr: 'تويوتا أفانزا',
+    category: 'MPV Family Class',
+    pricePerDay: 800000,
+    priceDisplay: 'Mulai Rp 800.000 / hari',
+    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
+    interiorImage: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80',
+    seats: 7,
+    transmission: 'Manual/Automatic',
+    fuel: 'Bensin Irit',
+    includeList: [
+      'Full AC Double Blower',
+      'Audio & USB Music',
+      'Hand Sanitizer & Tissue',
+      'Include Mobil, Supir & BBM'
+    ],
+    terms: COMMON_HIACE_TERMS,
+    description: 'Pilihan praktis, irit, dan ekonomis untuk perjalanan keluarga, dinas harian, maupun city tour Jabodetabek & sekitarnya.',
+    rating: 4.9,
+    reviewsCount: 140,
+    specifications: [
+      { label: 'Tarif Sewa', value: 'Mulai Rp 800.000 / hari' },
+      { label: 'Kapasitas Penumpang', value: '6-7 Kursi Penumpang' },
+      { label: 'Fasilitas Utama', value: 'Full AC Double Blower, Charger USB, Sanitizer' },
+      { label: 'Kondisi Armada', value: 'Unit Bersih, Irit & Terawat Berkala' }
+    ]
+  },
+  {
+    id: 'innova-reborn',
+    name: 'Toyota Innova Reborn',
+    nameAr: 'تويوتا إنوفا ريبورن',
+    category: 'Executive MPV Class',
+    pricePerDay: 1000000,
+    priceDisplay: 'Mulai Rp 1.000.000 / hari',
+    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80',
+    interiorImage: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+    seats: 7,
+    transmission: 'Manual/Automatic',
+    fuel: 'Diesel / Bensin Euro 4',
+    includeList: [
+      'Full AC Triple Blower',
+      'Comfort Reclining Seats',
+      'Hand Sanitizer & Tissue',
+      'Include Mobil, Supir & BBM'
+    ],
+    terms: COMMON_HIACE_TERMS,
+    description: 'Mobil MPV eksekutif favorit untuk kunjungan kerja dinas, tamu perusahaan, maupun liburan keluarga dengan suspensi super nyaman.',
+    rating: 5.0,
+    reviewsCount: 185,
+    specifications: [
+      { label: 'Tarif Sewa', value: 'Mulai Rp 1.000.000 / hari' },
+      { label: 'Kapasitas Penumpang', value: '7 Kursi Penumpang Executive' },
+      { label: 'Fasilitas Utama', value: 'Full AC Triple Blower, Captain/Bench Seats, Sanitizer' },
+      { label: 'Kondisi Armada', value: 'Kabin Senyap, Nyaman & Performa Handal' }
+    ]
+  },
+  {
+    id: 'grand-tour',
+    name: 'Hiace Grand Tour',
+    nameAr: 'هايس جراند تور',
+    category: 'Luxury Grand Tour Class',
+    pricePerDay: 2000000,
+    priceDisplay: 'Mulai Rp 2.000.000 / hari',
+    image: '/hiace_premio_luxury_exterior.jpg',
+    interiorImage: '/hiace_premio_luxury_seats.jpg',
+    seats: 12,
+    transmission: 'Automatic/Manual',
+    fuel: 'Diesel Euro 4',
+    includeList: [
+      'Full AC Climate Control',
+      'Grand Tour Executive Seats',
+      'Smart TV & Premium Audio',
+      'Include Mobil, Supir & BBM'
+    ],
+    terms: COMMON_HIACE_TERMS,
+    description: 'Varian eksklusif Hiace Grand Tour khusus dirancang untuk perjalanan jarak jauh antar kota & provinsi dengan kemewahan dan kenyamanan maksimal.',
+    rating: 5.0,
+    reviewsCount: 95,
+    specifications: [
+      { label: 'Tarif Sewa', value: 'Mulai Rp 2.000.000 / hari' },
+      { label: 'Kapasitas Penumpang', value: '10-12 Kursi Grand Tour VIP' },
+      { label: 'Fasilitas Utama', value: 'Smart TV, Grand Tour Reclining Seats, Ambient Lighting' },
+      { label: 'Kondisi Armada', value: 'Armada Jarak Jauh Ultra Executive' }
+    ]
   }
 ];
 
