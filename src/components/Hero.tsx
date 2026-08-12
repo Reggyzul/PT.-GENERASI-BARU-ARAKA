@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { MessageCircle, Ticket, ArrowRight, MapPin, Users, Calendar, Phone, ChevronDown, Car, ShieldCheck, Sparkles } from 'lucide-react';
+import { MessageCircle, Ticket, ArrowRight, MapPin, Users, Calendar, Phone, ChevronDown, Car, ShieldCheck, Sparkles, Building2, CreditCard } from 'lucide-react';
 import { TRANSLATIONS } from '../utils/translations';
 import { CARS } from '../data/cars';
 
@@ -119,6 +119,54 @@ Mohon informasi ketersediaan armada, jadwal, & rincian tarif. Terima kasih!`;
               >
                 <strong>Araka Trans</strong> melayani sewa armada Toyota Hiace (Commuter, Premio, Luxury), Elf Giga, Bus Medium, hingga Alphard VIP area Jabodetabek & antar kota seluruh Indonesia dengan armada super bersih, supir profesional, dan tarif paling hemat terpercaya.
               </motion.p>
+
+              {/* Professional Minimalist Legalitas & Informasi Pembayaran Block */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.16 }}
+                className="pt-1 max-w-xl"
+              >
+                <div className="bg-[#0c2340]/90 backdrop-blur-md rounded-2xl p-3.5 sm:p-4 border border-amber-400/35 text-left space-y-2.5 shadow-xl">
+                  {/* Title Bar */}
+                  <div className="flex items-center justify-between pb-2 border-b border-blue-900/80">
+                    <div className="flex items-center gap-2">
+                      <Building2 className="w-4 h-4 text-amber-400 shrink-0" />
+                      <span className="font-sans font-black text-xs uppercase tracking-wider text-amber-300">
+                        Legalitas & Informasi Pembayaran
+                      </span>
+                    </div>
+                    <span className="text-[9px] font-extrabold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 uppercase tracking-widest">
+                      TERVERIFIKASI RESMI
+                    </span>
+                  </div>
+
+                  {/* Info Details Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 text-xs pt-0.5">
+                    {/* NIB */}
+                    <div className="bg-[#071527]/70 p-2 rounded-xl border border-blue-900/50 space-y-0.5">
+                      <span className="text-[9px] font-extrabold text-slate-400 uppercase tracking-wider block">NIB</span>
+                      <p className="font-mono font-bold text-white text-xs tracking-tight select-all">2306220075432</p>
+                    </div>
+
+                    {/* NPWP */}
+                    <div className="bg-[#071527]/70 p-2 rounded-xl border border-blue-900/50 space-y-0.5">
+                      <span className="text-[9px] font-extrabold text-slate-400 uppercase tracking-wider block">NPWP</span>
+                      <p className="font-mono font-bold text-white text-xs tracking-tight select-all">74.195.738.5-453.000</p>
+                    </div>
+
+                    {/* Rekening Pembayaran */}
+                    <div className="bg-[#071527]/70 p-2 rounded-xl border border-amber-400/30 space-y-0.5">
+                      <span className="text-[9px] font-extrabold text-amber-400 uppercase tracking-wider block flex items-center gap-1">
+                        <CreditCard className="w-3 h-3 text-amber-400 shrink-0" />
+                        <span>REKENING RESMI</span>
+                      </span>
+                      <p className="font-sans font-black text-amber-300 text-xs">BCA 6760280095</p>
+                      <p className="text-[9.5px] text-slate-300 font-semibold leading-none truncate">a.n. PT Generasi Baru Araka</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
 
             </div>
 
