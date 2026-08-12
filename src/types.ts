@@ -24,6 +24,7 @@ export interface Car {
   }[];
   interiorImage?: string;
   interiorSecondaryImage?: string;
+  videoUrl?: string;
   terms?: string[];
 }
 

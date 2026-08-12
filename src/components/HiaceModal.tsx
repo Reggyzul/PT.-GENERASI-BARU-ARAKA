@@ -12,7 +12,7 @@ interface HiaceModalProps {
 
 export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: HiaceModalProps) {
   const [selectedVariantId, setSelectedVariantId] = useState<string>('hiace-commuter');
-  const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior' | 'interior_secondary'>('exterior');
+  const [activePhotoTab, setActivePhotoTab] = useState<'exterior' | 'interior' | 'interior_secondary' | 'video'>('exterior');
 
   useEffect(() => {
     if (isOpen) {
@@ -40,11 +40,14 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
   };
 
   const getDisplayedBadgeText = () => {
+    if (activePhotoTab === 'video') {
+      return `Video Walkthrough Interior ${currentVariant.name}`;
+    }
     if (activePhotoTab === 'exterior') {
       return `Eksterior ${currentVariant.name}`;
     }
     if (activePhotoTab === 'interior') {
-      return currentVariant.id === 'hiace-commuter' ? `Interior & Bagasi ${currentVariant.name}` : `Interior Kabin ${currentVariant.name}`;
+      return currentVariant.id === 'hiace-commuter' ? `Interior & Bagasi ${currentVariant.name}` : `Interior Kabin & Smart TV ${currentVariant.name}`;
     }
     return `Kabin Penumpang ${currentVariant.name}`;
   };
@@ -140,7 +143,7 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
               </div>
             </div>
 
-            {/* Photo Showcase with Clean Header & Switcher Tabs Below */}
+            {/* Photo & Video Showcase with Clean Header & Switcher Tabs Below */}
             <div className="space-y-3">
               {/* Photo Title & Badge Bar ABOVE Image */}
               <div className="flex items-center justify-between gap-2 px-1">
@@ -155,17 +158,29 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                 </span>
               </div>
 
-              {/* 100% UNCLUTTERED CLEAN PHOTO BOX */}
+              {/* 100% UNCLUTTERED CLEAN MEDIA BOX (PHOTO OR VIDEO) */}
               <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-[16/10] sm:aspect-[16/9] flex items-center justify-center border border-slate-200 shadow-md group">
-                <img
-                  src={getDisplayedImage()}
-                  alt={currentVariant.name}
-                  className="w-full h-full object-cover sm:object-contain drop-shadow-lg transition-transform duration-500 group-hover:scale-102"
-                />
+                {activePhotoTab === 'video' && currentVariant.videoUrl ? (
+                  <video
+                    src={currentVariant.videoUrl}
+                    controls
+                    autoPlay
+                    playsInline
+                    className="w-full h-full object-contain bg-black"
+                  />
+                ) : (
+                  <img
+                    src={getDisplayedImage()}
+                    alt={currentVariant.name}
+                    className="w-full h-full object-cover sm:object-contain drop-shadow-lg transition-transform duration-500 group-hover:scale-102"
+                  />
+                )}
               </div>
 
-              {/* Photo Selector Grid Buttons */}
-              <div className={`grid gap-2 ${currentVariant.interiorSecondaryImage ? 'grid-cols-3' : 'grid-cols-2'}`}>
+              {/* Photo & Video Selector Grid Buttons */}
+              <div className={`grid gap-2 ${
+                currentVariant.videoUrl ? 'grid-cols-2 sm:grid-cols-4' : (currentVariant.interiorSecondaryImage ? 'grid-cols-3' : 'grid-cols-2')
+              }`}>
                 <button
                   onClick={() => setActivePhotoTab('exterior')}
                   className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
@@ -185,7 +200,7 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                       : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
                   }`}
                 >
-                  <span>{currentVariant.id === 'hiace-commuter' ? 'Interior & Bagasi' : 'Interior Kabin'}</span>
+                  <span>{currentVariant.id === 'hiace-commuter' ? 'Interior & Bagasi' : 'Kabin Depan & TV'}</span>
                 </button>
 
                 {currentVariant.interiorSecondaryImage && (
@@ -198,6 +213,19 @@ export default function HiaceModal({ isOpen, onClose, onSelectVariantToBook }: H
                     }`}
                   >
                     <span>Kabin Penumpang</span>
+                  </button>
+                )}
+
+                {currentVariant.videoUrl && (
+                  <button
+                    onClick={() => setActivePhotoTab('video')}
+                    className={`py-2.5 px-3 rounded-xl font-bold text-xs transition-all cursor-pointer flex items-center justify-center text-center ${
+                      activePhotoTab === 'video'
+                        ? 'bg-[#0c2340] text-amber-400 border border-amber-400/50 shadow-sm'
+                        : 'bg-[#f1f5f9] text-[#2c3e50] hover:bg-slate-200'
+                    }`}
+                  >
+                    <span>🎥 Vidio Tour Unit</span>
                   </button>
                 )}
               </div>
